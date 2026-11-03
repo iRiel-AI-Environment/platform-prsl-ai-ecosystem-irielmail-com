@@ -59,7 +59,7 @@ function Home() {
         <h2 id="entities" className="text-3xl font-bold">{h.entitiesTitle}</h2>
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {h.entities.map((e, i) => {
-            const Icon = ICONS[i];
+            const Icon = ICONS[i] ?? Cpu;
             return (
               <article key={e.name} className="panel p-6">
                 <Icon className={`h-7 w-7 ${i === 3 ? "text-telemetry" : "text-primary"}`} aria-hidden />

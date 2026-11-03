@@ -39,7 +39,7 @@ export const LOCALES: readonly LocaleInfo[] = [
 export const DEFAULT_LOCALE: LocaleCode = "en-US";
 
 export function getLocale(code: string | null | undefined): LocaleInfo {
-  return LOCALES.find((l) => l.code === code) ?? LOCALES[0];
+  return LOCALES.find((l) => l.code === code) ?? LOCALES[0]!;
 }
 
 export function isRtl(code: LocaleCode): boolean {
