@@ -47,7 +47,7 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-2">
               {c.links.map((l) => (
                 <li key={l.label}>
-                  <Link to={l.to} hash={"hash" in l ? l.hash : undefined} className="text-sm text-muted-foreground hover:text-primary">
+                  <Link to={l.to} {..."hash" in l && l.hash ? { hash: l.hash } : {}} className="text-sm text-muted-foreground hover:text-primary">
                     {l.label}
                   </Link>
                 </li>

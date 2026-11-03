@@ -50,8 +50,8 @@ export function isRtl(code: LocaleCode): boolean {
 export function matchLocale(tag: string): LocaleCode {
   const exact = LOCALES.find((l) => l.code.toLowerCase() === tag.toLowerCase());
   if (exact) return exact.code;
-  const lang = tag.split("-")[0].toLowerCase();
+  const lang = (tag.split("-")[0] ?? "").toLowerCase();
   if (lang === "es" && !/^es-es$/i.test(tag)) return "es-419";
-  const byLang = LOCALES.find((l) => l.code.split("-")[0].toLowerCase() === lang);
+  const byLang = LOCALES.find((l) => (l.code.split("-")[0] ?? "").toLowerCase() === lang);
   return byLang?.code ?? DEFAULT_LOCALE;
 }
