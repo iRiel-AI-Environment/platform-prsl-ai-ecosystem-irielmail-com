@@ -141,10 +141,10 @@ const en: Messages = {
       privacy: "Privacy by Default: processing happens on-device whenever possible, and no data is transmitted without explicit, revocable consent. Security by Default means encrypted storage, least-privilege agents and a public vulnerability disclosure process.",
       languages: "The Language Core ships a typed BCP 47 registry with 17 locales: en-US, en-GB, pt-BR, pt-PT, es-ES, es-419, fr-FR, de-DE, it-IT, zh-CN, zh-TW, ja-JP, ko-KR, ar (right-to-left), hi-IN, ru-RU and nl-NL. en-US and pt-BR are complete; others fall back gracefully.",
       iapps: "iApps are focused modular applications — such as mail, notes, calendar and files — that share one accessible design language and plug into iRiel for orchestration.",
-      contact: "Robert Software Labs was founded by Robert, a Brazilian software engineer. You can reach the team at helloprsl.ai@outlook.com.",
+      contact: "Robert Software Labs was founded by Robert, a Brazilian software engineer. For any question, talk to Agent PRSL-AI, the official guide of the platform.",
     },
   },
-  form: { name: "Name", email: "Email", category: "Category", message: "Message", submit: "Send", thanks: "Thank you. Your email app will open so you can send this message to Robert Software Labs.", categories: ["Suggestion", "Accessibility", "Bug report", "Language / translation", "Other"], required: "Required" },
+  form: { name: "Name", email: "Email", category: "Category", message: "Message", submit: "Send", thanks: "Thank you. Your message was received in this session. For a direct answer, open Agent PRSL-AI.", categories: ["Suggestion", "Accessibility", "Bug report", "Language / translation", "Other"], required: "Required" },
   pages: {
     about: {
       eyebrow: "About", title: "Robert Software Labs",
@@ -189,7 +189,7 @@ const en: Messages = {
         { id: "architecture", h: "Architecture specification", items: ["Model layer — interchangeable reasoning engines", "Agent layer — permissioned executors", "Router — policy-driven placement (local / remote)", "Orchestration — iRiel coordinates context and tasks"] },
         { id: "sdk", h: "SDK & API concepts", body: ["The SDK exposes capabilities, not providers. You request a capability (e.g. summarize, translate) and the Router selects how to fulfil it."] },
         { id: "integrations", h: "Provider-agnostic integration", items: ["Never hard-code a vendor; register providers as adapters", "Declare data sensitivity on every request", "Respect user locale and direction from the Language Core", "Fail gracefully to on-device capabilities"] },
-        { id: "resources", h: "Developer resources", items: ["Language Core specification", "Accessibility checklist (WCAG 2.2 AA)", "Security disclosure policy", "Contact: helloprsl.ai@outlook.com"] },
+        { id: "resources", h: "Developer resources", items: ["Language Core specification", "Accessibility checklist (WCAG 2.2 AA)", "Security disclosure policy", "Contact: Agent PRSL-AI (floating button)"] },
       ],
     },
     docs: {
@@ -215,7 +215,7 @@ const en: Messages = {
       intro: "Protection is built in from the first line of code.",
       sections: [
         { h: "Principles", items: ["Least privilege for every agent", "Encrypted local storage", "Signed, verifiable updates", "Ethical protection of users"] },
-        { h: "Vulnerability disclosure", body: ["Found a vulnerability? Email helloprsl.ai@outlook.com with details and steps to reproduce. We acknowledge reports and work with researchers in good faith."] },
+        { h: "Vulnerability disclosure", body: ["Found a vulnerability? Report it through Agent PRSL-AI with details and steps to reproduce. We acknowledge reports and work with researchers in good faith."] },
       ],
     },
     support: {
@@ -224,7 +224,7 @@ const en: Messages = {
       sections: [
         { h: "Getting started", items: ["Choose your language in the top navigation", "Explore the Ecosystem page", "Ask Agent PRSL-AI anything about the platform"] },
         { h: "FAQ", items: ["Is iRiel the same as Agent PRSL-AI? — No. iRiel is your private environment; the Agent is the public ambassador.", "Does PRSL-AI need the cloud? — No. It is on-device first.", "Which languages are supported? — 17 locales, including Arabic right-to-left."] },
-        { h: "Still need help?", body: ["Write to helloprsl.ai@outlook.com."] },
+        { h: "Still need help?", body: ["Open Agent PRSL-AI using the floating button at the bottom of any page."] },
       ],
     },
     feedback: {
@@ -238,13 +238,13 @@ const en: Messages = {
       sections: [
         { h: "Use of this site", body: ["Content is provided for information about the PRSL-AI Ecosystem. Brand names and visual assets belong to Robert Software Labs."] },
         { h: "No warranty", body: ["Information is provided as is and may change as the ecosystem evolves."] },
-        { h: "Contact", body: ["Questions about these terms: helloprsl.ai@outlook.com."] },
+        { h: "Contact", body: ["Questions about these terms: ask Agent PRSL-AI."] },
       ],
     },
     contact: {
       eyebrow: "Contact", title: "Contact Robert Software Labs",
       intro: "Institutional contact for partnerships, press, security and general enquiries.",
-      sections: [{ h: "Email", body: ["helloprsl.ai@outlook.com"] }],
+      sections: [{ h: "Agent PRSL-AI", body: ["Agent PRSL-AI is the official point of contact for the platform. Open it with the floating button at the bottom of any page."] }],
     },
   },
 };
@@ -346,10 +346,10 @@ const pt: Messages = {
       privacy: "Privacidade por Padrão: o processamento ocorre no dispositivo sempre que possível, e nenhum dado é transmitido sem consentimento explícito e revogável. Segurança por Padrão significa armazenamento criptografado, agentes com privilégio mínimo e um processo público de divulgação de vulnerabilidades.",
       languages: "O Language Core traz um registro BCP 47 tipado com 17 locales: en-US, en-GB, pt-BR, pt-PT, es-ES, es-419, fr-FR, de-DE, it-IT, zh-CN, zh-TW, ja-JP, ko-KR, ar (direita para esquerda), hi-IN, ru-RU e nl-NL. en-US e pt-BR estão completos; os demais usam fallback.",
       iapps: "Os iApps são aplicativos modulares focados — como e-mail, notas, agenda e arquivos — que compartilham uma linguagem de design acessível e se conectam ao iRiel para orquestração.",
-      contact: "A Robert Software Labs foi fundada por Robert, engenheiro de software brasileiro. Fale com a equipe em helloprsl.ai@outlook.com.",
+      contact: "A Robert Software Labs foi fundada por Robert, engenheiro de software brasileiro. Para qualquer dúvida, fale com o Agent PRSL-AI, o guia oficial da plataforma.",
     },
   },
-  form: { name: "Nome", email: "E-mail", category: "Categoria", message: "Mensagem", submit: "Enviar", thanks: "Obrigado. Seu aplicativo de e-mail será aberto para você enviar esta mensagem à Robert Software Labs.", categories: ["Sugestão", "Acessibilidade", "Relato de erro", "Idioma / tradução", "Outro"], required: "Obrigatório" },
+  form: { name: "Nome", email: "E-mail", category: "Categoria", message: "Mensagem", submit: "Enviar", thanks: "Obrigado. Sua mensagem foi registrada nesta sessão. Para resposta imediata, abra o Agent PRSL-AI.", categories: ["Sugestão", "Acessibilidade", "Relato de erro", "Idioma / tradução", "Outro"], required: "Obrigatório" },
   pages: {
     about: {
       eyebrow: "Sobre", title: "Robert Software Labs",
@@ -394,7 +394,7 @@ const pt: Messages = {
         { id: "architecture", h: "Especificação de arquitetura", items: ["Camada de modelo — motores de raciocínio intercambiáveis", "Camada de agente — executores com permissão", "Router — alocação por política (local / remoto)", "Orquestração — o iRiel coordena contexto e tarefas"] },
         { id: "sdk", h: "Conceitos de SDK e API", body: ["O SDK expõe capacidades, não provedores. Você solicita uma capacidade (ex.: resumir, traduzir) e o Router escolhe como atendê-la."] },
         { id: "integrations", h: "Integração independente de provedor", items: ["Nunca fixe um fornecedor; registre provedores como adaptadores", "Declare a sensibilidade dos dados em cada requisição", "Respeite o locale e a direção do usuário via Language Core", "Recorra às capacidades no dispositivo em caso de falha"] },
-        { id: "resources", h: "Recursos para desenvolvedores", items: ["Especificação do Language Core", "Checklist de acessibilidade (WCAG 2.2 AA)", "Política de divulgação de segurança", "Contato: helloprsl.ai@outlook.com"] },
+        { id: "resources", h: "Recursos para desenvolvedores", items: ["Especificação do Language Core", "Checklist de acessibilidade (WCAG 2.2 AA)", "Política de divulgação de segurança", "Contato: Agent PRSL-AI (botão flutuante)"] },
       ],
     },
     docs: {
@@ -420,7 +420,7 @@ const pt: Messages = {
       intro: "A proteção é incorporada desde a primeira linha de código.",
       sections: [
         { h: "Princípios", items: ["Privilégio mínimo para cada agente", "Armazenamento local criptografado", "Atualizações assinadas e verificáveis", "Proteção ética dos usuários"] },
-        { h: "Divulgação de vulnerabilidades", body: ["Encontrou uma vulnerabilidade? Envie um e-mail para helloprsl.ai@outlook.com com detalhes e passos para reproduzir. Confirmamos os relatos e trabalhamos com pesquisadores de boa-fé."] },
+        { h: "Divulgação de vulnerabilidades", body: ["Encontrou uma vulnerabilidade? Relate pelo Agent PRSL-AI com detalhes e passos para reproduzir. Confirmamos os relatos e trabalhamos com pesquisadores de boa-fé."] },
       ],
     },
     support: {
@@ -429,7 +429,7 @@ const pt: Messages = {
       sections: [
         { h: "Primeiros passos", items: ["Escolha seu idioma na navegação superior", "Explore a página do Ecossistema", "Pergunte qualquer coisa ao Agent PRSL-AI"] },
         { h: "Perguntas frequentes", items: ["O iRiel é o mesmo que o Agent PRSL-AI? — Não. O iRiel é seu ambiente privado; o Agent é o embaixador público.", "O PRSL-AI precisa da nuvem? — Não. Ele prioriza o dispositivo.", "Quais idiomas são suportados? — 17 locales, incluindo árabe da direita para a esquerda."] },
-        { h: "Ainda precisa de ajuda?", body: ["Escreva para helloprsl.ai@outlook.com."] },
+        { h: "Ainda precisa de ajuda?", body: ["Abra o Agent PRSL-AI pelo botão flutuante no canto de qualquer página."] },
       ],
     },
     feedback: {
@@ -443,13 +443,13 @@ const pt: Messages = {
       sections: [
         { h: "Uso deste site", body: ["O conteúdo é fornecido para informação sobre o Ecossistema PRSL-AI. Marcas e ativos visuais pertencem à Robert Software Labs."] },
         { h: "Sem garantia", body: ["As informações são fornecidas como estão e podem mudar conforme o ecossistema evolui."] },
-        { h: "Contato", body: ["Dúvidas sobre estes termos: helloprsl.ai@outlook.com."] },
+        { h: "Contato", body: ["Dúvidas sobre estes termos: pergunte ao Agent PRSL-AI."] },
       ],
     },
     contact: {
       eyebrow: "Contato", title: "Contato Robert Software Labs",
       intro: "Contato institucional para parcerias, imprensa, segurança e assuntos gerais.",
-      sections: [{ h: "E-mail", body: ["helloprsl.ai@outlook.com"] }],
+      sections: [{ h: "Agent PRSL-AI", body: ["O Agent PRSL-AI é o ponto de contato oficial da plataforma. Abra-o pelo botão flutuante no canto de qualquer página."] }],
     },
   },
 };

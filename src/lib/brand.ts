@@ -6,6 +6,8 @@ import geometry from "@/assets/brand/img_0144.png.asset.json";
 import mobileA from "@/assets/brand/img_0145.png.asset.json";
 import mobileB from "@/assets/brand/img_0146.png.asset.json";
 import irielDevices from "@/assets/brand/img_0178.png.asset.json";
+import agentOrb from "@/assets/agent/agent_orb.png.asset.json";
+import agentPedestal from "@/assets/agent/agent_pedestal.png.asset.json";
 import irielDesktop from "@/assets/brand/img_0179.png.asset.json";
 
 // Note: file names come from the upload; content mapping verified visually.
@@ -19,6 +21,7 @@ export const brand = {
   mobileB: mobileB.url,
   irielDevices: irielDevices.url,
   irielDesktop: irielDesktop.url,
+  agentOrb: agentOrb.url,
+  agentPedestal: agentPedestal.url,
 };
 
-export const CONTACT_EMAIL = "helloprsl.ai@outlook.com";

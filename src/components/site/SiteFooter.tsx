@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useI18n } from "@/i18n/context";
-import { brand, CONTACT_EMAIL } from "@/lib/brand";
+import { brand } from "@/lib/brand";
 
 export function SiteFooter() {
   const { t } = useI18n();
@@ -39,7 +39,6 @@ export function SiteFooter() {
           </p>
           <p className="text-sm text-muted-foreground">By Robert Software Labs</p>
           <p className="mt-3 text-sm text-muted-foreground">{f.tagline}</p>
-          <a href={`mailto:${CONTACT_EMAIL}`} className="mt-3 inline-block text-sm text-primary underline-offset-4 hover:underline">{CONTACT_EMAIL}</a>
         </div>
         {cols.map((c) => (
           <nav key={c.h} aria-label={c.h}>

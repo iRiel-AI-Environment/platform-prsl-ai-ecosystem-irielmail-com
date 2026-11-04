@@ -13,12 +13,12 @@ export function AuraVisualizer({ active }: { active: boolean }) {
       <div className={`absolute inset-0 rounded-full bg-[radial-gradient(circle,var(--telemetry)_0%,transparent_65%)] opacity-30 ${active ? "animate-ping" : "animate-pulse"}`} />
       <div className="absolute inset-4 rounded-full border border-telemetry/40 animate-[spin_18s_linear_infinite]" style={{ borderStyle: "dashed" }} />
       <div className="absolute inset-10 rounded-full border border-primary/50 animate-[spin_12s_linear_infinite_reverse]" />
-      <img src={brand.orb} alt="" className="absolute inset-8 m-auto h-[calc(100%-4rem)] w-[calc(100%-4rem)] rounded-full object-cover glow-emerald" />
+      <img src={brand.agentOrb} alt="" className="absolute inset-8 m-auto h-[calc(100%-4rem)] w-[calc(100%-4rem)] rounded-full object-contain" />
     </div>
   );
 }
 
-export function AgentConsole() {
+export function AgentConsole({ compact = false }: { compact?: boolean }) {
   const { t } = useI18n();
   const a = t.agent;
   const [msgs, setMsgs] = useState<Msg[]>([{ from: "agent", topic: "greeting" }]);
@@ -46,8 +46,8 @@ export function AgentConsole() {
   const onSubmit = (e: FormEvent) => { e.preventDefault(); ask(input); };
 
   return (
-    <div className="panel grid overflow-hidden md:grid-cols-[18rem_1fr]">
-      <aside className="border-b border-border p-6 md:border-b-0 md:border-e">
+    <div className={compact ? "flex flex-col overflow-hidden" : "panel grid overflow-hidden md:grid-cols-[18rem_1fr]"}>
+      {!compact && <aside className="border-b border-border p-6 md:border-b-0 md:border-e">
         <AuraVisualizer active={thinking} />
         <p className="mt-4 text-center font-display text-lg font-bold text-metal">{a.title}</p>
         <p className="text-center text-xs text-muted-foreground">{a.poweredBy}</p>
@@ -55,9 +55,9 @@ export function AgentConsole() {
           <span className="h-2 w-2 rounded-full bg-telemetry glow-cyan" aria-hidden /> {a.status}
         </p>
         <p className="mt-4 text-center text-xs text-muted-foreground">{a.local}</p>
-      </aside>
-      <div className="flex min-h-[28rem] flex-col">
-        <div ref={logRef} role="log" aria-live="polite" aria-label={a.title} className="flex-1 space-y-4 overflow-y-auto p-6" style={{ maxHeight: "28rem" }}>
+      </aside>}
+      <div className={compact ? "flex min-h-0 flex-1 flex-col" : "flex min-h-[28rem] flex-col"}>
+        <div ref={logRef} role="log" aria-live="polite" aria-label={a.title} className="flex-1 space-y-4 overflow-y-auto p-6" style={{ maxHeight: compact ? "min(50vh, 24rem)" : "28rem" }}>
           {msgs.map((m, i) => (
             <div key={i} className={m.from === "user" ? "flex justify-end" : "flex"}>
               <div className={m.from === "user" ? "max-w-[85%] rounded-lg bg-primary px-4 py-2 text-primary-foreground" : "max-w-[90%] border-s-2 border-telemetry ps-4 text-foreground"}>
@@ -78,9 +78,9 @@ export function AgentConsole() {
             ))}
           </div>
           <form onSubmit={onSubmit} className="flex gap-2">
-            <label htmlFor="agent-input" className="sr-only">{a.placeholder}</label>
-            <input id="agent-input" value={input} onChange={(e) => setInput(e.target.value)} placeholder={a.placeholder}
-              className="min-h-11 flex-1 rounded-md border border-input bg-background px-3 placeholder:text-muted-foreground" />
+            <label htmlFor={compact ? "agent-input-fab" : "agent-input"} className="sr-only">{a.placeholder}</label>
+            <input id={compact ? "agent-input-fab" : "agent-input"} value={input} onChange={(e) => setInput(e.target.value)} placeholder={a.placeholder}
+              className="min-h-11 min-w-0 flex-1 rounded-md border border-input bg-background px-3 placeholder:text-muted-foreground" />
             <button type="submit" className="inline-flex min-h-11 items-center gap-2 rounded-md bg-primary px-4 font-medium text-primary-foreground hover:bg-accent hover:text-accent-foreground">
               <Send className="h-4 w-4 rtl:-scale-x-100" aria-hidden /> {a.send}
             </button>
