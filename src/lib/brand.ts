@@ -3,8 +3,9 @@ import crest from "@/assets/brand/9d83a5de-620a-40d6-ac81-71006a6e20c2.png.asset
 import orb from "@/assets/brand/e70a736b-5504-4df0-a9a4-f9f683f2b935.png.asset.json";
 import shield from "@/assets/brand/img_0019.png.asset.json";
 import geometry from "@/assets/brand/img_0144.png.asset.json";
-import mobileA from "@/assets/brand/img_0145.png.asset.json";
-import mobileB from "@/assets/brand/img_0146.png.asset.json";
+import aura from "@/assets/brand/agent_aura.jpg.asset.json";
+import galaxy from "@/assets/brand/agent_galaxy.jpg.asset.json";
+import hubs from "@/assets/brand/agent_hubs.jpg.asset.json";
 import irielDevices from "@/assets/brand/img_0178.png.asset.json";
 import agentOrb from "@/assets/agent/agent_orb.png.asset.json";
 import agentPedestal from "@/assets/agent/agent_pedestal.png.asset.json";
@@ -17,8 +18,9 @@ export const brand = {
   orb: orb.url,
   shield: shield.url,
   geometry: geometry.url,
-  mobileA: mobileA.url,
-  mobileB: mobileB.url,
+  aura: aura.url,
+  galaxy: galaxy.url,
+  hubs: hubs.url,
   irielDevices: irielDevices.url,
   irielDesktop: irielDesktop.url,
   agentOrb: agentOrb.url,
