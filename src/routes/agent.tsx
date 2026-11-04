@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AgentConsole } from "@/components/site/AgentConsole";
 import { PageHero } from "@/components/site/ContentPage";
+import { brand } from "@/lib/brand";
 import { useI18n } from "@/i18n/context";
 
 export const Route = createFileRoute("/agent")({
@@ -24,6 +25,7 @@ function AgentPage() {
     <>
       <PageHero eyebrow={a.eyebrow} title={a.title} intro={a.intro} />
       <div className="mx-auto max-w-6xl space-y-6 px-4">
+        <img src={brand.agentPedestal} alt="Agent PRSL-AI — Powered by Robert Software Labs" className="panel mx-auto w-full max-w-xl object-cover" />
         <AgentConsole />
         <section className="panel p-6 md:p-8">
           <h2 className="text-xl font-semibold">{a.distinctionTitle}</h2>
