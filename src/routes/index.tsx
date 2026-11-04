@@ -125,8 +125,8 @@ function Home() {
           </div>
         </div>
         <div className="mt-8 grid gap-5 md:grid-cols-[1.4fr_1fr]">
-          <img src={brand.irielDevices} alt="iRiel on phone, tablet and desktop with the emerald orb" className="panel h-full w-full object-cover" />
-          <img src={brand.irielDesktop} alt="iRiel desktop assistant: Ask or Search with iRiel" className="panel h-full w-full object-cover" />
+          <img src={brand.irielDevices} alt="iRiel on phone, tablet and desktop with the emerald orb" className="h-full w-full rounded-2xl border border-primary/20 object-cover shadow-2xl" />
+          <img src={brand.irielDesktop} alt="iRiel desktop assistant: Ask or Search with iRiel" className="h-full w-full rounded-2xl border border-primary/20 object-cover shadow-2xl" />
         </div>
         <Link to="/iriel" className="mt-4 inline-flex items-center gap-2 text-primary hover:underline">iRiel <ArrowRight className="h-4 w-4 rtl:-scale-x-100" aria-hidden /></Link>
       </section>
@@ -135,15 +135,14 @@ function Home() {
       <section aria-labelledby="agent-geo" className="mx-auto mt-24 max-w-7xl px-4">
         <h2 id="agent-geo" className="text-3xl font-bold">{h.agentTitle}</h2>
         <p className="mt-2 max-w-3xl text-muted-foreground">{h.agentBody}</p>
-        <div className="mt-8 grid items-start gap-5 md:grid-cols-[2fr_1fr_1fr]">
-          <figure className="panel overflow-hidden glow-cyan">
-            <img src={brand.geometry} alt={h.geometry.join(", ")} className="w-full" />
-            <figcaption className="flex flex-wrap gap-3 p-4 font-mono text-xs text-telemetry">
-              {h.geometry.map((g) => <span key={g}>◈ {g}</span>)}
-            </figcaption>
-          </figure>
-          <img src={brand.mobileA} alt={`Agent PRSL-AI mobile — ${h.geometry[0]}`} className="panel w-full" />
-          <img src={brand.mobileB} alt={`Agent PRSL-AI mobile — ${h.geometry[1]}, ${h.geometry[2]}`} className="panel w-full" />
+        <div className="mt-8 grid gap-5 md:grid-cols-2">
+          {[brand.aura, brand.galaxy, brand.hubs].map((src, i) => (
+            <figure key={src} className={`group relative overflow-hidden rounded-2xl border border-telemetry/25 bg-card glow-cyan ${i === 2 ? "md:col-span-2" : ""}`}>
+              <img src={src} alt={h.geometry[i]} loading="lazy" className={`w-full object-cover transition-transform duration-700 group-hover:scale-105 ${i === 2 ? "aspect-[21/9]" : "aspect-square"}`} />
+              <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
+              <figcaption className="absolute inset-x-0 bottom-0 p-5 text-sm font-semibold tracking-wide text-telemetry">◈ {h.geometry[i]}</figcaption>
+            </figure>
+          ))}
         </div>
       </section>
 
