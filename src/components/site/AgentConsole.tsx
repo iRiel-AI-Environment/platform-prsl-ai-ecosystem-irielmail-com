@@ -80,7 +80,7 @@ export function AgentConsole({ compact = false }: { compact?: boolean }) {
           <form onSubmit={onSubmit} className="flex gap-2">
             <label htmlFor={compact ? "agent-input-fab" : "agent-input"} className="sr-only">{a.placeholder}</label>
             <input id={compact ? "agent-input-fab" : "agent-input"} value={input} onChange={(e) => setInput(e.target.value)} placeholder={a.placeholder}
-              className="min-h-11 flex-1 rounded-md border border-input bg-background px-3 placeholder:text-muted-foreground" />
+              className="min-h-11 min-w-0 flex-1 rounded-md border border-input bg-background px-3 placeholder:text-muted-foreground" />
             <button type="submit" className="inline-flex min-h-11 items-center gap-2 rounded-md bg-primary px-4 font-medium text-primary-foreground hover:bg-accent hover:text-accent-foreground">
               <Send className="h-4 w-4 rtl:-scale-x-100" aria-hidden /> {a.send}
             </button>
