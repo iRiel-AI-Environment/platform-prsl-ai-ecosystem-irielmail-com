@@ -1,12 +1,9 @@
 import type { ReactNode } from "react";
 import { useI18n } from "@/i18n/context";
 import type { PageKey } from "@/i18n/messages";
-import { CONTACT_EMAIL } from "@/lib/brand";
 
 function linkify(text: string): ReactNode {
-  if (!text.includes(CONTACT_EMAIL)) return text;
-  const [a, b] = text.split(CONTACT_EMAIL);
-  return (<>{a}<a className="text-primary underline underline-offset-4" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>{b}</>);
+  return text;
 }
 
 export function PageHero({ eyebrow, title, intro }: { eyebrow: string; title: string; intro: string }) {

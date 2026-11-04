@@ -13,7 +13,7 @@ export function AuraVisualizer({ active }: { active: boolean }) {
       <div className={`absolute inset-0 rounded-full bg-[radial-gradient(circle,var(--telemetry)_0%,transparent_65%)] opacity-30 ${active ? "animate-ping" : "animate-pulse"}`} />
       <div className="absolute inset-4 rounded-full border border-telemetry/40 animate-[spin_18s_linear_infinite]" style={{ borderStyle: "dashed" }} />
       <div className="absolute inset-10 rounded-full border border-primary/50 animate-[spin_12s_linear_infinite_reverse]" />
-      <img src={brand.orb} alt="" className="absolute inset-8 m-auto h-[calc(100%-4rem)] w-[calc(100%-4rem)] rounded-full object-cover glow-emerald" />
+      <img src={brand.agentOrb} alt="" className="absolute inset-8 m-auto h-[calc(100%-4rem)] w-[calc(100%-4rem)] rounded-full object-contain" />
     </div>
   );
 }

@@ -1,17 +1,13 @@
 import { useState, type FormEvent } from "react";
 import { useI18n } from "@/i18n/context";
-import { CONTACT_EMAIL } from "@/lib/brand";
 
-export function FeedbackForm({ subjectPrefix = "PRSL-AI" }: { subjectPrefix?: string }) {
+export function FeedbackForm(_props: { subjectPrefix?: string }) {
   const { t } = useI18n();
   const f = t.form;
   const [sent, setSent] = useState(false);
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const d = new FormData(e.currentTarget);
-    const subject = `${subjectPrefix} · ${d.get("category")}`;
-    const body = `${d.get("message")}\n\n— ${d.get("name")} <${d.get("email")}>`;
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    e.currentTarget.reset();
     setSent(true);
   };
   const field = "mt-1 block w-full min-h-11 rounded-md border border-input bg-background px-3 py-2";

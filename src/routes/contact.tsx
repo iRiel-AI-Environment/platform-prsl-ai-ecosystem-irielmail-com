@@ -6,9 +6,9 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — Robert Software Labs" },
-      { name: "description", content: "Institutional contact for Robert Software Labs: helloprsl.ai@outlook.com." },
+      { name: "description", content: "Talk to Agent PRSL-AI, the official contact point of Robert Software Labs." },
       { property: "og:title", content: "Contact — Robert Software Labs" },
-      { property: "og:description", content: "Institutional contact for Robert Software Labs: helloprsl.ai@outlook.com." },
+      { property: "og:description", content: "Talk to Agent PRSL-AI, the official contact point of Robert Software Labs." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
