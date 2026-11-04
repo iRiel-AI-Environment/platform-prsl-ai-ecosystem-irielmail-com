@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ContentPage } from "@/components/site/ContentPage";
 import { brand } from "@/lib/brand";
+import { LanguageMatrix } from "@/components/site/LanguageMatrix";
 
 export const Route = createFileRoute("/ecosystem")({
   head: () => ({
@@ -13,5 +14,9 @@ export const Route = createFileRoute("/ecosystem")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: () => <ContentPage page="ecosystem" aside={<img src={brand.banner} alt="PRSL-AI Ecosystem overview" className="panel w-full" />} />,
+  component: () => (
+    <ContentPage page="ecosystem" aside={<img src={brand.banner} alt="PRSL-AI Ecosystem overview" className="panel w-full" />}>
+      <LanguageMatrix />
+    </ContentPage>
+  ),
 });

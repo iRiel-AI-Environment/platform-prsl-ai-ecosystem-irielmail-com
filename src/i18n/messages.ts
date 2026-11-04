@@ -126,7 +126,7 @@ const en: Messages = {
     keywords: {
       ecosystem: ["ecosystem", "what is", "prsl", "core", "overview"],
       routing: ["router", "route", "routing", "decide", "model"],
-      iriel: ["iriel", "different", "difference", "personal", "pie"],
+      iriel: ["iriel", "different", "difference", "personal", "pie", "connection", "integration", "deep intelligence"],
       principles: ["principle", "architecture", "design", "dependency"],
       privacy: ["privacy", "data", "security", "local", "device"],
       languages: ["language", "locale", "rtl", "arabic", "translation", "i18n"],
@@ -136,10 +136,10 @@ const en: Messages = {
     answers: {
       ecosystem: "The PRSL-AI Ecosystem is an accessible, privacy-first intelligence platform by Robert Software Labs. It has four core entities: PRSL-AI Core (the foundation), iRiel (your Personal Intelligence Environment), iApps (the modular application family) and me, Agent PRSL-AI (the institutional ambassador).",
       routing: "The Router is the decision layer. For each task it evaluates policy, sensitivity, capability and cost, then decides where it runs — on-device first, remote only with consent. In short: the model thinks, the agent executes, the Router decides, and iRiel orchestrates.",
-      iriel: "I am the public ambassador: I explain the ecosystem and hold no personal data. iRiel is your private Personal Intelligence Environment — it lives on your device, remembers your context and orchestrates your iApps on your behalf.",
+      iriel: "I am the public ambassador: I explain the ecosystem and hold no personal data. iRiel is your private Personal Intelligence Environment — it lives on your device, remembers your context and orchestrates your iApps on your behalf. In the future, iRiel will connect to the PRSL-AI Platform to receive language support in 17 locales and deep intelligence, always with your explicit consent.",
       principles: "Six principles guide every decision: local-first execution, provider agnosticism, accessibility by construction (WCAG 2.2 AA), language as infrastructure, explicit consent, and continuity of your context across models, devices and providers.",
       privacy: "Privacy by Default: processing happens on-device whenever possible, and no data is transmitted without explicit, revocable consent. Security by Default means encrypted storage, least-privilege agents and a public vulnerability disclosure process.",
-      languages: "The Language Core ships a typed BCP 47 registry with 17 locales: en-US, en-GB, pt-BR, pt-PT, es-ES, es-419, fr-FR, de-DE, it-IT, zh-CN, zh-TW, ja-JP, ko-KR, ar (right-to-left), hi-IN, ru-RU and nl-NL. en-US and pt-BR are complete; others fall back gracefully.",
+      languages: "The Language Core ships a typed BCP 47 registry with 17 locales: en-US, en-GB, pt-BR, pt-PT, es-ES, es-419, fr-FR, de-DE, it-IT, zh-CN, zh-TW, ja-JP, ko-KR, ar (right-to-left), hi-IN, ru-RU and nl-NL. en-US and pt-BR are complete; others fall back gracefully. The Language Core is available to every visitor with no setup, and will also serve iRiel.",
       iapps: "iApps are focused modular applications — such as mail, notes, calendar and files — that share one accessible design language and plug into iRiel for orchestration.",
       contact: "Robert Software Labs was founded by Robert, a Brazilian software engineer. For any question, talk to Agent PRSL-AI, the official guide of the platform.",
     },
@@ -164,6 +164,8 @@ const en: Messages = {
         { id: "iriel", h: "iRiel — Personal Intelligence Environment", body: ["iRiel is where your personal intelligence lives. It keeps your context, memory and preferences on your device and orchestrates agents and iApps for you."] },
         { id: "iapps", h: "iApps — Modular Family", body: ["Independent applications that each do one thing well and share a single accessible interface language."], items: ["iMail", "iNotes", "iCalendar", "iFiles", "iSpace"] },
         { h: "Agent PRSL-AI", body: ["The public institutional agent that explains the ecosystem. It does not access personal data."] },
+        { id: "hierarchy", h: "Responsibility hierarchy", body: ["Human First. Privacy by Default. Provider-Agnostic AI."], items: ["Robert Software Labs — creator and steward of the ecosystem", "PRSL-AI Ecosystem — shared architecture, principles, contracts, Language Core and Model Router", "iRiel — Personal Intelligence Environment: experience, consent, local context and orchestration", "iApps — specialised, interoperable domain modules", "Agent PRSL-AI — public knowledge ambassador and official support channel"] },
+        { id: "iriel-connection", h: "iRiel ↔ Platform: language support and deep intelligence", body: ["In a future integration, iRiel will connect to the PRSL-AI Platform to receive unified language support for all 17 locales and deep intelligence on demand. iRiel keeps sovereignty: it decides locally, with explicit consent, what may be sent. The Platform validates, routes the request to an eligible model and returns a normalised answer.", "Every iRiel user receives the same language and advanced-AI capabilities — no hidden tiers. Provider credentials never live in the iRiel app; they stay protected inside the Platform."], items: ["Health — availability check without exposing internals", "Capabilities — discover languages and intelligence currently available", "Inference — language-aware request, evaluated by policy and routed by the Model Router", "Local fallback — iRiel keeps working on-device when offline"] },
       ],
     },
     iriel: {
@@ -172,6 +174,7 @@ const en: Messages = {
       sections: [
         { h: "What iRiel does", items: ["Ask or search across all your iApps", "Remember context with your permission", "Orchestrate agents to complete tasks", "Adapt to your language, abilities and rhythm"] },
         { h: "Where it runs", body: ["On your phone, tablet and desktop, on-device first. Remote models are used only when the Router's policy and your consent allow it."] },
+        { h: "Powered by the PRSL-AI Platform", body: ["iRiel will connect to the PRSL-AI Platform to gain unified language support in 17 locales and deep intelligence on demand — while your context, memory and consent decisions stay with you."] },
       ],
     },
     iapps: {
@@ -331,7 +334,7 @@ const pt: Messages = {
     keywords: {
       ecosystem: ["ecossistema", "o que é", "prsl", "core", "visão"],
       routing: ["router", "rota", "roteamento", "decide", "modelo"],
-      iriel: ["iriel", "diferença", "diferente", "pessoal", "pie"],
+      iriel: ["iriel", "diferença", "diferente", "pessoal", "pie", "conexão", "integração", "inteligência profunda"],
       principles: ["princípio", "principio", "arquitetura", "design", "dependência"],
       privacy: ["privacidade", "dados", "segurança", "local", "dispositivo"],
       languages: ["idioma", "língua", "locale", "rtl", "árabe", "tradução"],
@@ -341,10 +344,10 @@ const pt: Messages = {
     answers: {
       ecosystem: "O Ecossistema PRSL-AI é uma plataforma de inteligência acessível e com privacidade em primeiro lugar, da Robert Software Labs. Possui quatro entidades centrais: PRSL-AI Core (a fundação), iRiel (seu Ambiente de Inteligência Pessoal), iApps (a família modular de aplicativos) e eu, o Agent PRSL-AI (o embaixador institucional).",
       routing: "O Router é a camada de decisão. Para cada tarefa ele avalia política, sensibilidade, capacidade e custo, e decide onde ela roda — no dispositivo primeiro, remotamente só com consentimento. Resumindo: o modelo pensa, o agente executa, o Router decide e o iRiel orquestra.",
-      iriel: "Eu sou o embaixador público: explico o ecossistema e não guardo dados pessoais. O iRiel é o seu Ambiente de Inteligência Pessoal privado — vive no seu dispositivo, lembra seu contexto e orquestra seus iApps por você.",
+      iriel: "Eu sou o embaixador público: explico o ecossistema e não guardo dados pessoais. O iRiel é o seu Ambiente de Inteligência Pessoal privado — vive no seu dispositivo, lembra seu contexto e orquestra seus iApps por você. No futuro, o iRiel se conectará à Plataforma PRSL-AI para receber suporte linguístico nos 17 idiomas e inteligência profunda, sempre com seu consentimento explícito.",
       principles: "Seis princípios guiam cada decisão: execução local primeiro, independência de provedor, acessibilidade por construção (WCAG 2.2 AA), idioma como infraestrutura, consentimento explícito e continuidade do seu contexto entre modelos, dispositivos e provedores.",
       privacy: "Privacidade por Padrão: o processamento ocorre no dispositivo sempre que possível, e nenhum dado é transmitido sem consentimento explícito e revogável. Segurança por Padrão significa armazenamento criptografado, agentes com privilégio mínimo e um processo público de divulgação de vulnerabilidades.",
-      languages: "O Language Core traz um registro BCP 47 tipado com 17 locales: en-US, en-GB, pt-BR, pt-PT, es-ES, es-419, fr-FR, de-DE, it-IT, zh-CN, zh-TW, ja-JP, ko-KR, ar (direita para esquerda), hi-IN, ru-RU e nl-NL. en-US e pt-BR estão completos; os demais usam fallback.",
+      languages: "O Language Core traz um registro BCP 47 tipado com 17 locales: en-US, en-GB, pt-BR, pt-PT, es-ES, es-419, fr-FR, de-DE, it-IT, zh-CN, zh-TW, ja-JP, ko-KR, ar (direita para esquerda), hi-IN, ru-RU e nl-NL. en-US e pt-BR estão completos; os demais usam fallback. O Language Core está disponível para todos os visitantes, sem configuração, e servirá também ao iRiel.",
       iapps: "Os iApps são aplicativos modulares focados — como e-mail, notas, agenda e arquivos — que compartilham uma linguagem de design acessível e se conectam ao iRiel para orquestração.",
       contact: "A Robert Software Labs foi fundada por Robert, engenheiro de software brasileiro. Para qualquer dúvida, fale com o Agent PRSL-AI, o guia oficial da plataforma.",
     },
@@ -369,6 +372,8 @@ const pt: Messages = {
         { id: "iriel", h: "iRiel — Ambiente de Inteligência Pessoal", body: ["O iRiel é onde sua inteligência pessoal vive. Ele mantém seu contexto, memória e preferências no seu dispositivo e orquestra agentes e iApps para você."] },
         { id: "iapps", h: "iApps — Família Modular", body: ["Aplicativos independentes que fazem uma coisa bem e compartilham uma única linguagem de interface acessível."], items: ["iMail", "iNotes", "iCalendar", "iFiles", "iSpace"] },
         { h: "Agent PRSL-AI", body: ["O agente institucional público que explica o ecossistema. Ele não acessa dados pessoais."] },
+        { id: "hierarchy", h: "Hierarquia de responsabilidades", body: ["Human First. Privacy by Default. Provider-Agnostic AI."], items: ["Robert Software Labs — criadora e guardiã do ecossistema", "PRSL-AI Ecosystem — arquitetura compartilhada, princípios, contratos, Language Core e Model Router", "iRiel — Ambiente de Inteligência Pessoal: experiência, consentimento, contexto local e orquestração", "iApps — módulos de domínio especializados e interoperáveis", "Agent PRSL-AI — embaixador público do conhecimento e canal oficial de suporte"] },
+        { id: "iriel-connection", h: "iRiel ↔ Plataforma: suporte linguístico e inteligência profunda", body: ["Em uma integração futura, o iRiel se conectará à Plataforma PRSL-AI para receber suporte linguístico unificado nos 17 idiomas e inteligência profunda sob demanda. O iRiel mantém a soberania: decide localmente, com consentimento explícito, o que pode ser enviado. A Plataforma valida, encaminha o pedido a um modelo elegível e devolve uma resposta normalizada.", "Todo usuário do iRiel recebe as mesmas capacidades linguísticas e de IA avançada — sem níveis ocultos. Credenciais de provedores nunca ficam no app do iRiel; permanecem protegidas dentro da Plataforma."], items: ["Health — verificação de disponibilidade sem expor detalhes internos", "Capabilities — descoberta dos idiomas e inteligências disponíveis", "Inference — pedido com idioma, avaliado por política e roteado pelo Model Router", "Fallback local — o iRiel continua funcionando no dispositivo quando offline"] },
       ],
     },
     iriel: {
@@ -377,6 +382,7 @@ const pt: Messages = {
       sections: [
         { h: "O que o iRiel faz", items: ["Perguntar ou pesquisar em todos os seus iApps", "Lembrar contexto com sua permissão", "Orquestrar agentes para concluir tarefas", "Adaptar-se ao seu idioma, habilidades e ritmo"] },
         { h: "Onde roda", body: ["No celular, tablet e desktop, no dispositivo primeiro. Modelos remotos só são usados quando a política do Router e o seu consentimento permitem."] },
+        { h: "Impulsionado pela Plataforma PRSL-AI", body: ["O iRiel se conectará à Plataforma PRSL-AI para ganhar suporte linguístico unificado em 17 idiomas e inteligência profunda sob demanda — enquanto seu contexto, memória e decisões de consentimento continuam com você."] },
       ],
     },
     iapps: {
