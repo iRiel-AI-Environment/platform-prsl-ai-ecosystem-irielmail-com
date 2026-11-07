@@ -1,4 +1,5 @@
 import { getLocale, type LocaleCode } from "./locales";
+import { OVERRIDES, deepMerge } from "./locales/overrides";
 
 export type PageKey =
   | "about" | "ecosystem" | "iriel" | "iapps" | "developers" | "docs"
@@ -484,5 +485,7 @@ export const MESSAGES = { "en-US": en, "pt-BR": pt } as const;
 
 export function messagesFor(code: LocaleCode): Messages {
   const info = getLocale(code);
-  return MESSAGES[info.fallback];
+  const base = MESSAGES[info.fallback];
+  const over = OVERRIDES[info.code];
+  return over ? deepMerge(base, over) : base;
 }
