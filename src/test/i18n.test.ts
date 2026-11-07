@@ -17,6 +17,12 @@ describe("Language Core", () => {
     expect(messagesFor("pt-PT").nav.about).toBe("Sobre");
     expect(messagesFor("ja-JP").nav.about).toBe("About");
   });
+  it("serves native interface text for es, ar and pt-PT", () => {
+    expect(messagesFor("es-419").nav.about).toBe("Acerca de");
+    expect(messagesFor("ar").nav.support).toBe("الدعم");
+    expect(messagesFor("pt-PT").nav.contact).toBe("Contacto");
+    expect(messagesFor("es-ES").pages.about.title).toBe(messagesFor("en-US").pages.about.title);
+  });
   it("matches browser tags", () => {
     expect(matchLocale("pt")).toBe("pt-BR");
     expect(matchLocale("es-MX")).toBe("es-419");
