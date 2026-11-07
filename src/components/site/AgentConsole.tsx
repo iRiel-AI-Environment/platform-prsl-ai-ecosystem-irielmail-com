@@ -4,6 +4,7 @@ import { useI18n } from "@/i18n/context";
 import type { AgentTopic } from "@/i18n/messages";
 import { matchTopic } from "@/lib/agent";
 import { brand } from "@/lib/brand";
+import { askAgent } from "@/lib/ai/agent.functions";
 
 type Msg = { from: "agent" | "user"; text?: string; topic?: AgentTopic | "greeting" | "fallback" };
 
@@ -34,14 +35,18 @@ export function AgentConsole({ compact = false }: { compact?: boolean }) {
     setInput("");
     setThinking(true);
     const found = topic ?? matchTopic(text, a.keywords);
-    setTimeout(() => {
-      setMsgs((m) => [...m, { from: "agent", topic: found ?? "fallback" }]);
-      setThinking(false);
-    }, 550);
+    if (found) {
+      setTimeout(() => { setMsgs((m) => [...m, { from: "agent", topic: found }]); setThinking(false); }, 550);
+      return;
+    }
+    askAgent({ data: { question: text } })
+      .then((r) => setMsgs((m) => [...m, r.ok ? { from: "agent", text: r.text } : { from: "agent", topic: "fallback" }]))
+      .catch(() => setMsgs((m) => [...m, { from: "agent", topic: "fallback" }]))
+      .finally(() => setThinking(false));
   };
 
   const render = (m: Msg) =>
-    m.from === "user" ? m.text : m.topic === "greeting" ? a.greeting : m.topic === "fallback" ? a.fallback : a.answers[m.topic as AgentTopic];
+    m.text ? m.text : m.topic === "greeting" ? a.greeting : m.topic === "fallback" ? a.fallback : a.answers[m.topic as AgentTopic];
 
   const onSubmit = (e: FormEvent) => { e.preventDefault(); ask(input); };
 
