@@ -6,7 +6,7 @@ export type PageKey =
 
 export interface Section { id?: string; h: string; body?: string[]; items?: string[] }
 export interface PageContent { eyebrow: string; title: string; intro: string; sections: Section[] }
-export type AgentTopic = "ecosystem" | "routing" | "iriel" | "principles" | "privacy" | "languages" | "iapps" | "contact";
+export type AgentTopic = "ecosystem" | "routing" | "iriel" | "principles" | "privacy" | "languages" | "iapps" | "contact" | "framework" | "exposure" | "apple" | "tools";
 
 export interface Messages {
   nav: Record<"home" | "about" | "ecosystem" | "developers" | "docs" | "agent" | "support" | "contact", string>;
@@ -122,6 +122,7 @@ const en: Messages = {
       { label: "How are you different from iRiel?", topic: "iriel" },
       { label: "What are the architectural principles?", topic: "principles" },
       { label: "Which languages are supported?", topic: "languages" },
+      { label: "What are the five framework layers?", topic: "framework" },
     ],
     keywords: {
       ecosystem: ["ecosystem", "what is", "prsl", "core", "overview"],
@@ -132,6 +133,10 @@ const en: Messages = {
       languages: ["language", "locale", "rtl", "arabic", "translation", "i18n"],
       iapps: ["iapps", "apps", "mail", "calendar", "notes"],
       contact: ["contact", "email", "robert", "founder", "team"],
+      framework: ["framework", "layer", "layers", "on-demand", "on demand", "contract"],
+      exposure: ["exposure", "execution", "usagealternativetolls", "tolls", "expose"],
+      apple: ["apple", "siri", "app intents", "spotlight", "shortcuts", "ios", "mac"],
+      tools: ["tools", "vision", "audio", "voice", "location", "recognizer", "creative", "reader", "cli", "specialized"],
     },
     answers: {
       ecosystem: "The PRSL-AI Ecosystem is an accessible, privacy-first intelligence platform by Robert Software Labs. It has four core entities: PRSL-AI Core (the foundation), iRiel (your Personal Intelligence Environment), iApps (the modular application family) and me, Agent PRSL-AI (the institutional ambassador).",
@@ -142,6 +147,10 @@ const en: Messages = {
       languages: "The Language Core ships a typed BCP 47 registry with 17 locales: en-US, en-GB, pt-BR, pt-PT, es-ES, es-419, fr-FR, de-DE, it-IT, zh-CN, zh-TW, ja-JP, ko-KR, ar (right-to-left), hi-IN, ru-RU and nl-NL. en-US and pt-BR are complete; others fall back gracefully. The Language Core is available to every visitor with no setup, and will also serve iRiel.",
       iapps: "iApps are focused modular applications — such as mail, notes, calendar and files — that share one accessible design language and plug into iRiel for orchestration.",
       contact: "Robert Software Labs was founded by Robert, a Brazilian software engineer. For any question, talk to Agent PRSL-AI, the official guide of the platform.",
+      framework: "The PRSL-AI framework has five layers: Human intention, Application, Capability, Execution, and Governance & observability. Execution is strictly on demand — nothing runs without a request — and every capability is reached through an explicit capability contract. PRSL-AI is the governed intelligence infrastructure; iRiel is the authorized consumer, connected by explicit contracts with no hidden coupling.",
+      exposure: "Capability Exposure defines what can be accessed. Capability Execution determines how the capability is performed. UsageAlternativeTolls is the exposure API (contracts, operations, access points); Tolls_Intelligence is the execution API that performs the specialized work. This reusable pattern lets me offer new specialties without embedding all execution logic in each exposure API.",
+      apple: "Apple Integration (canonical extension v5) lets iRiel take part in Siri, App Intents, Shortcuts, Spotlight and Apple Intelligence, following Human → iRiel → PRSL-AI → Apple adapter → Apple surface. Apple exposes capabilities but never owns iRiel's identity, memory or semantics; availability is checked explicitly, disclosure is minimal, and if Apple Intelligence is unavailable the system degrades gracefully.",
+      tools: "I can call specialized intelligences: Vision, Audio, Voice, Location, Recognizers, Tools, Creative, Reader and CLI. Each is a separate capability with its own contract and permissions, invoked only on demand and under human authority.",
     },
   },
   form: { name: "Name", email: "Email", category: "Category", message: "Message", submit: "Send", thanks: "Thank you. Your message was received in this session. For a direct answer, open Agent PRSL-AI.", categories: ["Suggestion", "Accessibility", "Bug report", "Language / translation", "Other"], required: "Required" },
@@ -331,6 +340,7 @@ const pt: Messages = {
       { label: "Qual a diferença entre você e o iRiel?", topic: "iriel" },
       { label: "Quais são os princípios arquiteturais?", topic: "principles" },
       { label: "Quais idiomas são suportados?", topic: "languages" },
+      { label: "Quais são as cinco camadas do framework?", topic: "framework" },
     ],
     keywords: {
       ecosystem: ["ecossistema", "o que é", "prsl", "core", "visão"],
@@ -341,6 +351,10 @@ const pt: Messages = {
       languages: ["idioma", "língua", "locale", "rtl", "árabe", "tradução"],
       iapps: ["iapps", "apps", "aplicativo", "email", "agenda", "notas"],
       contact: ["contato", "email", "robert", "fundador", "equipe"],
+      framework: ["framework", "camada", "camadas", "sob demanda", "contrato"],
+      exposure: ["exposição", "exposicao", "execução", "usagealternativetolls", "tolls", "expor"],
+      apple: ["apple", "siri", "app intents", "spotlight", "atalhos", "shortcuts", "ios", "mac"],
+      tools: ["ferramenta", "ferramentas", "visão", "áudio", "voz", "localização", "reconhecedor", "criativ", "leitor", "cli", "especializ"],
     },
     answers: {
       ecosystem: "O Ecossistema PRSL-AI é uma plataforma de inteligência acessível e com privacidade em primeiro lugar, da Robert Software Labs. Possui quatro entidades centrais: PRSL-AI Core (a fundação), iRiel (seu Ambiente de Inteligência Pessoal), iApps (a família modular de aplicativos) e eu, o Agent PRSL-AI (o embaixador institucional).",
@@ -351,6 +365,10 @@ const pt: Messages = {
       languages: "O Language Core traz um registro BCP 47 tipado com 17 locales: en-US, en-GB, pt-BR, pt-PT, es-ES, es-419, fr-FR, de-DE, it-IT, zh-CN, zh-TW, ja-JP, ko-KR, ar (direita para esquerda), hi-IN, ru-RU e nl-NL. en-US e pt-BR estão completos; os demais usam fallback. O Language Core está disponível para todos os visitantes, sem configuração, e servirá também ao iRiel.",
       iapps: "Os iApps são aplicativos modulares focados — como e-mail, notas, agenda e arquivos — que compartilham uma linguagem de design acessível e se conectam ao iRiel para orquestração.",
       contact: "A Robert Software Labs foi fundada por Robert, engenheiro de software brasileiro. Para qualquer dúvida, fale com o Agent PRSL-AI, o guia oficial da plataforma.",
+      framework: "O framework PRSL-AI tem cinco camadas: Intenção humana, Aplicação, Capacidade, Execução, e Governança e observabilidade. A execução é estritamente sob demanda — nada roda sem um pedido — e toda capacidade é acessada por um contrato de capacidade explícito. O PRSL-AI é a infraestrutura de inteligência governada; o iRiel é o consumidor autorizado, conectados por contratos explícitos, sem acoplamento oculto.",
+      exposure: "Capability Exposure defines what can be accessed. Capability Execution determines how the capability is performed. O UsageAlternativeTolls é a API de exposição (contratos, operações, pontos de acesso); o Tolls_Intelligence é a API de execução que realiza o trabalho especializado. Esse padrão reutilizável me permite oferecer novas especialidades sem embutir toda a lógica de execução em cada API de exposição.",
+      apple: "A Integração Apple (extensão canônica v5) permite que o iRiel participe da Siri, App Intents, Atalhos, Spotlight e Apple Intelligence, seguindo Humano → iRiel → PRSL-AI → adaptador Apple → superfície Apple. A Apple expõe capacidades, mas nunca é dona da identidade, memória ou semântica do iRiel; a disponibilidade é verificada explicitamente, a divulgação é mínima e, sem Apple Intelligence, o sistema degrada com elegância.",
+      tools: "Posso acionar inteligências especializadas: Vision, Audio, Voice, Location, Recognizers, Tools, Creative, Reader e CLI. Cada uma é uma capacidade separada, com contrato e permissões próprios, acionada apenas sob demanda e sob autoridade humana.",
     },
   },
   form: { name: "Nome", email: "E-mail", category: "Categoria", message: "Mensagem", submit: "Enviar", thanks: "Obrigado. Sua mensagem foi registrada nesta sessão. Para resposta imediata, abra o Agent PRSL-AI.", categories: ["Sugestão", "Acessibilidade", "Relato de erro", "Idioma / tradução", "Outro"], required: "Obrigatório" },
