@@ -16,7 +16,10 @@ This directory contains the canonical architecture definitions and technical spe
 - [Capability contract](./agent-prsl-ai/capability-contract.md)
 - [Capability catalog](./agent-prsl-ai/capability-catalog.md)
 - [Reasoning and Action Execution Pattern](./agent-prsl-ai/reasoning-action-execution-pattern.md)
-- [Capability registry specification](./agent-prsl-ai/registry-specification.md)
+- [Executable Execution Contract](./agent-prsl-ai/executable-execution-contract.md)
+- [Execution Envelope Schema](./agent-prsl-ai/schemas/execution-envelope.schema.json)
+- [Execution Contract Test Vectors](./agent-prsl-ai/validation/execution-contract-cases.json)
+- [Capability Registry specification](./agent-prsl-ai/registry-specification.md)
 - [Permission Manager specification](./agent-prsl-ai/permission-manager-specification.md)
 - [Permission Manager schemas and validation](./agent-prsl-ai/validation/README.md)
 - [Apple integration extension](./agent-prsl-ai/extensions/apple-integration-v5.md)
@@ -29,6 +32,7 @@ This directory contains the canonical architecture definitions and technical spe
 - **Agent PRSL-AI** performs specialized PRSL-AI platform assistance within its declared scope.
 - **The model** provides inference and remains replaceable.
 - **The Intelligence Router** selects eligible execution candidates; it does not authorize protected operations.
+- **The Capability Registry** provides validated, dispatch-eligible capability metadata; registration does not grant permissions.
 - **The Permission Manager** issues scoped authorization decisions for protected PRSL-AI operations.
 - **The operating system / host** independently controls native permissions.
 

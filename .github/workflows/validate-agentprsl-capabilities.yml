@@ -31,3 +31,5 @@ jobs:
         run: python docs/architecture/agent-prsl-ai/scripts/validate_capability_manifests.py
       - name: Validate Permission Manager contracts
         run: python docs/architecture/agent-prsl-ai/scripts/validate_permission_manager.py
+      - name: Validate execution and authorization contract
+        run: python docs/architecture/agent-prsl-ai/scripts/validate_execution_contract.py

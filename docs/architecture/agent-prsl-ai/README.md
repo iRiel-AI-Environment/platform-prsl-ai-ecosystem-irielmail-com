@@ -34,6 +34,9 @@ The governing separation is:
 | [Capability Contract v1.0](./capability-contract.md) | Shared contract for identity, schemas, permissions, dependencies, availability, and execution policy. |
 | [Capability Catalog](./capability-catalog.md) | Initial module and interface inventory with candidate capability operations. |
 | [Reasoning and Action Execution Pattern](./reasoning-action-execution-pattern.md) | ReAct-informed plan/action/observation/verification cycle, with PRSL-AI policy and authorization gates. |
+| [Executable Execution Contract v1.0](./executable-execution-contract.md) | Machine-readable execution envelope and cross-component dispatch/authorization gates. |
+| [Execution Envelope JSON Schema](./schemas/execution-envelope.schema.json) | State and trusted-reference contract for one bounded execution. |
+| [Execution Contract Test Vectors](./validation/execution-contract-cases.json) | Positive and negative registry, authorization, native-permission, and state-transition scenarios. |
 | [Capability Registry Specification](./registry-specification.md) | Registration, discovery, lifecycle, and dispatch governance. |
 | [Permission Manager Specification](./permission-manager-specification.md) | Authorization authority, consent lifecycle, runtime gate, revocation, delegation, and fail-closed enforcement. |
 | [Permission Request Schema](./schemas/permission-request.schema.json) | Machine-readable input contract for one protected operation. |
@@ -46,9 +49,9 @@ The governing separation is:
 
 ## Canonical architecture flow
 
-`Human → iRiel identity/context → PRSL-AI intent and policy → Intelligence Router (candidate selection only) → Permission Manager (authorization gate) → approved capability or integration adapter → execution target`
+`Human → iRiel identity/context → PRSL-AI intent and policy → Intelligence Router (candidate selection only) → Capability Registry (eligible metadata) → Permission Manager (authorization gate) → native host permission (when applicable) → approved capability → execution target`
 
-The ReAct-informed execution pattern adds a governed task loop around approved operations:
+The ReAct-informed task loop is:
 
 `Interpret → Plan → Evaluate → Authorize → Act → Observe → Verify → Adapt or Stop`
 
@@ -77,10 +80,8 @@ Do not use *Implemented* or *Verified* based only on documentation or a declared
 
 ## Validation
 
-A GitHub Actions workflow validates JSON syntax, JSON Schema conformance, unique capability identifiers, module/identifier consistency, and permission declaration consistency for example manifests on relevant pull requests.
-
-A passing documentation validation is not proof of a deployed runtime, provider connection, permission grant, or operational capability.
+GitHub Actions validates capability manifests, Permission Manager contracts, and the cross-component execution contract. These are deterministic contract tests against synthetic fixtures. A passing workflow is not proof of a deployed runtime, provider connection, permission grant, or operational capability.
 
 ## Scope note
 
-This documentation is an architecture baseline. It does not create application code, runtime registrations, Apple entitlements, provider connections, permissions, or deployed integrations.
+This documentation and its validators establish architecture and testable contract rules. They do not create application code, runtime registrations, Apple entitlements, provider connections, permissions, or deployed integrations.

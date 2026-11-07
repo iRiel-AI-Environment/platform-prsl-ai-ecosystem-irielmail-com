@@ -1,0 +1,125 @@
+{
+  "description": "Deterministic contract-level gate scenarios. The verified registry record is synthetic test data; no production capability is registered by these vectors.",
+  "gate_cases": [
+    {
+      "name": "registered verified capability with matching scoped grant",
+      "expected_dispatch": true
+    },
+    {
+      "name": "specified capability is not dispatch eligible",
+      "manifest_lifecycle_status": "specified",
+      "expected_dispatch": false
+    },
+    {
+      "name": "unregistered capability is blocked",
+      "registration_status": "unregistered",
+      "expected_dispatch": false
+    },
+    {
+      "name": "revoked registry record is blocked",
+      "registration_status": "revoked",
+      "expected_dispatch": false
+    },
+    {
+      "name": "manifest validation pending is blocked",
+      "validation_status": "pending",
+      "expected_dispatch": false
+    },
+    {
+      "name": "policy review pending is blocked",
+      "review_status": "pending",
+      "expected_dispatch": false
+    },
+    {
+      "name": "stale manifest digest is blocked",
+      "digest_matches": false,
+      "expected_dispatch": false
+    },
+    {
+      "name": "permission decision denied is blocked",
+      "decision_status": "denied",
+      "expected_dispatch": false
+    },
+    {
+      "name": "decision request correlation mismatch is blocked",
+      "decision_request_mismatch": true,
+      "expected_dispatch": false
+    },
+    {
+      "name": "decision subject mismatch is blocked",
+      "decision_subject_mismatch": true,
+      "expected_dispatch": false
+    },
+    {
+      "name": "decision capability mismatch is blocked",
+      "decision_capability_mismatch": true,
+      "expected_dispatch": false
+    },
+    {
+      "name": "decision permission mismatch is blocked",
+      "decision_permission_mismatch": true,
+      "expected_dispatch": false
+    },
+    {
+      "name": "approved resource scope mismatch is blocked",
+      "decision_scope_mismatch": true,
+      "expected_dispatch": false
+    },
+    {
+      "name": "expired authorization is blocked",
+      "decision_expired": true,
+      "expected_dispatch": false
+    },
+    {
+      "name": "single-use authorization replay is blocked",
+      "decision_consumed": true,
+      "expected_dispatch": false
+    },
+    {
+      "name": "native permission denial is blocked",
+      "native_permission_status": "denied",
+      "expected_dispatch": false
+    },
+    {
+      "name": "remote sensitive execution without separate disclosure grant is blocked",
+      "remote_execution": true,
+      "expected_dispatch": false
+    },
+    {
+      "name": "undeclared permission request is blocked",
+      "undeclared_permission": true,
+      "expected_dispatch": false
+    }
+  ],
+  "envelope_cases": [
+    {
+      "name": "ready envelope with all gates passed",
+      "valid": true,
+      "state": "ready",
+      "verification_status": "not_started",
+      "include_observation": false
+    },
+    {
+      "name": "completed envelope with observation and verification evidence",
+      "valid": true,
+      "state": "completed",
+      "verification_status": "passed",
+      "include_observation": true
+    },
+    {
+      "name": "completed envelope without verification evidence is rejected",
+      "valid": false,
+      "state": "completed",
+      "verification_status": "passed",
+      "include_observation": false
+    },
+    {
+      "name": "ready envelope missing a required permission check is rejected",
+      "valid": false,
+      "state": "ready",
+      "verification_status": "not_started",
+      "include_observation": false,
+      "omit_permission_check": true
+    }
+  ]
+}

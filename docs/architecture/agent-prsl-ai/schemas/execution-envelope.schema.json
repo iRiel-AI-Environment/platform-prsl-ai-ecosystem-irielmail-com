@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://prsl.ai/schemas/agent-execution-envelope.schema.json",
+  "title": "Agent PRSL-AI Execution Envelope",
+  "description": "Minimized execution-state envelope. References trusted registry and Permission Manager records; it is not itself an authorization token.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "execution_id", "request_id", "capability_id", "plan_step_id", "state", "registry_binding", "required_permissions", "permission_checks", "execution_mode", "native_permission_status", "verification", "limitations"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "execution_id": {"type": "string", "format": "uuid"},
+    "request_id": {"type": "string", "format": "uuid"},
+    "capability_id": {"type": "string", "pattern": "^prsl\\.(agent|integration)\\.[a-z0-9]+(?:-[a-z0-9]+)*(?:\\.[a-z0-9]+(?:-[a-z0-9]+)*)+$"},
+    "plan_step_id": {"type": "string", "minLength": 1, "maxLength": 160},
+    "state": {"enum": ["interpreting", "planning", "evaluating", "awaiting_consent", "awaiting_authorization", "ready", "executing", "observing", "verifying", "adapting", "completed", "partially_completed", "denied", "failed", "cancelled"]},
+    "registry_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["registry_id", "registration_status", "lifecycle_status", "manifest_digest", "validation_status", "review_status"],
+      "properties": {
+        "registry_id": {"type": "string", "minLength": 1, "maxLength": 256},
+        "registration_status": {"enum": ["registered", "unregistered", "revoked"]},
+        "lifecycle_status": {"enum": ["draft", "proposed", "specified", "in_development", "verified", "deprecated"]},
+        "manifest_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "validation_status": {"enum": ["passed", "failed", "pending"]},
+        "review_status": {"enum": ["approved", "rejected", "pending"]}
+      }
+    },
+    "required_permissions": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1, "maxLength": 100}},
+    "permission_checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["permission_id", "request_ref", "decision_ref", "status"],
+        "properties": {
+          "permission_id": {"type": "string", "minLength": 1, "maxLength": 100},
+          "request_ref": {"type": "string", "minLength": 1, "maxLength": 256},
+          "decision_ref": {"type": "string", "minLength": 1, "maxLength": 256},
+          "status": {"enum": ["granted", "denied", "consent_required", "platform_permission_required", "policy_blocked", "revoked", "indeterminate"]}
+        }
+      }
+    },
+    "execution_mode": {"enum": ["on_device", "remote", "hybrid"]},
+    "native_permission_status": {"enum": ["not_required", "granted", "denied", "unavailable"]},
+    "observation_ref": {"type": "string", "minLength": 1, "maxLength": 256},
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "evidence_refs"],
+      "properties": {
+        "status": {"enum": ["not_started", "passed", "failed", "unavailable"]},
+        "evidence_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1, "maxLength": 256}}
+      }
+    },
+    "limitations": {"type": "array", "items": {"type": "string", "maxLength": 1000}},
+    "error_code": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]{1,79}$"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"state": {"enum": ["ready", "executing", "observing", "verifying", "completed"]}}},
+      "then": {
+        "properties": {
+          "registry_binding": {"properties": {"registration_status": {"const": "registered"}, "lifecycle_status": {"const": "verified"}, "validation_status": {"const": "passed"}, "review_status": {"const": "approved"}}},
+          "native_permission_status": {"enum": ["not_required", "granted"]}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"state": {"enum": ["ready", "executing", "observing", "verifying", "completed"]}}},
+      "then": {"properties": {"permission_checks": {"items": {"properties": {"status": {"const": "granted"}}}}}}
+    },
+    {
+      "if": {"properties": {"state": {"const": "completed"}}},
+      "then": {
+        "properties": {"verification": {"properties": {"status": {"const": "passed"}, "evidence_refs": {"minItems": 1}}}},
+        "required": ["observation_ref"]
+      }
+    }
+  ]
+}
