@@ -28,6 +28,7 @@ This directory contains the canonical architecture definitions and technical spe
 - [Capability Registry specification](./agent-prsl-ai/registry-specification.md)
 - [Permission Manager specification](./agent-prsl-ai/permission-manager-specification.md)
 - [Permission Manager schemas and validation](./agent-prsl-ai/validation/README.md)
+- [Permission Manager decision-binding implementation](../../src/lib/permission-manager/README.md)
 - [Apple integration extension](./agent-prsl-ai/extensions/apple-integration-v5.md)
 
 ## Governing separation of responsibilities
