@@ -133,7 +133,7 @@ An implementation SHOULD expose explicit states equivalent to:
 | `partially_completed` | Some work succeeded; remaining work is blocked or incomplete. |
 | `denied` | Policy or authorization prevented execution. |
 | `failed` | Execution or verification failed. |
-| `cancelled` | The user or system cancelled the operation. |
+| `cancelled` | The user or system canceled the operation. |
 
 State transitions must be validated by the runtime. A model response cannot directly set a protected operation to `ready` or `completed`.
 
@@ -217,7 +217,7 @@ A conforming implementation must demonstrate:
 6. Remote disclosure and retention are separately authorized.
 7. Policy denial cannot be bypassed through alternative tools or providers.
 8. Tool observations are treated as untrusted data.
-9. The runtime distinguishes executed, observed, verified, partial, denied, failed, and cancelled outcomes.
+9. The runtime distinguishes executed, observed, verified, partial, denied, failed, and canceled outcomes.
 10. Completion claims require verification evidence or are explicitly marked unverified.
 11. Revocation and cancellation prevent subsequent protected access within documented limits.
 12. Audit output excludes hidden chain-of-thought and unnecessary sensitive payloads.

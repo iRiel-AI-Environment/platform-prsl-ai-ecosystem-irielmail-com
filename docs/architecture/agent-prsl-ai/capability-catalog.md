@@ -166,7 +166,7 @@ Permissions depend on the requested output and the execution provider.
 
 **Module ID:** `prsl.agent.reader`  
 **Display name:** Reader Intelligence  
-**Portuguese-facing alias:** `Leitor_Intelligence`  
+**Source compatibility alias:** `Leitor_Intelligence`
 **Responsibility:** Reading, extracting, interpreting, and presenting content accessibly.
 
 Candidate operations:
@@ -242,7 +242,7 @@ It may expose eligible operations through Apple system surfaces, subject to plat
 | `Recognizers_Intelligence` | `Recognizers_Intelligence` | Retain. |
 | `Tolls_Intelligence` | `Tools_Intelligence` | Correct likely spelling error. |
 | `Creative_Intelligence` | `Creative_Intelligence` | Retain. |
-| `Leitor_Intelligence` | `Reader_Intelligence` | Use English canonical label; preserve Portuguese alias. |
+| `Leitor_Intelligence` | `Reader_Intelligence` | Use the English canonical label; retain the supplied source identifier only where compatibility requires it. |
 | `UsageAlternativeTolls` | `UsageAlternativeTools` | Correct likely spelling error. |
 | `CLI` | `CLI` | Classify as developer interface. |
 | `Apple_Integration` | `Apple_Integration` | Classify as canonical integration extension. |

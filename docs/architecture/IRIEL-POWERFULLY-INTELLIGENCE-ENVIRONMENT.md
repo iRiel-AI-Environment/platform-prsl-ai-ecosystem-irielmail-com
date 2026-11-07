@@ -3,7 +3,6 @@
 
 **Canonical name:** iRiel AI  
 **Canonical definition:** Powerfully Intelligence Environment  
-**Portuguese definition:** Ambiente de Inteligência Poderosa  
 **Canonical entity identity:** `@iriel.prsl.ai.ecosystem`  
 **Owner and creator:** Robert Software Labs  
 **Ecosystem:** PRSL-AI Ecosystem  
@@ -15,7 +14,7 @@
 
 ## 1. Executive definition
 
-**iRiel AI is a Powerfully Intelligence Environment: a human-centred intelligence environment that coordinates personal intent, authorized context, continuity, models, specialized agents, capabilities, and provider integrations through a coherent and accessible experience.**
+**iRiel AI is a Powerfully Intelligence Environment: a human-centered intelligence environment that coordinates personal intent, authorized context, continuity, models, specialized agents, capabilities, and provider integrations through a coherent and accessible experience.**
 
 iRiel is the environment and orchestration layer through which a person can interact with intelligence without having to manage the underlying models, providers, agents, tools, or infrastructure.
 

@@ -198,3 +198,16 @@ This decision does not:
 > One platform repository. Modular components. Distinct identities. Shared contracts. Explicit permissions. No duplicated authority.
 
 **Agent PRSL-AI — Powerful by Robert Software Labs.**
+
+
+## 10. Documentation language standard
+
+All human-readable platform documentation, architecture specifications, repository guidance, and user-facing technical explanations must use **English (United States)** as the canonical editorial language.
+
+- Use US spelling, punctuation, date conventions, and technical writing style consistently.
+- Keep product names, canonical identities, API names, schema fields, code symbols, protocol values, and established compatibility identifiers unchanged.
+- Retain source-language identifiers only when required for compatibility or traceability; explain them in English and do not use them as translated prose.
+- Do not add parallel-language definitions or translated paragraphs to canonical EN-US documents. Maintain translations as separately governed localization assets when explicitly required.
+- Preserve exact machine-readable enum values even when their historical spelling differs from US English; changing such values requires a versioned compatibility decision, not an editorial correction.
+
+This standard applies to new documentation and revisions of existing documentation in this repository.

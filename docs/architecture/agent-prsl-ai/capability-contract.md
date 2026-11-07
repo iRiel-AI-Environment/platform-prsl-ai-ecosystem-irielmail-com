@@ -150,7 +150,7 @@ All operations return a normalized envelope.
 - `permission_required`: additional authorization is needed.
 - `denied`: policy refused the operation.
 - `failed`: technical execution failure.
-- `cancelled`: operation was cancelled.
+- `cancelled`: operation was canceled.
 
 ### 6.2 Output rules
 
