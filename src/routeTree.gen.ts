@@ -23,6 +23,9 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as SecurityRouteImport } from './routes/security'
 import { Route as SupportRouteImport } from './routes/support'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as ApiPublicV1CapabilitiesRouteImport } from './routes/api/public/v1/capabilities'
+import { Route as ApiPublicV1HealthRouteImport } from './routes/api/public/v1/health'
+import { Route as ApiPublicV1InferenceRouteImport } from './routes/api/public/v1/inference'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -94,6 +97,21 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicV1CapabilitiesRoute = ApiPublicV1CapabilitiesRouteImport.update({
+  id: '/api/public/v1/capabilities',
+  path: '/api/public/v1/capabilities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicV1HealthRoute = ApiPublicV1HealthRouteImport.update({
+  id: '/api/public/v1/health',
+  path: '/api/public/v1/health',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicV1InferenceRoute = ApiPublicV1InferenceRouteImport.update({
+  id: '/api/public/v1/inference',
+  path: '/api/public/v1/inference',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -110,6 +128,9 @@ export interface FileRoutesByFullPath {
   '/security': typeof SecurityRoute
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
+  '/api/public/v1/capabilities': typeof ApiPublicV1CapabilitiesRoute
+  '/api/public/v1/health': typeof ApiPublicV1HealthRoute
+  '/api/public/v1/inference': typeof ApiPublicV1InferenceRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -126,6 +147,9 @@ export interface FileRoutesByTo {
   '/security': typeof SecurityRoute
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
+  '/api/public/v1/capabilities': typeof ApiPublicV1CapabilitiesRoute
+  '/api/public/v1/health': typeof ApiPublicV1HealthRoute
+  '/api/public/v1/inference': typeof ApiPublicV1InferenceRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -143,6 +167,9 @@ export interface FileRoutesById {
   '/security': typeof SecurityRoute
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
+  '/api/public/v1/capabilities': typeof ApiPublicV1CapabilitiesRoute
+  '/api/public/v1/health': typeof ApiPublicV1HealthRoute
+  '/api/public/v1/inference': typeof ApiPublicV1InferenceRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -161,6 +188,9 @@ export interface FileRouteTypes {
     | '/security'
     | '/support'
     | '/terms'
+    | '/api/public/v1/capabilities'
+    | '/api/public/v1/health'
+    | '/api/public/v1/inference'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -177,6 +207,9 @@ export interface FileRouteTypes {
     | '/security'
     | '/support'
     | '/terms'
+    | '/api/public/v1/capabilities'
+    | '/api/public/v1/health'
+    | '/api/public/v1/inference'
   id:
     | '__root__'
     | '/'
@@ -193,6 +226,9 @@ export interface FileRouteTypes {
     | '/security'
     | '/support'
     | '/terms'
+    | '/api/public/v1/capabilities'
+    | '/api/public/v1/health'
+    | '/api/public/v1/inference'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -210,6 +246,9 @@ export interface RootRouteChildren {
   SecurityRoute: typeof SecurityRoute
   SupportRoute: typeof SupportRoute
   TermsRoute: typeof TermsRoute
+  ApiPublicV1CapabilitiesRoute: typeof ApiPublicV1CapabilitiesRoute
+  ApiPublicV1HealthRoute: typeof ApiPublicV1HealthRoute
+  ApiPublicV1InferenceRoute: typeof ApiPublicV1InferenceRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -312,6 +351,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/v1/capabilities': {
+      id: '/api/public/v1/capabilities'
+      path: '/api/public/v1/capabilities'
+      fullPath: '/api/public/v1/capabilities'
+      preLoaderRoute: typeof ApiPublicV1CapabilitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/v1/health': {
+      id: '/api/public/v1/health'
+      path: '/api/public/v1/health'
+      fullPath: '/api/public/v1/health'
+      preLoaderRoute: typeof ApiPublicV1HealthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/v1/inference': {
+      id: '/api/public/v1/inference'
+      path: '/api/public/v1/inference'
+      fullPath: '/api/public/v1/inference'
+      preLoaderRoute: typeof ApiPublicV1InferenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -330,6 +390,9 @@ const rootRouteChildren: RootRouteChildren = {
   SecurityRoute: SecurityRoute,
   SupportRoute: SupportRoute,
   TermsRoute: TermsRoute,
+  ApiPublicV1CapabilitiesRoute: ApiPublicV1CapabilitiesRoute,
+  ApiPublicV1HealthRoute: ApiPublicV1HealthRoute,
+  ApiPublicV1InferenceRoute: ApiPublicV1InferenceRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
