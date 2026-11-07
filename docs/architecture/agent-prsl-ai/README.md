@@ -5,15 +5,18 @@
 **Canonical agent identity:** `@prsl-ai.agent.prsl.ai`  
 **Parent platform identity:** `@prsl-ai.prsl.ai.ecosystem`  
 **Institutional signature:** Powerful by Robert Software Labs  
+**Repository placement:** First-party component in the canonical PRSL-AI platform repository  
 **Document status:** Architecture specification; implementation status is component-specific
 
 This documentation defines Agent PRSL-AI as the specialized platform agent within the PRSL-AI Ecosystem. It distinguishes architectural definitions from implementation status: inclusion in this catalog does not claim that a module, API, provider, adapter, or runtime is already implemented.
 
+**Repository decision:** Agent PRSL-AI does not require an independent Git repository. It is modularly owned and tested within the PRSL-AI Ecosystem repository. See [Platform, Agent, and Repository Governance](../PLATFORM-AGENT-REPOSITORY-GOVERNANCE.md) for the canonical ownership, dependency, release, and repository-split rules.
+
 ## Identity and scope
 
-- **Agent PRSL-AI** is the specialized agent identity for institutional and technical knowledge of the PRSL-AI Ecosystem and authorized platform tasks.
+- **Agent PRSL-AI** is the first-party specialized agent identity for institutional and technical knowledge of the PRSL-AI Ecosystem and authorized platform tasks.
 - **Powerful by Robert Software Labs** is its institutional signature; it is not a model/provider name and does not imply unrestricted autonomy.
-- **iRiel AI** is the distinct Powerfully Intelligence Environment that coordinates the user's broader personal intelligence experience.
+- **iRiel AI** is the distinct Powerfully Intelligence Environment that coordinates the user's broader personal intelligence experience and may integrate with approved PRSL-AI capabilities.
 - **Capability modules** group related specialist functions.
 - **Capabilities** are individually identified operations with explicit input/output contracts.
 - **Integration extensions** connect the agent and authorized consumers to external platforms and system surfaces.
@@ -25,10 +28,17 @@ The governing separation is:
 
 > The model thinks. The agent executes a specialty. The Router decides. iRiel orchestrates.
 
+## Repository and module boundary
+
+The canonical repository is the PRSL-AI Ecosystem platform repository. Agent-specific code, tests, manifests, evaluations, and documentation must remain identifiable as Agent-owned modules within that repository. Shared policy, routing, registry, Permission Manager, and common schemas remain platform-owned contracts; the Agent consumes them and must not fork or privately redefine them.
+
+An independent Agent repository is a future option only if deployment, distribution, team permissions, compliance, or release requirements establish a real need. Such a split requires an approved migration and compatibility plan. It is not the current architecture decision.
+
 ## Documents
 
 | Document | Purpose |
 |---|---|
+| [Platform, Agent, and Repository Governance](../PLATFORM-AGENT-REPOSITORY-GOVERNANCE.md) | Canonical ownership, repository placement, module boundaries, dependency direction, release governance, and split criteria. |
 | [Agent PRSL-AI institutional and architectural specification](../PRSL-AI-AGENT.md) | Canonical agent identity, specialization, scope, responsibilities, and boundaries. |
 | [iRiel — Powerfully Intelligence Environment](../IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md) | Canonical definition of the environment that orchestrates personal intelligence. |
 | [Capability Contract v1.0](./capability-contract.md) | Shared contract for identity, schemas, permissions, dependencies, availability, and execution policy. |
