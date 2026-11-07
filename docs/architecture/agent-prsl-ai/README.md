@@ -1,20 +1,25 @@
-# AgentPRSL-AI Architecture
+# Agent PRSL-AI Architecture
 
 **Owner:** Robert Software Labs  
 **Ecosystem:** PRSL-AI Ecosystem  
-**Agent identity:** `@AgentPRSL-AI`  
-**Document status:** Architecture proposal assembled from the current design material
+**Canonical agent identity:** `@prsl-ai.agent.prsl.ai`  
+**Parent platform identity:** `@prsl-ai.prsl.ai.ecosystem`  
+**Institutional signature:** Powerful by Robert Software Labs  
+**Document status:** Architecture specification; implementation status is component-specific
 
-This documentation organizes the AgentPRSL-AI capability model and its integration boundaries. It distinguishes architectural definitions from implementation status: inclusion in this catalog does not claim that a module, API, provider, adapter, or runtime is already implemented.
+This documentation defines Agent PRSL-AI as the specialized platform agent within the PRSL-AI Ecosystem. It distinguishes architectural definitions from implementation status: inclusion in this catalog does not claim that a module, API, provider, adapter, or runtime is already implemented.
 
-## Architecture at a glance
+## Identity and scope
 
-- **AgentPRSL-AI** is the specialized agent identity.
+- **Agent PRSL-AI** is the specialized agent identity for institutional and technical knowledge of the PRSL-AI Ecosystem and authorized platform tasks.
+- **Powerful by Robert Software Labs** is its institutional signature; it is not a model/provider name and does not imply unrestricted autonomy.
+- **iRiel AI** is the distinct Powerfully Intelligence Environment that coordinates the user's broader personal intelligence experience.
 - **Capability modules** group related specialist functions.
 - **Capabilities** are individually identified operations with explicit input/output contracts.
-- **Integration extensions** connect the agent and iRiel to external platforms and system surfaces.
-- **PRSL-AI policy and routing** govern selection, permissions, provider choice, and execution.
-- **Human authority** remains the ultimate authority for consent and consequential actions.
+- **Integration extensions** connect the agent and authorized consumers to external platforms and system surfaces.
+- **PRSL-AI policy and routing** govern candidate selection, permissions, provider choice, and execution boundaries.
+- **The Permission Manager** is the only PRSL-AI component that issues authorization decisions for protected operations.
+- **Human authority** remains the source of user intent and consent.
 
 The governing separation is:
 
@@ -24,6 +29,8 @@ The governing separation is:
 
 | Document | Purpose |
 |---|---|
+| [Agent PRSL-AI institutional and architectural specification](../PRSL-AI-AGENT.md) | Canonical agent identity, specialization, scope, responsibilities, and boundaries. |
+| [iRiel — Powerfully Intelligence Environment](../IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md) | Canonical definition of the environment that orchestrates personal intelligence. |
 | [Capability Contract v1.0](./capability-contract.md) | Shared contract for identity, schemas, permissions, dependencies, availability, and execution policy. |
 | [Capability Catalog](./capability-catalog.md) | Initial module and interface inventory with candidate capability operations. |
 | [Capability Registry Specification](./registry-specification.md) | Registration, discovery, lifecycle, and dispatch governance. |
@@ -38,7 +45,7 @@ The governing separation is:
 
 ## Canonical architecture flow
 
-`Human → iRiel identity/context → PRSL-AI intent and policy → Intelligence Router (candidate selection only) → Permission Manager (authorization gate) → capability or integration adapter → execution target`
+`Human → iRiel identity/context → PRSL-AI intent and policy → Intelligence Router (candidate selection only) → Permission Manager (authorization gate) → approved capability or integration adapter → execution target`
 
 The flow is conceptual. Concrete runtime components and integrations must be verified separately.
 

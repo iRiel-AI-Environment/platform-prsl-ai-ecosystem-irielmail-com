@@ -1,6 +1,6 @@
 # Capability Manifest Validation
 
-This folder contains representative manifests and automated validation for the AgentPRSL-AI Capability Contract.
+This folder contains representative manifests and automated validation for the Agent PRSL-AI Capability Contract.
 
 Run locally:
 

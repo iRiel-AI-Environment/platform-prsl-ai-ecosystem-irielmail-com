@@ -2,7 +2,7 @@
 
 **Status:** Proposed  
 **Owner:** Robert Software Labs  
-**Scope:** PRSL-AI Ecosystem / AgentPRSL-AI
+**Scope:** PRSL-AI Ecosystem / Agent PRSL-AI
 
 ## 1. Purpose
 

@@ -2,7 +2,7 @@
 
 **Status:** Proposed  
 **Owner:** Robert Software Labs  
-**Scope:** PRSL-AI Ecosystem / AgentPRSL-AI  
+**Scope:** PRSL-AI Ecosystem / Agent PRSL-AI  
 **Authority boundary:** iRiel identity and user consent; PRSL-AI policy enforcement
 
 ## 1. Purpose

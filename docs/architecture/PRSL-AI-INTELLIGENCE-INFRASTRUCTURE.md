@@ -193,12 +193,12 @@ The infrastructure is shared ecosystem capability, not an iRiel-only subsystem.
 
 Potential authorized consumers include:
 
-- **iRiel:** Personal Intelligence Environment and intelligence orchestration.
+- **iRiel:** [Powerfully Intelligence Environment](./IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md) and personal intelligence orchestration.
 - **iApps:** Applications within the ecosystem.
-- **PRSL-AI Agent:** Institutional platform intelligence, within its defined scope.
+- **Agent PRSL-AI:** Institutional platform intelligence, within its defined scope.
 - **Approved external integrations:** Other systems explicitly authorized to consume published capabilities.
 
-iRiel remains responsible for personal intelligence orchestration and user-facing continuity. The infrastructure supplies reusable capabilities; it does not replace iRiel's identity, context, policy, or orchestration responsibilities.
+iRiel remains responsible for personal intelligence orchestration and user-facing continuity. See the [canonical iRiel technical definition](./IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md). The infrastructure supplies reusable capabilities; it does not replace iRiel's identity, context, policy, or orchestration responsibilities.
 
 Preserve this architectural principle:
 

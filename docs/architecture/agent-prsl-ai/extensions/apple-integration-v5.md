@@ -1,7 +1,7 @@
 # Apple Integration — Canonical Extension v5
 
 **Canonical identifier:** `prsl.integration.apple`  
-**Agent association:** `@AgentPRSL-AI<Apple_Integration>`  
+**Agent association:** `@prsl-ai.agent.prsl.ai<Apple_Integration>`  
 **Class:** Canonical Extension  
 **Status:** Canonical  
 **Owning Domain:** 07 — Integrations
@@ -19,7 +19,7 @@
 
 ## 1. Purpose
 
-This Extension establishes the controlled integration boundary between AgentPRSL-AI, iRiel AI, and Apple technologies.
+This Extension establishes the controlled integration boundary between Agent PRSL-AI, iRiel AI, and Apple technologies.
 
 Apple frameworks may expose or execute eligible iRiel capabilities, but must not assume ownership of iRiel identity, canonical memory, domain ownership, or architectural authority.
 

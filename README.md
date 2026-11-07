@@ -7,7 +7,7 @@ BRANDING & DESIGN:
 - High-tech, accessible, human-centered UI following WCAG 2.2 AA contrast rules.
 - Dedicated showcase sections for the attached visual assets:
   1. The PRSL-AI Ecosystem Crest & Shield (attached files).
-  2. The iRiel AI Personal Intelligence Environment mockups with the emerald energy orb (attached files).
+  2. The iRiel AI Powerfully Intelligence Environment mockups with the emerald energy orb (attached files).
   3. The Agent PRSL-AI with sacred geometry, cosmic vortex and energy hub network (cyan + emerald accents, attached files).
 
 ARCHITECTURE & SCOPE (Build comprehensively in this single prompt):
@@ -17,9 +17,9 @@ ARCHITECTURE & SCOPE (Build comprehensively in this single prompt):
    - Complete translations for all core institutional content in en-US and pt-BR, with fallback for other locales.
 
 2. INSTITUTIONAL PAGES & ROUTING:
-   - Home / Overview: Full manifesto, "Accessibility, Inclusion, and Security by Default. Your continuity is your right. The machine adapts to you.", Core Entities (PRSL-AI Core, iRiel PIE, iApps, Agent PRSL-AI), Architectural Principles, Intelligence Without Dependency ("The model thinks. The agent executes. The Router decides. iRiel orchestrates.").
+   - Home / Overview: Full manifesto, "Accessibility, Inclusion, and Security by Default. Your continuity is your right. The machine adapts to you.", Core Entities (PRSL-AI Core, iRiel AI — Powerfully Intelligence Environment, iApps, Agent PRSL-AI — Powerful by Robert Software Labs), Architectural Principles, Intelligence Without Dependency ("The model thinks. The agent executes. The Router decides. iRiel orchestrates.").
    - About: Robert Software Labs origin, vision, mission, Robert (Founder, Brazilian software engineer).
-   - Ecosystem: Deep dive into the architecture, PRSL-AI Core, iRiel (Personal Intelligence Environment) and iApps modular family.
+   - Ecosystem: Deep dive into the architecture, PRSL-AI Core, iRiel AI (Powerfully Intelligence Environment) and iApps modular family.
    - Developers: Architecture specifications, SDK/API concepts, provider-agnostic integration guidelines.
    - Documentation: Architectural principles, technical guides, Language Core specification.
    - Privacy: Privacy by Default, on-device local execution, zero unauthorized data transmission.
@@ -29,8 +29,8 @@ ARCHITECTURE & SCOPE (Build comprehensively in this single prompt):
    - Terms & Contact: Institutional contact for Robert Software Labs (helloprsl.ai@outlook.com).
 
 3. AGENT PRSL-AI INTERFACE:
-   - Interactive Agent PRSL-AI console (Powered by Robert Software Labs) with emerald/cyan aura visualizer, specialized in explaining the ecosystem, routing, iRiel distinction, and architectural principles.
-   - Distinct from iRiel: clearly explains that Agent PRSL-AI is the institutional knowledge ambassador, while iRiel is the personal intelligence environment.
+   - Interactive Agent PRSL-AI console (Powerful by Robert Software Labs) with emerald/cyan aura visualizer, specialized in explaining the ecosystem, routing, iRiel distinction, and architectural principles.
+   - Distinct from iRiel: clearly explains that Agent PRSL-AI is the specialized PRSL-AI platform agent, while iRiel AI is the Powerfully Intelligence Environment that orchestrates the user's broader personal intelligence experience.
 
 4. FOOTER:
    - Structured exactly as requested:

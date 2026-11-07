@@ -1,15 +1,15 @@
-# AgentPRSL-AI — Capability and Module Catalog
+# Agent PRSL-AI — Capability and Module Catalog
 
 **Classification:** Initial architecture catalog  
 **Owner:** Robert Software Labs  
-**Parent identity:** `@AgentPRSL-AI`  
+**Parent identity:** `@prsl-ai.agent.prsl.ai`  
 **Contract:** [Canonical Capability Contract v1.0](./capability-contract.md)  
 **Registry:** [Capability Registry Specification](./registry-specification.md)  
 **Manifest schema:** [Capability Manifest JSON Schema](./schemas/capability-manifest.schema.json)
 
 ## 1. Purpose
 
-This catalog organizes the modules, operational interfaces, supporting tools, and integration extensions identified in the current AgentPRSL-AI design.
+This catalog organizes the modules, operational interfaces, supporting tools, and integration extensions identified in the current Agent PRSL-AI design.
 
 It is an architecture inventory, not an implementation report. Candidate operations below describe intended capability boundaries; they are not claims that corresponding code, APIs, or integrations currently exist.
 

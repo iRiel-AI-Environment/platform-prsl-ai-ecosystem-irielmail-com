@@ -4,7 +4,7 @@
 **Status:** Architecture contract — approved direction, not an implementation claim  
 **Version:** 1.0.0  
 **Owner:** Robert Software Labs  
-**Applies to:** PRSL-AI Ecosystem Platform and iRiel Personal Intelligence Environment
+**Applies to:** PRSL-AI Ecosystem Platform and [iRiel AI — Powerfully Intelligence Environment](./IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md)
 
 ## 1. Purpose
 
@@ -48,7 +48,7 @@ The platform is the institutional experience and knowledge interface. Its Agent 
 
 ### 4.3 iRiel
 
-iRiel remains the Personal Intelligence Environment (PIE) and the personal orchestration environment. It may request shared PRSL-AI capabilities, while retaining control of its own identity, user consent, personal context, memory, accessibility preferences, and routing decisions.
+iRiel is the Powerfully Intelligence Environment and personal intelligence orchestration environment. It may request shared PRSL-AI capabilities while retaining responsibility for its identity, user consent experience, personal context, memory, accessibility preferences, and orchestration. The Intelligence Router selects eligible execution candidates; iRiel does not replace the Router or the Permission Manager.
 
 The platform provides capabilities; it does not take over iRiel orchestration or personal memory.
 

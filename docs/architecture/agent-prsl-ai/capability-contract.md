@@ -1,4 +1,4 @@
-# AgentPRSL-AI — Canonical Capability Contract v1.0
+# Agent PRSL-AI — Canonical Capability Contract v1.0
 
 **Classification:** Proposed shared architecture standard  
 **Owner:** Robert Software Labs  
@@ -17,7 +17,7 @@ A capability declares what it can do and the conditions under which it may do it
 
 ## 2. Terminology and boundaries
 
-- **Agent:** The specialized identity `@AgentPRSL-AI`.
+- **Agent:** The specialized identity `@prsl-ai.agent.prsl.ai`.
 - **Module:** A domain grouping of related capabilities, such as Vision or Voice.
 - **Capability:** A specific operation exposed under a stable identifier.
 - **Tool:** An executable resource that a capability may use, subject to policy.
