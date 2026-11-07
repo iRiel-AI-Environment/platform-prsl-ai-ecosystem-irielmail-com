@@ -6,9 +6,11 @@ This directory contains the canonical architecture definitions and technical spe
 
 | Identity | Technical classification | Canonical reference |
 |---|---|---|
-| **iRiel AI** | Powerfully Intelligence Environment; personal intelligence coordination and orchestration environment | [iRiel technical definition](./IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md) |
+| **iRiel AI** | PowerFully Intelligence Environment; personal intelligence coordination and orchestration environment | [iRiel technical definition](./IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md) |
 | **Agent PRSL-AI** | First-party specialized agent of the PRSL-AI platform; **Powerful by Robert Software Labs** | [Agent PRSL-AI specification](./PRSL-AI-AGENT.md) |
 | **PRSL-AI Intelligence Infrastructure** | Shared platform foundation for governed capabilities, contracts, integrations, and execution infrastructure | [Infrastructure architecture](./PRSL-AI-INTELLIGENCE-INFRASTRUCTURE.md) |
+
+- [iRiel AppWeb — PRSL-AI Platform Integration Contract](./IRIEL-APPWEB-INTEGRATION.md) — canonical responsibility boundary, request flow, provider-connection separation, capability-contract alignment, and cross-repository change control.
 
 ## Platform and repository governance
 
@@ -35,7 +37,7 @@ This directory contains the canonical architecture definitions and technical spe
 
 - **Robert Software Labs** is the creator and institutional owner.
 - **PRSL-AI Ecosystem** defines the shared platform architecture, policy, and reusable capabilities.
-- **iRiel** coordinates the Powerfully Intelligence Environment and the user's experience through explicit integration boundaries.
+- **iRiel** coordinates the PowerFully Intelligence Environment and the user's experience through explicit integration boundaries.
 - **Agent PRSL-AI** is a first-party platform component that performs specialized assistance within its declared scope.
 - **The model** provides inference and remains replaceable.
 - **The Intelligence Router** selects eligible execution candidates; it does not authorize protected operations.

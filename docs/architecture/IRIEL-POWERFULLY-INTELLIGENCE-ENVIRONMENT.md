@@ -1,8 +1,8 @@
-# iRiel AI — Powerfully Intelligence Environment
+# iRiel AI — PowerFully Intelligence Environment
 ## Canonical Technical Definition, Responsibilities, and Architectural Boundaries
 
 **Canonical name:** iRiel AI  
-**Canonical definition:** Powerfully Intelligence Environment  
+**Canonical definition:** PowerFully Intelligence Environment  
 **Canonical entity identity:** `@iriel.prsl.ai.ecosystem`  
 **Owner and creator:** Robert Software Labs  
 **Ecosystem:** PRSL-AI Ecosystem  
@@ -14,7 +14,7 @@
 
 ## 1. Executive definition
 
-**iRiel AI is a Powerfully Intelligence Environment: a human-centered intelligence environment that coordinates personal intent, authorized context, continuity, models, specialized agents, capabilities, and provider integrations through a coherent and accessible experience.**
+**iRiel AI is a PowerFully Intelligence Environment: a human-centered intelligence environment that coordinates personal intent, authorized context, continuity, models, specialized agents, capabilities, and provider integrations through a coherent and accessible experience.**
 
 iRiel is the environment and orchestration layer through which a person can interact with intelligence without having to manage the underlying models, providers, agents, tools, or infrastructure.
 
@@ -22,7 +22,7 @@ It is designed to make the system adapt to the person—not require the person t
 
 iRiel is not defined by a particular language model, AI provider, agent framework, application framework, hosting vendor, or device. Its identity and core responsibilities remain stable when those underlying components are replaced.
 
-The branded wording **“Powerfully Intelligence Environment”** is intentional and canonical. Preserve this exact English wording in institutional and technical references. Do not silently normalize it to “Powerful Intelligence Environment” or substitute the historical “Personal Intelligence Environment (PIE)” expansion.
+The branded wording **“PowerFully Intelligence Environment”** is intentional and canonical. Preserve this exact English wording in institutional and technical references. Do not silently normalize it to “Powerful Intelligence Environment” or substitute the historical “Personal Intelligence Environment (PIE)” expansion.
 
 ## 2. System classification
 
@@ -196,7 +196,7 @@ iRiel and Agent PRSL-AI have distinct identities and responsibilities:
 
 | Dimension | iRiel | Agent PRSL-AI |
 |---|---|---|
-| System type | Powerfully Intelligence Environment | Specialized platform agent |
+| System type | PowerFully Intelligence Environment | Specialized platform agent |
 | Primary purpose | Coordinate a person's broader intelligence experience | Explain, diagnose, and assist with PRSL-AI platform matters |
 | Scope | Personal intent, context, continuity, routing, and orchestration | Institutional and technical PRSL-AI knowledge and authorized platform tasks |
 | Model relationship | Provider-agnostic environment | Provider-agnostic specialist agent |
@@ -240,7 +240,7 @@ An implementation is conformant with this definition when:
 
 ---
 
-**Institutional definition:** iRiel AI is the Powerfully Intelligence Environment that orchestrates personal intelligence around the human, while preserving identity, consent, privacy, continuity, provider independence, and the user's control.
+**Institutional definition:** iRiel AI is the PowerFully Intelligence Environment that orchestrates personal intelligence around the human, while preserving identity, consent, privacy, continuity, provider independence, and the user's control.
 
 **Robert Software Labs**  
 *The machine adapts to you.*
