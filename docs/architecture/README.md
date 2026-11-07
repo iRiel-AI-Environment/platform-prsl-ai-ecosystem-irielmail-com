@@ -15,6 +15,7 @@ This directory contains the canonical architecture definitions and technical spe
 - [Agent PRSL-AI architecture overview](./agent-prsl-ai/README.md)
 - [Capability contract](./agent-prsl-ai/capability-contract.md)
 - [Capability catalog](./agent-prsl-ai/capability-catalog.md)
+- [Reasoning and Action Execution Pattern](./agent-prsl-ai/reasoning-action-execution-pattern.md)
 - [Capability registry specification](./agent-prsl-ai/registry-specification.md)
 - [Permission Manager specification](./agent-prsl-ai/permission-manager-specification.md)
 - [Permission Manager schemas and validation](./agent-prsl-ai/validation/README.md)

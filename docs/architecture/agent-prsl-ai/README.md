@@ -33,6 +33,7 @@ The governing separation is:
 | [iRiel — Powerfully Intelligence Environment](../IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md) | Canonical definition of the environment that orchestrates personal intelligence. |
 | [Capability Contract v1.0](./capability-contract.md) | Shared contract for identity, schemas, permissions, dependencies, availability, and execution policy. |
 | [Capability Catalog](./capability-catalog.md) | Initial module and interface inventory with candidate capability operations. |
+| [Reasoning and Action Execution Pattern](./reasoning-action-execution-pattern.md) | ReAct-informed plan/action/observation/verification cycle, with PRSL-AI policy and authorization gates. |
 | [Capability Registry Specification](./registry-specification.md) | Registration, discovery, lifecycle, and dispatch governance. |
 | [Permission Manager Specification](./permission-manager-specification.md) | Authorization authority, consent lifecycle, runtime gate, revocation, delegation, and fail-closed enforcement. |
 | [Permission Request Schema](./schemas/permission-request.schema.json) | Machine-readable input contract for one protected operation. |
@@ -46,6 +47,10 @@ The governing separation is:
 ## Canonical architecture flow
 
 `Human → iRiel identity/context → PRSL-AI intent and policy → Intelligence Router (candidate selection only) → Permission Manager (authorization gate) → approved capability or integration adapter → execution target`
+
+The ReAct-informed execution pattern adds a governed task loop around approved operations:
+
+`Interpret → Plan → Evaluate → Authorize → Act → Observe → Verify → Adapt or Stop`
 
 The flow is conceptual. Concrete runtime components and integrations must be verified separately.
 
