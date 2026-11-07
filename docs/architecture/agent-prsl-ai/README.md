@@ -52,7 +52,7 @@ An independent Agent repository is a future option only if deployment, distribut
 | [Permission Request Schema](./schemas/permission-request.schema.json) | Machine-readable input contract for one protected operation. |
 | [Permission Decision Schema](./schemas/permission-decision.schema.json) | Machine-readable, scope-bound authorization outcome. |
 | [Permission Manager Test Vectors](./validation/permission-manager-cases.json) | Positive and negative request/decision contract cases. |
-| [Permission Manager Decision Gate](../../../src/lib/permission-manager/README.md) | Implemented deterministic request/decision binding validator and its explicit security limitations. |
+| [Permission Manager Runtime Core](../../../src/lib/permission-manager/README.md) | Implemented dependency-injected evaluation and pre-execution orchestration; production adapters remain unimplemented. |
 | [Capability Manifest JSON Schema](./schemas/capability-manifest.schema.json) | Machine-readable validation schema for capability manifests. |
 | Capability manifests | [Vision](./examples/vision-analyze-image.manifest.json) · [Voice](./examples/voice-synthesize-speech.manifest.json) · [Location](./examples/location-resolve-location.manifest.json) · [Recognizers](./examples/recognizers-classify-content.manifest.json) · [Tools](./examples/tools-evaluate-tool.manifest.json) · [Creative](./examples/creative-generate-text.manifest.json) · [Reader](./examples/reader-extract-document-content.manifest.json). All seven are specified examples, not implementation claims. |
 | [Validation instructions](./validation/README.md) | Local validation commands and CI behavior. |
@@ -91,10 +91,10 @@ Do not use *Implemented* or *Verified* based only on documentation or a declared
 
 ## Validation
 
-GitHub Actions validates capability manifests, Permission Manager contracts, the cross-component execution contract, and the TypeScript decision-binding gate. These are deterministic contract tests against synthetic fixtures. A passing workflow is not proof of a deployed runtime, provider connection, permission grant, or operational capability.
+GitHub Actions validates capability manifests, Permission Manager contracts, the cross-component execution contract, the TypeScript decision-binding gate, and the TypeScript runtime orchestration core. These are deterministic contract tests against synthetic fixtures. A passing workflow is not proof of a deployed runtime, provider connection, permission grant, or operational capability.
 
 ## Scope note
 
-The Permission Manager Decision Gate is a first implementation slice only. It validates that a decision returned by a trusted service matches a specific invocation and does not widen its scope. It does not authenticate or issue decisions, collect consent, evaluate policy, resolve trusted registry state, inspect native platform grants, sign tokens, persist revocation, or provide production authorization. Until those trusted services and adapters exist and are independently verified, protected execution remains disabled or fail-closed.
+The Permission Manager now has two implementation slices: a deterministic decision-binding gate and a framework-neutral runtime orchestration core. The runtime defines mandatory adapter contracts for authentication, registry, policy, consent, native permissions, remote disclosure, decision issuance/consumption, and minimized audit. These adapters are not yet implemented or deployed; the runtime is not a production authorization service. Until those trusted services and adapters exist and are independently verified, protected execution remains disabled or fail-closed.
 
 This documentation and its validators establish architecture and testable contract rules. They do not create application code, runtime registrations, Apple entitlements, provider connections, permissions, or deployed integrations.

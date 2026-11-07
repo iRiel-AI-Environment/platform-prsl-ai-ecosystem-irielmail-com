@@ -263,6 +263,8 @@ Capabilities may declare required permissions but cannot create, edit, approve, 
 
 ## 19. Implementation readiness boundary
 
-This documentation establishes contracts and acceptance tests, not an operational authorization service. Before protected operations can be enabled, an implementation must provide authenticated request transport, trusted registry resolution, policy evaluation, consent evidence verification, native permission adapters, decision integrity and replay protection, revocation propagation, audit minimization, and execution-boundary enforcement.
+This documentation establishes contracts and acceptance tests, not an operational authorization service. A framework-neutral runtime orchestration core and deterministic decision-binding gate are implemented under `src/lib/permission-manager/`. They define and exercise the required control flow, but they do not provide deployed production adapters or an authenticated service.
 
-Until those controls are implemented and independently verified, the Permission Manager status remains `specified` and protected runtime execution must remain disabled or fail closed.
+Before protected operations can be enabled, an implementation must provide authenticated request transport, a trusted registry with verified manifest digests, current policy evaluation and scope narrowing, confirmation and consent evidence verification, native permission adapters, independent remote-disclosure authorization, cryptographic decision integrity, atomic replay prevention, revocation propagation, durable minimized audit, and trusted execution-boundary enforcement.
+
+Until those production controls are implemented and independently verified, the Permission Manager service status remains `specified` and protected runtime execution must remain disabled or fail closed.

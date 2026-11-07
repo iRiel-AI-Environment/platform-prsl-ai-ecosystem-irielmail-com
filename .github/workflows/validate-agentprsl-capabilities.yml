@@ -56,4 +56,4 @@ jobs:
       - name: Type-check the application
         run: bunx tsc --noEmit
       - name: Lint the Permission Manager implementation
-        run: bunx eslint src/lib/permission-manager/decision-gate.ts src/test/permission-manager/decision-gate.test.ts
+        run: bunx eslint src/lib/permission-manager/*.ts src/test/permission-manager/*.test.ts
