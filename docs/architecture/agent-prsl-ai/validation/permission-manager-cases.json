@@ -1,0 +1,368 @@
+{
+  "request_cases": [
+    {
+      "name": "valid single-operation local media read",
+      "valid": true,
+      "value": {
+        "schema_version": "1.0",
+        "request_id": "4d2d4e7e-9c0e-4d50-a2a1-6d5f2f6c8c11",
+        "subject": {
+          "principal_type": "user",
+          "principal_id": "user-pseudonymous-01",
+          "session_id": "session-01"
+        },
+        "capability_id": "prsl.agent.vision.analyze-image",
+        "permission_id": "media.read",
+        "action": "read_user_selected_image",
+        "resource_scope": {
+          "resource_type": "image",
+          "scope_mode": "exact",
+          "resource_ids": [
+            "media-ref-01"
+          ]
+        },
+        "purpose": {
+          "purpose_id": "understand_image",
+          "description": "Describe the image selected by the user."
+        },
+        "data_classification": "personal",
+        "execution_mode": "on_device",
+        "requested_duration": {
+          "kind": "single_operation"
+        }
+      }
+    },
+    {
+      "name": "valid bounded camera operation",
+      "valid": true,
+      "value": {
+        "schema_version": "1.0",
+        "request_id": "4d2d4e7e-9c0e-4d50-a2a1-6d5f2f6c8c12",
+        "subject": {
+          "principal_type": "user",
+          "principal_id": "user-pseudonymous-01"
+        },
+        "capability_id": "prsl.agent.vision.analyze-image",
+        "permission_id": "camera.use",
+        "action": "capture_one_frame",
+        "resource_scope": {
+          "resource_type": "camera",
+          "scope_mode": "bounded",
+          "boundary": "one user-initiated frame"
+        },
+        "purpose": {
+          "purpose_id": "identify_object",
+          "description": "Identify an object in a user-requested image."
+        },
+        "data_classification": "sensitive",
+        "execution_mode": "on_device",
+        "requested_duration": {
+          "kind": "seconds",
+          "seconds": 30
+        }
+      }
+    },
+    {
+      "name": "reject unbounded resource scope",
+      "valid": false,
+      "value": {
+        "schema_version": "1.0",
+        "request_id": "4d2d4e7e-9c0e-4d50-a2a1-6d5f2f6c8c13",
+        "subject": {
+          "principal_type": "user",
+          "principal_id": "user-pseudonymous-01"
+        },
+        "capability_id": "prsl.agent.vision.analyze-image",
+        "permission_id": "camera.use",
+        "action": "capture",
+        "resource_scope": {
+          "resource_type": "camera",
+          "scope_mode": "bounded"
+        },
+        "purpose": {
+          "purpose_id": "identify_object",
+          "description": "Identify an object."
+        },
+        "data_classification": "sensitive",
+        "execution_mode": "on_device",
+        "requested_duration": {
+          "kind": "single_operation"
+        }
+      }
+    },
+    {
+      "name": "reject missing purpose",
+      "valid": false,
+      "value": {
+        "schema_version": "1.0",
+        "request_id": "4d2d4e7e-9c0e-4d50-a2a1-6d5f2f6c8c14",
+        "subject": {
+          "principal_type": "user",
+          "principal_id": "user-pseudonymous-01"
+        },
+        "capability_id": "prsl.agent.vision.analyze-image",
+        "permission_id": "camera.use",
+        "action": "capture",
+        "resource_scope": {
+          "resource_type": "camera",
+          "scope_mode": "bounded",
+          "boundary": "one frame"
+        },
+        "data_classification": "sensitive",
+        "execution_mode": "on_device",
+        "requested_duration": {
+          "kind": "single_operation"
+        }
+      }
+    },
+    {
+      "name": "reject unknown permission identifier",
+      "valid": false,
+      "value": {
+        "schema_version": "1.0",
+        "request_id": "4d2d4e7e-9c0e-4d50-a2a1-6d5f2f6c8c15",
+        "subject": {
+          "principal_type": "user",
+          "principal_id": "user-pseudonymous-01"
+        },
+        "capability_id": "prsl.agent.vision.analyze-image",
+        "permission_id": "camera.admin_everything",
+        "action": "capture",
+        "resource_scope": {
+          "resource_type": "camera",
+          "scope_mode": "bounded",
+          "boundary": "one frame"
+        },
+        "purpose": {
+          "purpose_id": "identify_object",
+          "description": "Identify an object."
+        },
+        "data_classification": "sensitive",
+        "execution_mode": "on_device",
+        "requested_duration": {
+          "kind": "single_operation"
+        }
+      }
+    },
+    {
+      "name": "valid remote disclosure bound to recipient",
+      "valid": true,
+      "value": {
+        "schema_version": "1.0",
+        "request_id": "4d2d4e7e-9c0e-4d50-a2a1-6d5f2f6c8c16",
+        "subject": {
+          "principal_type": "user",
+          "principal_id": "user-pseudonymous-01"
+        },
+        "capability_id": "prsl.agent.reader.extract-document-content",
+        "permission_id": "data.remote_disclose",
+        "action": "send_minimized_text_for_translation",
+        "resource_scope": {
+          "resource_type": "document",
+          "scope_mode": "exact",
+          "resource_ids": [
+            "document-ref-01"
+          ],
+          "recipient": "provider:approved-translation-service"
+        },
+        "purpose": {
+          "purpose_id": "translate_document",
+          "description": "Translate the selected document using the approved remote service."
+        },
+        "data_classification": "sensitive",
+        "execution_mode": "remote",
+        "requested_duration": {
+          "kind": "single_operation"
+        }
+      }
+    },
+    {
+      "name": "reject remote disclosure without recipient binding",
+      "valid": false,
+      "value": {
+        "schema_version": "1.0",
+        "request_id": "4d2d4e7e-9c0e-4d50-a2a1-6d5f2f6c8c17",
+        "subject": {
+          "principal_type": "user",
+          "principal_id": "user-pseudonymous-01"
+        },
+        "capability_id": "prsl.agent.reader.extract-document-content",
+        "permission_id": "data.remote_disclose",
+        "action": "send_document",
+        "resource_scope": {
+          "resource_type": "document",
+          "scope_mode": "exact",
+          "resource_ids": [
+            "document-ref-01"
+          ]
+        },
+        "purpose": {
+          "purpose_id": "translate_document",
+          "description": "Translate the selected document."
+        },
+        "data_classification": "sensitive",
+        "execution_mode": "remote",
+        "requested_duration": {
+          "kind": "single_operation"
+        }
+      }
+    },
+    {
+      "name": "valid retention with explicit duration and storage scope",
+      "valid": true,
+      "value": {
+        "schema_version": "1.0",
+        "request_id": "4d2d4e7e-9c0e-4d50-a2a1-6d5f2f6c8c18",
+        "subject": {
+          "principal_type": "user",
+          "principal_id": "user-pseudonymous-01"
+        },
+        "capability_id": "prsl.agent.reader.extract-document-content",
+        "permission_id": "data.retain",
+        "action": "save_user_requested_document_summary",
+        "resource_scope": {
+          "resource_type": "document_summary",
+          "scope_mode": "exact",
+          "resource_ids": [
+            "summary-ref-01"
+          ],
+          "retention": {
+            "duration_seconds": 86400,
+            "storage_scope": "user-selected-private-space",
+            "deletion_trigger": "expiry"
+          }
+        },
+        "purpose": {
+          "purpose_id": "save_summary",
+          "description": "Save the summary in the user-selected private space for one day."
+        },
+        "data_classification": "personal",
+        "execution_mode": "on_device",
+        "requested_duration": {
+          "kind": "single_operation"
+        }
+      }
+    },
+    {
+      "name": "reject remote disclosure requested as on-device",
+      "valid": false,
+      "value": {
+        "schema_version": "1.0",
+        "request_id": "4d2d4e7e-9c0e-4d50-a2a1-6d5f2f6c8c19",
+        "subject": {
+          "principal_type": "user",
+          "principal_id": "user-pseudonymous-01"
+        },
+        "capability_id": "prsl.agent.reader.extract-document-content",
+        "permission_id": "data.remote_disclose",
+        "action": "send_minimized_text",
+        "resource_scope": {
+          "resource_type": "document",
+          "scope_mode": "exact",
+          "resource_ids": [
+            "document-ref-01"
+          ],
+          "recipient": "provider:approved-translation-service"
+        },
+        "purpose": {
+          "purpose_id": "translate_document",
+          "description": "Translate the selected document."
+        },
+        "data_classification": "sensitive",
+        "execution_mode": "on_device",
+        "requested_duration": {
+          "kind": "single_operation"
+        }
+      }
+    }
+  ],
+  "decision_cases": [
+    {
+      "name": "valid scoped grant",
+      "valid": true,
+      "value": {
+        "schema_version": "1.0",
+        "decision_id": "5d2d4e7e-9c0e-4d50-a2a1-6d5f2f6c8c11",
+        "request_id": "4d2d4e7e-9c0e-4d50-a2a1-6d5f2f6c8c11",
+        "status": "granted",
+        "subject": {
+          "principal_type": "user",
+          "principal_id": "user-pseudonymous-01",
+          "session_id": "session-01"
+        },
+        "capability_id": "prsl.agent.vision.analyze-image",
+        "permission_id": "media.read",
+        "approved_scope": {
+          "resource_type": "image",
+          "scope_mode": "exact",
+          "resource_ids": [
+            "media-ref-01"
+          ]
+        },
+        "purpose": {
+          "purpose_id": "understand_image",
+          "description": "Describe the image selected by the user."
+        },
+        "execution_mode": "on_device",
+        "issued_at": "2026-11-07T19:00:00Z",
+        "expires_at": "2026-11-07T19:00:30Z",
+        "single_use": true,
+        "policy_version": "1.0",
+        "evidence_refs": [
+          "consent-evidence:opaque-01"
+        ],
+        "reason_code": "AUTHORIZED",
+        "explanation": "The selected image may be read for this operation."
+      }
+    },
+    {
+      "name": "valid policy denial",
+      "valid": true,
+      "value": {
+        "schema_version": "1.0",
+        "decision_id": "5d2d4e7e-9c0e-4d50-a2a1-6d5f2f6c8c12",
+        "request_id": "4d2d4e7e-9c0e-4d50-a2a1-6d5f2f6c8c12",
+        "status": "policy_blocked",
+        "subject": {
+          "principal_type": "user",
+          "principal_id": "user-pseudonymous-01"
+        },
+        "capability_id": "prsl.agent.vision.analyze-image",
+        "permission_id": "camera.use",
+        "purpose": {
+          "purpose_id": "identify_object",
+          "description": "Identify an object in a user-requested image."
+        },
+        "issued_at": "2026-11-07T19:00:00Z",
+        "policy_version": "1.0",
+        "reason_code": "REMOTE_PROCESSING_DISABLED",
+        "explanation": "The requested execution route is not permitted."
+      }
+    },
+    {
+      "name": "reject grant without approved scope",
+      "valid": false,
+      "value": {
+        "schema_version": "1.0",
+        "decision_id": "5d2d4e7e-9c0e-4d50-a2a1-6d5f2f6c8c13",
+        "request_id": "4d2d4e7e-9c0e-4d50-a2a1-6d5f2f6c8c13",
+        "status": "granted",
+        "subject": {
+          "principal_type": "user",
+          "principal_id": "user-pseudonymous-01"
+        },
+        "capability_id": "prsl.agent.vision.analyze-image",
+        "permission_id": "media.read",
+        "purpose": {
+          "purpose_id": "understand_image",
+          "description": "Describe an image."
+        },
+        "issued_at": "2026-11-07T19:00:00Z",
+        "expires_at": "2026-11-07T19:00:30Z",
+        "single_use": true,
+        "policy_version": "1.0",
+        "reason_code": "AUTHORIZED"
+      }
+    }
+  ]
+}

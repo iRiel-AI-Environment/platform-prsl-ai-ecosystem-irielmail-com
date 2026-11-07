@@ -1,0 +1,158 @@
+{
+  "$schema": "../../schemas/capability-manifest.schema.json",
+  "capability_id": "prsl.agent.tools.evaluate-tool",
+  "name": "Evaluate Tool",
+  "description": "Evaluate a declared tool candidate for intent fit, compatibility, declared permissions, privacy characteristics, and policy eligibility without invoking it.",
+  "module_id": "prsl.agent.tools",
+  "contract_version": "1.0",
+  "capability_version": "1.0",
+  "lifecycle_status": "specified",
+  "owner": "Robert Software Labs",
+  "input_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "intent",
+      "tool_candidate"
+    ],
+    "properties": {
+      "intent": {
+        "type": "string",
+        "minLength": 1
+      },
+      "tool_candidate": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "tool_id",
+          "description"
+        ],
+        "properties": {
+          "tool_id": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "input_schema": {
+            "type": "object"
+          },
+          "declared_permissions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "execution_modes": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "on_device",
+                "remote",
+                "hybrid"
+              ]
+            }
+          }
+        }
+      },
+      "constraints": {
+        "type": "object"
+      }
+    }
+  },
+  "output_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "eligible",
+      "reasons",
+      "risk_flags"
+    ],
+    "properties": {
+      "eligible": {
+        "type": "boolean"
+      },
+      "fit_score": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+      },
+      "reasons": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "risk_flags": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "required_permissions": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "limitations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "permissions": [],
+  "dependencies": {
+    "runtime": [
+      {
+        "id": "prsl-agent-runtime",
+        "required": true,
+        "version": ">=1.0.0"
+      }
+    ],
+    "framework": [],
+    "model": {
+      "required": false,
+      "provider_constraints": []
+    },
+    "device": [],
+    "service": [],
+    "capability": [],
+    "permission": []
+  },
+  "availability": {
+    "evaluation": "runtime",
+    "states": [
+      "available",
+      "unavailable",
+      "permission_required",
+      "dependency_missing",
+      "degraded_with_fallback"
+    ],
+    "notes": "Availability is evaluated at runtime from authorization, compatible resources, dependency health, and PRSL-AI policy. No runtime availability is asserted by this specification."
+  },
+  "execution_policy": {
+    "execution_modes": [
+      "on_device",
+      "remote"
+    ],
+    "routing_policy": "prsl_intelligence_router",
+    "privacy_policy": "minimum_disclosure",
+    "consent_policy": "explicit_when_required",
+    "authority_level": "user_authorized",
+    "data_retention": "ephemeral_by_default",
+    "fallback_policy": "approved_alternative_only",
+    "confirmation_required": false,
+    "timeout_ms": 30000,
+    "idempotency": "operation_defined"
+  },
+  "tags": [
+    "tools",
+    "evaluation",
+    "policy"
+  ]
+}

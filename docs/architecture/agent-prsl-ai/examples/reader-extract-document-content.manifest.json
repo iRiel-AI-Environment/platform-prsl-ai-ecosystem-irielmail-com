@@ -1,0 +1,150 @@
+{
+  "$schema": "../../schemas/capability-manifest.schema.json",
+  "capability_id": "prsl.agent.reader.extract-document-content",
+  "name": "Extract Document Content",
+  "description": "Extract readable text and basic structure from a user-authorized document or image while preserving source order and reporting extraction limitations.",
+  "module_id": "prsl.agent.reader",
+  "contract_version": "1.0",
+  "capability_version": "1.0",
+  "lifecycle_status": "specified",
+  "owner": "Robert Software Labs",
+  "input_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "document_ref"
+    ],
+    "properties": {
+      "document_ref": {
+        "type": "string",
+        "minLength": 1
+      },
+      "source_type": {
+        "enum": [
+          "pdf",
+          "image",
+          "document",
+          "text",
+          "unknown"
+        ]
+      },
+      "language": {
+        "type": "string"
+      },
+      "preserve_layout": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  },
+  "output_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "text",
+      "segments",
+      "limitations"
+    ],
+    "properties": {
+      "text": {
+        "type": "string"
+      },
+      "segments": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "text"
+          ],
+          "properties": {
+            "text": {
+              "type": "string"
+            },
+            "kind": {
+              "enum": [
+                "heading",
+                "paragraph",
+                "list_item",
+                "table_cell",
+                "unknown"
+              ]
+            },
+            "page": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        }
+      },
+      "detected_language": {
+        "type": "string"
+      },
+      "limitations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "permissions": [
+    "files.read"
+  ],
+  "dependencies": {
+    "runtime": [
+      {
+        "id": "prsl-agent-runtime",
+        "required": true,
+        "version": ">=1.0.0"
+      }
+    ],
+    "framework": [],
+    "model": {
+      "required": false,
+      "provider_constraints": []
+    },
+    "device": [],
+    "service": [],
+    "capability": [],
+    "permission": [
+      {
+        "id": "files.read",
+        "required": true
+      }
+    ]
+  },
+  "availability": {
+    "evaluation": "runtime",
+    "states": [
+      "available",
+      "unavailable",
+      "permission_required",
+      "dependency_missing",
+      "degraded_with_fallback"
+    ],
+    "notes": "Availability is evaluated at runtime from authorization, compatible resources, dependency health, and PRSL-AI policy. No runtime availability is asserted by this specification."
+  },
+  "execution_policy": {
+    "execution_modes": [
+      "on_device",
+      "remote"
+    ],
+    "routing_policy": "prsl_intelligence_router",
+    "privacy_policy": "minimum_disclosure",
+    "consent_policy": "explicit_when_required",
+    "authority_level": "user_authorized",
+    "data_retention": "ephemeral_by_default",
+    "fallback_policy": "approved_alternative_only",
+    "confirmation_required": false,
+    "timeout_ms": 30000,
+    "idempotency": "operation_defined"
+  },
+  "tags": [
+    "reader",
+    "document",
+    "accessibility"
+  ]
+}

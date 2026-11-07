@@ -1,0 +1,141 @@
+{
+  "$schema": "../../schemas/capability-manifest.schema.json",
+  "capability_id": "prsl.agent.voice.synthesize-speech",
+  "name": "Synthesize Speech",
+  "description": "Produce spoken audio from user-authorized text using an eligible speech resource and declared language/voice constraints.",
+  "module_id": "prsl.agent.voice",
+  "contract_version": "1.0",
+  "capability_version": "1.0",
+  "lifecycle_status": "specified",
+  "owner": "Robert Software Labs",
+  "input_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "text",
+      "language"
+    ],
+    "properties": {
+      "text": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 20000
+      },
+      "language": {
+        "type": "string",
+        "minLength": 2
+      },
+      "locale": {
+        "type": "string"
+      },
+      "voice_profile": {
+        "type": "string"
+      },
+      "speaking_style": {
+        "enum": [
+          "neutral",
+          "conversational",
+          "formal",
+          "expressive"
+        ]
+      },
+      "output_format": {
+        "enum": [
+          "audio/mpeg",
+          "audio/wav",
+          "audio/mp4"
+        ]
+      }
+    }
+  },
+  "output_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "audio_ref",
+      "language",
+      "format"
+    ],
+    "properties": {
+      "audio_ref": {
+        "type": "string",
+        "minLength": 1
+      },
+      "language": {
+        "type": "string"
+      },
+      "format": {
+        "type": "string"
+      },
+      "duration_ms": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "limitations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "permissions": [
+    "speech.output"
+  ],
+  "dependencies": {
+    "runtime": [
+      {
+        "id": "prsl-agent-runtime",
+        "required": true,
+        "version": ">=1.0.0"
+      }
+    ],
+    "framework": [],
+    "model": {
+      "required": false,
+      "provider_constraints": []
+    },
+    "device": [],
+    "service": [],
+    "capability": [],
+    "permission": [
+      {
+        "id": "speech.output",
+        "required": true
+      }
+    ]
+  },
+  "availability": {
+    "evaluation": "runtime",
+    "states": [
+      "available",
+      "unavailable",
+      "permission_required",
+      "dependency_missing",
+      "degraded_with_fallback"
+    ],
+    "notes": "Availability is evaluated at runtime from authorization, compatible resources, dependency health, and PRSL-AI policy. No runtime availability is asserted by this specification."
+  },
+  "execution_policy": {
+    "execution_modes": [
+      "on_device",
+      "remote"
+    ],
+    "routing_policy": "prsl_intelligence_router",
+    "privacy_policy": "minimum_disclosure",
+    "consent_policy": "explicit_when_required",
+    "authority_level": "user_authorized",
+    "data_retention": "ephemeral_by_default",
+    "fallback_policy": "approved_alternative_only",
+    "confirmation_required": false,
+    "timeout_ms": 30000,
+    "idempotency": "operation_defined"
+  },
+  "tags": [
+    "voice",
+    "speech",
+    "tts"
+  ]
+}

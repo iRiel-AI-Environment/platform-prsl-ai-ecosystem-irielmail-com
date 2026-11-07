@@ -1,0 +1,33 @@
+name: Validate AgentPRSL-AI Capability Manifests
+
+on:
+  pull_request:
+    paths:
+      - "docs/architecture/agent-prsl-ai/**"
+      - ".github/workflows/validate-agentprsl-capabilities.yml"
+  push:
+    branches: [main]
+    paths:
+      - "docs/architecture/agent-prsl-ai/**"
+      - ".github/workflows/validate-agentprsl-capabilities.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-capability-manifests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install validator dependency
+        run: python -m pip install -r docs/architecture/agent-prsl-ai/requirements-dev.txt
+      - name: Validate manifests
+        run: python docs/architecture/agent-prsl-ai/scripts/validate_capability_manifests.py
+      - name: Validate Permission Manager contracts
+        run: python docs/architecture/agent-prsl-ai/scripts/validate_permission_manager.py

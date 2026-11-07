@@ -1,0 +1,134 @@
+{
+  "$schema": "../../schemas/capability-manifest.schema.json",
+  "capability_id": "prsl.agent.location.resolve-location",
+  "name": "Resolve Location",
+  "description": "Resolve an explicitly authorized location signal or place reference into normalized geographic context with precision and freshness metadata.",
+  "module_id": "prsl.agent.location",
+  "contract_version": "1.0",
+  "capability_version": "1.0",
+  "lifecycle_status": "specified",
+  "owner": "Robert Software Labs",
+  "input_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "source",
+      "requested_precision"
+    ],
+    "properties": {
+      "source": {
+        "const": "device_location"
+      },
+      "requested_precision": {
+        "const": "approximate"
+      },
+      "language": {
+        "type": "string"
+      }
+    }
+  },
+  "output_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "resolved",
+      "precision",
+      "source"
+    ],
+    "properties": {
+      "resolved": {
+        "type": "boolean"
+      },
+      "place": {
+        "type": "string"
+      },
+      "coordinates": {
+        "type": "object",
+        "properties": {
+          "latitude": {
+            "type": "number"
+          },
+          "longitude": {
+            "type": "number"
+          }
+        }
+      },
+      "precision": {
+        "enum": [
+          "approximate",
+          "unknown"
+        ]
+      },
+      "source": {
+        "type": "string"
+      },
+      "freshness": {
+        "type": "string"
+      },
+      "limitations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "permissions": [
+    "location.coarse"
+  ],
+  "dependencies": {
+    "runtime": [
+      {
+        "id": "prsl-agent-runtime",
+        "required": true,
+        "version": ">=1.0.0"
+      }
+    ],
+    "framework": [],
+    "model": {
+      "required": false,
+      "provider_constraints": []
+    },
+    "device": [],
+    "service": [],
+    "capability": [],
+    "permission": [
+      {
+        "id": "location.coarse",
+        "required": true
+      }
+    ]
+  },
+  "availability": {
+    "evaluation": "runtime",
+    "states": [
+      "available",
+      "unavailable",
+      "permission_required",
+      "dependency_missing",
+      "degraded_with_fallback"
+    ],
+    "notes": "This operation specifically resolves device location. Place-reference and coordinate-only resolution should use separate operations that do not request device-location permission."
+  },
+  "execution_policy": {
+    "execution_modes": [
+      "on_device",
+      "remote"
+    ],
+    "routing_policy": "prsl_intelligence_router",
+    "privacy_policy": "minimum_disclosure",
+    "consent_policy": "explicit_when_required",
+    "authority_level": "user_authorized",
+    "data_retention": "ephemeral_by_default",
+    "fallback_policy": "graceful_degradation",
+    "confirmation_required": false,
+    "timeout_ms": 30000,
+    "idempotency": "operation_defined"
+  },
+  "tags": [
+    "location",
+    "geospatial"
+  ]
+}

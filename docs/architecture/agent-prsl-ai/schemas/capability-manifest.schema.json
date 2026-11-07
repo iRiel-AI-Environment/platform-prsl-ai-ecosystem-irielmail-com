@@ -1,0 +1,423 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://prsl.ai.ecosystem/schemas/capability-manifest.schema.json",
+  "title": "PRSL-AI Capability Manifest",
+  "description": "Canonical machine-readable manifest for an AgentPRSL-AI capability or PRSL-AI integration operation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "capability_id",
+    "name",
+    "description",
+    "module_id",
+    "contract_version",
+    "lifecycle_status",
+    "owner",
+    "input_schema",
+    "output_schema",
+    "permissions",
+    "dependencies",
+    "availability",
+    "execution_policy"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "capability_id": {
+      "type": "string",
+      "pattern": "^prsl\\.(agent|integration)\\.[a-z0-9]+(?:-[a-z0-9]+)*(?:\\.[a-z0-9]+(?:-[a-z0-9]+)*)+$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000
+    },
+    "module_id": {
+      "type": "string",
+      "pattern": "^prsl\\.(agent|integration)\\.[a-z0-9]+(?:-[a-z0-9]+)*(?:\\.[a-z0-9]+(?:-[a-z0-9]+)*)*$"
+    },
+    "contract_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+(?:\\.[0-9]+)?$"
+    },
+    "capability_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+(?:\\.[0-9]+)?$"
+    },
+    "lifecycle_status": {
+      "enum": [
+        "proposed",
+        "specified",
+        "in_development",
+        "implemented",
+        "verified",
+        "deprecated"
+      ]
+    },
+    "owner": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "input_schema": {
+      "$ref": "#/$defs/jsonSchema"
+    },
+    "output_schema": {
+      "$ref": "#/$defs/jsonSchema"
+    },
+    "permissions": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9]*(?:\\.[a-z][a-z0-9_]*)+$"
+      }
+    },
+    "dependencies": {
+      "$ref": "#/$defs/dependencies"
+    },
+    "availability": {
+      "$ref": "#/$defs/availability"
+    },
+    "execution_policy": {
+      "$ref": "#/$defs/executionPolicy"
+    },
+    "tags": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "documentation": {
+      "type": "string",
+      "format": "uri-reference"
+    }
+  },
+  "$defs": {
+    "jsonSchema": {
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "$schema": {
+          "type": "string"
+        },
+        "$id": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "type": {
+          "type": [
+            "string",
+            "array"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "properties": {
+          "type": "object"
+        },
+        "required": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "additionalProperties": {
+          "type": [
+            "boolean",
+            "object"
+          ]
+        },
+        "items": {
+          "type": [
+            "object",
+            "boolean"
+          ]
+        },
+        "enum": {
+          "type": "array"
+        },
+        "const": {},
+        "format": {
+          "type": "string"
+        },
+        "minimum": {
+          "type": "number"
+        },
+        "maximum": {
+          "type": "number"
+        },
+        "minLength": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "maxLength": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pattern": {
+          "type": "string"
+        },
+        "$ref": {
+          "type": "string"
+        },
+        "$defs": {
+          "type": "object"
+        },
+        "oneOf": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "anyOf": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "allOf": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "runtime",
+        "framework",
+        "model",
+        "device",
+        "service",
+        "capability",
+        "permission"
+      ],
+      "properties": {
+        "runtime": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/dependencyRef"
+          }
+        },
+        "framework": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/dependencyRef"
+          }
+        },
+        "model": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "required",
+            "provider_constraints"
+          ],
+          "properties": {
+            "required": {
+              "type": "boolean"
+            },
+            "provider_constraints": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "device": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/dependencyRef"
+          }
+        },
+        "service": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/dependencyRef"
+          }
+        },
+        "capability": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/dependencyRef"
+          }
+        },
+        "permission": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/dependencyRef"
+          }
+        }
+      }
+    },
+    "dependencyRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "required"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "availability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evaluation",
+        "states"
+      ],
+      "properties": {
+        "evaluation": {
+          "const": "runtime"
+        },
+        "states": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "available",
+              "unavailable",
+              "unavailable_by_device",
+              "unavailable_by_os_or_framework",
+              "unavailable_by_region_language_or_policy",
+              "permission_required",
+              "dependency_missing",
+              "degraded_with_fallback",
+              "disabled_by_policy"
+            ]
+          }
+        },
+        "fallback_capability_id": {
+          "type": "string",
+          "pattern": "^prsl\\."
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "executionPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "execution_modes",
+        "routing_policy",
+        "privacy_policy",
+        "consent_policy",
+        "authority_level",
+        "data_retention",
+        "fallback_policy",
+        "confirmation_required",
+        "timeout_ms",
+        "idempotency"
+      ],
+      "properties": {
+        "execution_modes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "on_device",
+              "remote",
+              "hybrid"
+            ]
+          }
+        },
+        "routing_policy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "privacy_policy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "consent_policy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authority_level": {
+          "enum": [
+            "system",
+            "user_authorized",
+            "user_confirmation",
+            "administrator_authorized"
+          ]
+        },
+        "data_retention": {
+          "enum": [
+            "ephemeral_by_default",
+            "no_retention",
+            "explicit_retention_only",
+            "operation_defined"
+          ]
+        },
+        "fallback_policy": {
+          "enum": [
+            "none",
+            "graceful_degradation",
+            "approved_alternative_only",
+            "fail_closed"
+          ]
+        },
+        "confirmation_required": {
+          "type": "boolean"
+        },
+        "timeout_ms": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 600000
+        },
+        "idempotency": {
+          "enum": [
+            "idempotent",
+            "non_idempotent",
+            "operation_defined"
+          ]
+        }
+      }
+    }
+  }
+}
