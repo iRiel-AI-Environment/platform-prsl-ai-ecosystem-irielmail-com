@@ -17,7 +17,7 @@ export class GatewayError extends Error {
 
 /** Streams a gateway response server-side and returns the final text. */
 export async function generateAnswer(prompt: string, instructions: string, signal?: AbortSignal): Promise<string> {
-  const apiKey = process.env.LOVABLE_API_KEY;
+  const apiKey = process.env['LOVABLE_API_KEY'];
   if (!apiKey) throw new GatewayError(500, "AI is not configured.");
   const provider = createOpenAI({
     baseURL: "https://ai.gateway.lovable.dev/v1",
@@ -29,7 +29,7 @@ export async function generateAnswer(prompt: string, instructions: string, signa
     model: provider.responses(MODEL),
     system: instructions,
     messages: [{ role: "user", content: prompt }],
-    abortSignal: signal,
+    ...(signal ? { abortSignal: signal } : {}),
     maxRetries: 1,
     onError: ({ error }) => { failure = error; },
     providerOptions: {
