@@ -84,6 +84,8 @@ Remote inference is intentionally not enabled in this console. Any future remote
 
 The current console does not access an iRiel profile, personal memory, or conversation history.
 
+The PRSL-AI Core and Core API service prototypes have not yet been consolidated into this platform repository. Transitional prototypes remain in the separate iRiel AppWeb repository; they are not canonical platform services, are not deployed, and are not connected to the public platform API. Repository-boundary migration is tracked as GAP-023.
+
 ## Architecture documentation
 
 Start here:
