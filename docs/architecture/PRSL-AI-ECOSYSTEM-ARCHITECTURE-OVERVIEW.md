@@ -161,6 +161,7 @@ Accessibility is structural across interfaces, APIs, capabilities, workflows, do
 | Agent PRSL-AI console | Browser-local keyword-matched knowledge base in src/lib/agent.ts | Limited implementation; not a general autonomous agent runtime. |
 | Seven representative capability manifests | Vision, Voice, Location, Recognizers, Tools, Creative, Reader | Specified examples; not production-registered or dispatch-eligible. |
 | Capability Registry | Registry specification and deterministic contract validation | Specification/validation exists; production registry service is not established. |
+| Dependency Resolver | v1.0 specification, request/result schemas, and deterministic synthetic fixtures | Contract and fixture validator exist; production resolver runtime and trusted Registry adapter are not established. |
 | Permission Manager | Decision-binding gate and framework-neutral runtime orchestration core with tests | Partial code implementation; trusted production adapters and deployment are not implemented. |
 | Execution contract | JSON Schema, cross-component validator, and synthetic test vectors | Contract validation exists; does not establish a production execution runtime. |
 | Intelligence Router | Defined responsibility and architecture boundary | Runtime implementation and provider selection are not verified by this repository evidence. |
@@ -181,6 +182,7 @@ Statuses must be updated only with source, test, configuration, deployment, and 
 - [Agent PRSL-AI architecture and capability contracts](./agent-prsl-ai/README.md)
 - [Capability Contract v1.0](./agent-prsl-ai/capability-contract.md)
 - [Capability Registry Specification](./agent-prsl-ai/registry-specification.md)
+- [Dependency Resolver Specification v1.0](./agent-prsl-ai/dependency-resolver-specification.md)
 - [Permission Manager Specification](./agent-prsl-ai/permission-manager-specification.md)
 - [Executable Execution Contract](./agent-prsl-ai/executable-execution-contract.md)
 - [Permission Manager Runtime Core and implementation boundary](../../src/lib/permission-manager/README.md)

@@ -1,0 +1,282 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://prsl.ai.ecosystem/schemas/dependency-resolution-result.schema.json",
+  "title": "PRSL-AI Dependency Resolution Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "resolution_id",
+    "root_capability_id",
+    "registry_snapshot_ref",
+    "status",
+    "resolved_dependencies",
+    "skipped_optional_dependencies",
+    "authorization_requirements",
+    "model_requirement",
+    "dependency_order",
+    "errors"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "resolution_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "root_capability_id": {
+      "type": "string",
+      "pattern": "^prsl\\.(agent|integration)\\.[a-z0-9]+(?:-[a-z0-9]+)*(?:\\.[a-z0-9]+(?:-[a-z0-9]+)*)+$"
+    },
+    "registry_snapshot_ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "status": {
+      "enum": [
+        "resolved",
+        "degraded",
+        "blocked"
+      ]
+    },
+    "resolved_dependencies": {
+      "type": "array",
+      "maxItems": 1000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "dependency_type",
+          "dependency_id",
+          "version",
+          "registry_record_ref",
+          "required",
+          "parents"
+        ],
+        "properties": {
+          "dependency_type": {
+            "enum": [
+              "runtime",
+              "framework",
+              "device",
+              "service",
+              "capability"
+            ]
+          },
+          "dependency_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "version": {
+            "type": "string",
+            "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+          },
+          "registry_record_ref": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "parents": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            }
+          }
+        }
+      }
+    },
+    "skipped_optional_dependencies": {
+      "type": "array",
+      "maxItems": 1000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "dependency_type",
+          "dependency_id",
+          "reason_code"
+        ],
+        "properties": {
+          "dependency_type": {
+            "enum": [
+              "runtime",
+              "framework",
+              "device",
+              "service",
+              "capability"
+            ]
+          },
+          "dependency_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "reason_code": {
+            "enum": [
+              "OPTIONAL_DEPENDENCY_NOT_FOUND",
+              "OPTIONAL_DEPENDENCY_NOT_VERIFIED",
+              "OPTIONAL_DEPENDENCY_VERSION_UNSATISFIED",
+              "OPTIONAL_DEPENDENCY_OMITTED_BY_POLICY"
+            ]
+          }
+        }
+      }
+    },
+    "authorization_requirements": {
+      "type": "array",
+      "maxItems": 256,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "permission_id",
+          "required"
+        ],
+        "properties": {
+          "permission_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "required": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "model_requirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required",
+        "provider_constraints"
+      ],
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "provider_constraints": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        }
+      }
+    },
+    "errors": {
+      "type": "array",
+      "maxItems": 1000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code",
+          "dependency_type",
+          "dependency_id",
+          "parent_id"
+        ],
+        "properties": {
+          "code": {
+            "enum": [
+              "ROOT_CAPABILITY_NOT_VERIFIED",
+              "ROOT_VERSION_UNSATISFIED",
+              "DEPENDENCY_NOT_FOUND",
+              "DEPENDENCY_NOT_VERIFIED",
+              "DEPENDENCY_VERSION_UNSATISFIED",
+              "DEPENDENCY_VERSION_CONFLICT",
+              "DEPENDENCY_REGISTRY_AMBIGUOUS",
+              "DEPENDENCY_MANIFEST_MISMATCH",
+              "DEPENDENCY_CYCLE",
+              "UNSUPPORTED_VERSION_CONSTRAINT",
+              "RESOLUTION_LIMIT_EXCEEDED",
+              "MODEL_PROVIDER_CONSTRAINT_CONFLICT",
+              "ROOT_CAPABILITY_ID_MISMATCH",
+              "ROOT_CAPABILITY_ID_MISMATCH"
+            ]
+          },
+          "dependency_type": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 32
+          },
+          "dependency_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 256
+          },
+          "parent_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 256
+          }
+        }
+      }
+    },
+    "dependency_order": {
+      "type": "array",
+      "maxItems": 1000,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 256
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "blocked"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "dependency_order": {
+            "maxItems": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "enum": [
+              "resolved",
+              "degraded"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "errors": {
+            "maxItems": 0
+          }
+        }
+      }
+    }
+  ]
+}

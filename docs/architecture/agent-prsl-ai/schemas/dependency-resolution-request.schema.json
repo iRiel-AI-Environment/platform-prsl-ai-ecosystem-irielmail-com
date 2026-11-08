@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://prsl.ai.ecosystem/schemas/dependency-resolution-request.schema.json",
+  "title": "PRSL-AI Dependency Resolution Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "resolution_id",
+    "root_capability_id",
+    "registry_snapshot_ref"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "resolution_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "root_capability_id": {
+      "type": "string",
+      "pattern": "^prsl\\.(agent|integration)\\.[a-z0-9]+(?:-[a-z0-9]+)*(?:\\.[a-z0-9]+(?:-[a-z0-9]+)*)+$"
+    },
+    "root_version_constraint": {
+      "type": "string",
+      "pattern": "^(?:=|>=|<=|>|<)?(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+    },
+    "registry_snapshot_ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "optional_dependency_policy": {
+      "enum": [
+        "required_only",
+        "include_available_optional"
+      ]
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "max_depth": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 64
+        },
+        "max_nodes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        }
+      }
+    }
+  }
+}

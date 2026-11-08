@@ -4,7 +4,7 @@
 **Platform:** PRSL-AI Ecosystem  
 **Baseline:** 2026  
 **Status:** Active engineering register; evidence-based  
-**Related:** [Canonical Architecture Overview](./PRSL-AI-ECOSYSTEM-ARCHITECTURE-OVERVIEW.md)
+**Related:** [Canonical Architecture Overview](./PRSL-AI-ECOSYSTEM-ARCHITECTURE-OVERVIEW.md) · [Dependency Resolver Specification v1.0](./agent-prsl-ai/dependency-resolver-specification.md)
 
 ## 1. Purpose
 
@@ -38,7 +38,7 @@ A status applies only to the exact component and scope stated. A passing synthet
 | GAP-009 | Audit storage | Minimized audit port exists; durable production sink and integrity/retention controls are not established. | Tamper-resistant audit, pseudonymous subject references, access controls, retention/deletion, no-secret/no-payload tests. | Blocked |
 | GAP-010 | Trusted execution boundary | Runtime code must not be exposed to browser code as an authorization authority; production protected resource boundary is not established. | Server/host-side enforcement, no client bypass, direct-resource tests, authorization re-check immediately before access. | Blocked |
 | GAP-011 | Verified capability implementations | Seven example manifests remain specified; they are not production registered or dispatch-eligible. | Each capability has source implementation, owner, verified manifest, tests, security review, registry approval, and operational availability evidence. | Blocked |
-| GAP-012 | Dependency Resolver | Capability dependencies are declared, but a standalone trusted resolver/runtime is not established. | Version/range resolution, cycle detection, transitive dependency closure, conflict handling, provenance, deterministic resolution, fail-closed tests. | Not implemented / design gap |
+| GAP-012 | Dependency Resolver | Version 1.0 contract, request/result schemas, and deterministic synthetic validator are specified; production resolver and trusted Registry adapter are not implemented. | Authenticated resolver runtime using trusted snapshot references, registry provenance/digest verification, deterministic graph resolution, cycle/conflict/limit enforcement, integration and adversarial tests. | Contract specified and fixture-validated; runtime not implemented |
 | GAP-013 | Availability Resolver | Availability metadata is part of the capability contract, but a live health/readiness resolver is not established. | Distinguish declared availability from observed health; freshness/TTL, timeout, circuit-breaker, offline and stale-state tests. | Not implemented / design gap |
 | GAP-014 | Execution Policy contract | Policy evaluation is an adapter boundary; a complete separately versioned policy contract and runtime are not established. | Formal policy inputs/outputs, precedence, versioning, deny reasons, data-classification rules, mode restrictions, conformance vectors. | Not verified |
 | GAP-015 | Intelligence Router runtime | Candidate selection is architecturally defined; production routing and provider-health behavior are not verified here. | Provider-neutral routing contract, deterministic policy-constrained selection, no unauthorized remote fallback, timeout/failure tests, route trace minimization. | Not verified |
@@ -91,7 +91,7 @@ No protected operation may execute unless all applicable conditions are satisfie
 
 The following order minimizes duplicated authority and avoids building execution services on untrusted metadata:
 
-1. **Dependency Resolver contract and deterministic validator.** Define dependency identity, version constraints, transitive closure, cycle detection, conflicts, provenance, and failure semantics.
+1. **Dependency Resolver runtime and trusted Registry integration.** Implement the approved v1.0 contract against authenticated, immutable registry snapshots; preserve permission and model routing boundaries.
 2. **Availability Resolver contract.** Separate declared availability from observed readiness, with freshness, timeout, stale-state, and circuit-breaker semantics.
 3. **Execution Policy contract.** Formalize policy inputs, outputs, precedence, scope narrowing, data classification, execution modes, and deny reasons.
 4. **Capability Registry runtime.** Implement trusted records, digest/provenance verification, lifecycle transitions, review state, and revocation.
@@ -119,7 +119,7 @@ A documentation-only change may close a documentation gap, but it cannot close a
 
 ## 8. Release decision
 
-Protected execution is **not production-ready** while any applicable blocking item in GAP-001 through GAP-011 remains open. The current Permission Manager core and synthetic contract validators are useful foundations, but they do not remove these blockers.
+Protected execution is **not production-ready** while any applicable blocking item in GAP-001 through GAP-018 remains open. iRiel integration and accessibility conformance remain additional release-specific gates (GAP-019 and GAP-020). The current Permission Manager core and synthetic contract validators are useful foundations, but they do not remove these blockers.
 
 The gap register must be reviewed whenever a trust boundary, provider, capability, execution mode, data category, or persistent-storage behavior changes.
 

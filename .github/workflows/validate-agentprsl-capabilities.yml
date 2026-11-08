@@ -43,6 +43,8 @@ jobs:
         run: python docs/architecture/agent-prsl-ai/scripts/validate_permission_manager.py
       - name: Validate execution and authorization contract
         run: python docs/architecture/agent-prsl-ai/scripts/validate_execution_contract.py
+      - name: Validate Dependency Resolver contract
+        run: python docs/architecture/agent-prsl-ai/scripts/validate_dependency_resolver.py
 
   permission-manager-decision-gate:
     runs-on: ubuntu-latest

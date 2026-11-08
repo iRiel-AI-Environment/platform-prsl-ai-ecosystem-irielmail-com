@@ -16,7 +16,7 @@ This documentation defines Agent PRSL-AI as the specialized platform agent withi
 
 - **Agent PRSL-AI** is the first-party specialized agent identity for institutional and technical knowledge of the PRSL-AI Ecosystem and authorized platform tasks.
 - **Powerful by Robert Software Labs** is its institutional signature; it is not a model/provider name and does not imply unrestricted autonomy.
-- **iRiel AI** is the distinct Powerfully Intelligence Environment that coordinates the user's broader personal intelligence experience and may integrate with approved PRSL-AI capabilities.
+- **iRiel AI** is the distinct PowerFully Intelligence Environment that coordinates the user's broader personal intelligence experience and may integrate with approved PRSL-AI capabilities.
 - **Capability modules** group related specialist functions.
 - **Capabilities** are individually identified operations with explicit input/output contracts.
 - **Integration extensions** connect the agent and authorized consumers to external platforms and system surfaces.
@@ -40,7 +40,7 @@ An independent Agent repository is a future option only if deployment, distribut
 |---|---|
 | [Platform, Agent, and Repository Governance](../PLATFORM-AGENT-REPOSITORY-GOVERNANCE.md) | Canonical ownership, repository placement, module boundaries, dependency direction, release governance, and split criteria. |
 | [Agent PRSL-AI institutional and architectural specification](../PRSL-AI-AGENT.md) | Canonical agent identity, specialization, scope, responsibilities, and boundaries. |
-| [iRiel — Powerfully Intelligence Environment](../IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md) | Canonical definition of the environment that orchestrates personal intelligence. |
+| [iRiel — PowerFully Intelligence Environment](../IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md) | Canonical definition of the environment that orchestrates personal intelligence. |
 | [Capability Contract v1.0](./capability-contract.md) | Shared contract for identity, schemas, permissions, dependencies, availability, and execution policy. |
 | [Capability Catalog](./capability-catalog.md) | Initial module and interface inventory with candidate capability operations. |
 | [Reasoning and Action Execution Pattern](./reasoning-action-execution-pattern.md) | ReAct-informed plan/action/observation/verification cycle, with PRSL-AI policy and authorization gates. |
@@ -48,6 +48,10 @@ An independent Agent repository is a future option only if deployment, distribut
 | [Execution Envelope JSON Schema](./schemas/execution-envelope.schema.json) | State and trusted-reference contract for one bounded execution. |
 | [Execution Contract Test Vectors](./validation/execution-contract-cases.json) | Positive and negative registry, authorization, native-permission, and state-transition scenarios. |
 | [Capability Registry Specification](./registry-specification.md) | Registration, discovery, lifecycle, and dispatch governance. |
+| [Dependency Resolver Specification v1.0](./dependency-resolver-specification.md) | Trusted-snapshot dependency graph resolution, version constraints, cycle detection, and authority separation. |
+| [Dependency Resolution Request Schema](./schemas/dependency-resolution-request.schema.json) | Machine-readable request contract. |
+| [Dependency Resolution Result Schema](./schemas/dependency-resolution-result.schema.json) | Machine-readable resolution outcome, authorization requirements, model constraints, and dependency order. |
+| [Dependency Resolution Test Vectors](./validation/dependency-resolution-cases.json) | Synthetic positive and negative graph-resolution fixtures. |
 | [Permission Manager Specification](./permission-manager-specification.md) | Authorization authority, consent lifecycle, runtime gate, revocation, delegation, and fail-closed enforcement. |
 | [Permission Request Schema](./schemas/permission-request.schema.json) | Machine-readable input contract for one protected operation. |
 | [Permission Decision Schema](./schemas/permission-decision.schema.json) | Machine-readable, scope-bound authorization outcome. |
@@ -91,7 +95,7 @@ Do not use *Implemented* or *Verified* based only on documentation or a declared
 
 ## Validation
 
-GitHub Actions validates capability manifests, Permission Manager contracts, the cross-component execution contract, the TypeScript decision-binding gate, and the TypeScript runtime orchestration core. These are deterministic contract tests against synthetic fixtures. A passing workflow is not proof of a deployed runtime, provider connection, permission grant, or operational capability.
+GitHub Actions validates capability manifests, Permission Manager contracts, the cross-component execution contract, Dependency Resolver schemas and deterministic graph fixtures, the TypeScript decision-binding gate, and the TypeScript runtime orchestration core. These are deterministic contract tests against synthetic fixtures. A passing workflow is not proof of a deployed runtime, provider connection, permission grant, or operational capability.
 
 ## Scope note
 
