@@ -15,7 +15,13 @@ describe("Language Core", () => {
   });
   it("falls back pt-PT to pt-BR and other locales to en-US", () => {
     expect(messagesFor("pt-PT").nav.about).toBe("Sobre");
-    expect(messagesFor("ja-JP").nav.about).toBe("About");
+    expect(messagesFor("ja-JP").pages.about.sections).toEqual(messagesFor("en-US").pages.about.sections);
+  });
+  it("serves native interface text for every remaining locale", () => {
+    expect(messagesFor("ja-JP").nav.about).toBe("概要");
+    expect(messagesFor("fr-FR").nav.support).toBe("Assistance");
+    expect(messagesFor("zh-CN").nav.home).toBe("首页");
+    expect(messagesFor("ru-RU").pages.docs.title).toBe("Документация");
   });
   it("serves native interface text for es, ar and pt-PT", () => {
     expect(messagesFor("es-419").nav.about).toBe("Acerca de");
