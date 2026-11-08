@@ -1,4 +1,5 @@
 import type { Messages } from "../messages";
+import { fr, de, it, nl, ru, zhCN, zhTW, ja, ko, hi, enGB } from "./world";
 
 type DeepPartial<T> = T extends (infer U)[] ? U[] : T extends object ? { [K in keyof T]?: DeepPartial<T[K]> } : T;
 export type Override = DeepPartial<Messages>;
@@ -90,7 +91,8 @@ const ptPT: Override = {
   form: { email: "Correio eletrónico", thanks: "Obrigado. A sua mensagem foi registada nesta sessão. Para resposta imediata, abra o Agent PRSL-AI.", categories: ["Sugestão", "Acessibilidade", "Relato de erro", "Idioma / tradução", "Outro"] },
 };
 
-export const OVERRIDES: Partial<Record<string, Override>> = { "es-ES": es, "es-419": es, ar, "pt-PT": ptPT };
+export const OVERRIDES: Partial<Record<string, Override>> = { "es-ES": es, "es-419": es, ar, "pt-PT": ptPT,
+  "fr-FR": fr, "de-DE": de, "it-IT": it, "nl-NL": nl, "ru-RU": ru, "zh-CN": zhCN, "zh-TW": zhTW, "ja-JP": ja, "ko-KR": ko, "hi-IN": hi, "en-GB": enGB };
 
 export function deepMerge<T>(base: T, over: unknown): T {
   if (!over || typeof over !== "object" || Array.isArray(over)) return (over ?? base) as T;
