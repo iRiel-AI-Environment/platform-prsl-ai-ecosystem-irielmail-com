@@ -2,6 +2,12 @@
 
 This directory contains the canonical architecture definitions and technical specifications for the PRSL-AI Ecosystem and its associated intelligence components.
 
+## Ecosystem-level architecture
+
+- [Canonical PRSL-AI Ecosystem Architecture Overview](./PRSL-AI-ECOSYSTEM-ARCHITECTURE-OVERVIEW.md) — institutional hierarchy, component responsibilities, routing and authorization boundaries, provider model, security principles, and evidence-based implementation status.
+- [Implementation Readiness and Architecture Gap Register](./IMPLEMENTATION-READINESS-AND-GAP-REGISTER.md) — known production blockers, mandatory security invariants, threat scenarios, closure evidence, and the next engineering sequence.
+- [Architecture documentation link validator](./scripts/validate_architecture_links.py) — repository-local Markdown target validation, executed by GitHub Actions.
+
 ## Canonical identity definitions
 
 | Identity | Technical classification | Canonical reference |
@@ -37,6 +43,7 @@ This directory contains the canonical architecture definitions and technical spe
 
 - **Robert Software Labs** is the creator and institutional owner.
 - **PRSL-AI Ecosystem** defines the shared platform architecture, policy, and reusable capabilities.
+- **PRSL-AI Core** provides the foundational platform infrastructure; the complete infrastructure is not yet established as operational.
 - **iRiel** coordinates the PowerFully Intelligence Environment and the user's experience through explicit integration boundaries.
 - **Agent PRSL-AI** is a first-party platform component that performs specialized assistance within its declared scope.
 - **The model** provides inference and remains replaceable.
