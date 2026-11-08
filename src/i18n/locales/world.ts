@@ -18,7 +18,7 @@ interface Pack {
 function build(p: Pack): Override {
   const [home, about, ecosystem, developers, docs, support, contact] = p.nav;
   const f = p.foot;
-  const pages = Object.fromEntries(KEYS.map((k, i) => [k, { title: p.pages[i] }])) as Override["pages"];
+  const pages = Object.fromEntries(KEYS.map((k, i) => [k, { title: p.pages[i] }])) as NonNullable<Override["pages"]>;
   return {
     nav: { home, about, ecosystem, developers, docs, agent: "Agent PRSL-AI", support, contact },
     skip: p.skip,
