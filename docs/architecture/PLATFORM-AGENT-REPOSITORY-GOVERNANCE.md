@@ -27,7 +27,7 @@ A repository boundary is a source-control and delivery decision. It is not, by i
 | Creator and institutional owner | Robert Software Labs | Owns the institutional direction, product identities, and governing principles. |
 | Platform | PRSL-AI Ecosystem — `@prsl-ai.prsl.ai.ecosystem` | Owns shared architecture, policy, contracts, infrastructure, and platform services. |
 | First-party specialized agent | Agent PRSL-AI — `@prsl-ai.agent.prsl.ai` | Provides specialized platform intelligence and performs only authorized platform tasks. |
-| Personal intelligence environment | iRiel AI — `@iriel.prsl.ai.ecosystem` | Coordinates the person's Powerfully Intelligence Environment and may consume approved platform capabilities through explicit integration. |
+| PowerFully Intelligence Environment | iRiel AI — `@iriel.prsl.ai.ecosystem` | Coordinates the person's intelligence experience and may consume approved platform capabilities through explicit integration. |
 | Inference providers | Replaceable provider adapters | Supply inference; they do not own the Agent's identity, policies, or permissions. |
 
 Agent PRSL-AI is part of the platform, not the platform itself. iRiel is a distinct environment, not a child agent of Agent PRSL-AI. Neither identity replaces the other.

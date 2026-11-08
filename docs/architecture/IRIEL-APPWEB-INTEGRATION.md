@@ -8,6 +8,10 @@
 - **Associated platform agent:** `@prsl-ai.agent.prsl.ai`
 - **Status:** Canonical responsibility boundary; implementation evidence is tracked separately
 - **Language:** English (United States)
+- **PRSL-AI platform deployment:** https://platform-prsl-ai-ecosystem-irielmail-com.lovable.app/ecosystem
+- **iRiel AppWeb deployment:** https://iriel-prsl-ai-irielmail-com.lovable.app
+- **PRSL-AI platform repository:** https://github.com/iRiel-AI-Environment/platform-prsl-ai-ecosystem-irielmail-com
+- **iRiel AppWeb repository:** https://github.com/iRiel-AI-Environment/https-iriel-prsl-ai-irielmail-com.lovable.app
 
 ## 1. Purpose
 

@@ -3,18 +3,34 @@ name: Validate AgentPRSL-AI Capability Manifests
 on:
   pull_request:
     paths:
+      - "README.md"
+      - "AGENTS.md"
+      - ".env.example"
+      - ".gitignore"
       - "docs/architecture/**"
+      - "src/components/site/**"
+      - "src/i18n/**"
+      - "src/lib/ai/**"
       - "src/lib/permission-manager/**"
-      - "src/test/permission-manager/**"
+      - "src/routes/**"
+      - "src/test/**"
       - "package.json"
       - "bun.lock"
       - ".github/workflows/validate-agentprsl-capabilities.yml"
   push:
     branches: [main]
     paths:
+      - "README.md"
+      - "AGENTS.md"
+      - ".env.example"
+      - ".gitignore"
       - "docs/architecture/**"
+      - "src/components/site/**"
+      - "src/i18n/**"
+      - "src/lib/ai/**"
       - "src/lib/permission-manager/**"
-      - "src/test/permission-manager/**"
+      - "src/routes/**"
+      - "src/test/**"
       - "package.json"
       - "bun.lock"
       - ".github/workflows/validate-agentprsl-capabilities.yml"
@@ -46,7 +62,7 @@ jobs:
       - name: Validate Dependency Resolver contract
         run: python docs/architecture/agent-prsl-ai/scripts/validate_dependency_resolver.py
 
-  permission-manager-decision-gate:
+  application-quality-gates:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -59,5 +75,9 @@ jobs:
         run: bun run test
       - name: Type-check the application
         run: bunx tsc --noEmit
+      - name: Build the platform application
+        run: bun run build
+      - name: Lint local-only Agent and public API routes
+        run: bunx eslint src/components/site/AgentConsole.tsx src/routes/api/public/v1/inference.ts src/routes/api/public/v1/capabilities.ts
       - name: Lint the Permission Manager implementation
         run: bunx eslint src/lib/permission-manager/*.ts src/test/permission-manager/*.test.ts

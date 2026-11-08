@@ -36,4 +36,14 @@ describe("Language Core", () => {
   it("agent routes an iRiel question to the distinction answer", () => {
     expect(matchTopic("How is iRiel different?", messagesFor("en-US").agent.keywords)).toBe("iriel");
   });
+  it("provides a local-only response in all 17 locales", () => {
+    for (const locale of LOCALES) {
+      expect(messagesFor(locale.code).agent.localOnly.trim(), locale.code).not.toBe("");
+    }
+  });
+  it("clearly states that contact and feedback submission is unavailable in every locale", () => {
+    for (const locale of LOCALES) {
+      expect(messagesFor(locale.code).form.unavailable.trim(), locale.code).not.toBe("");
+    }
+  });
 });

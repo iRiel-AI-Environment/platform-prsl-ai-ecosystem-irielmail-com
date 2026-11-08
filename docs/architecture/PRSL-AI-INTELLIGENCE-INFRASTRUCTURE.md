@@ -193,7 +193,7 @@ The infrastructure is shared ecosystem capability, not an iRiel-only subsystem.
 
 Potential authorized consumers include:
 
-- **iRiel:** [Powerfully Intelligence Environment](./IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md) and personal intelligence orchestration.
+- **iRiel:** [PowerFully Intelligence Environment](./IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md) and personal intelligence orchestration.
 - **iApps:** Applications within the ecosystem.
 - **Agent PRSL-AI:** Institutional platform intelligence, within its defined scope.
 - **Approved external integrations:** Other systems explicitly authorized to consume published capabilities.
