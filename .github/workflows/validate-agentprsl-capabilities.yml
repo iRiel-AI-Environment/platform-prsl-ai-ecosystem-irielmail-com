@@ -70,6 +70,21 @@ jobs:
           done
           cat /tmp/prsl-nitro.log
           exit 1
+      - name: Build portable OCI image
+        run: docker build --tag prsl-ai-ecosystem-platform:ci .
+      - name: Smoke-test portable OCI image
+        run: |
+          set -euo pipefail
+          docker run --detach --name prsl-platform-smoke --publish 127.0.0.1:4180:3000 prsl-ai-ecosystem-platform:ci
+          trap 'docker rm --force prsl-platform-smoke >/dev/null 2>&1 || true' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:4180/api/public/v1/health; then
+              exit 0
+            fi
+            sleep 1
+          done
+          docker logs prsl-platform-smoke
+          exit 1
       - name: Lint local-only Agent and public API routes
         run: bunx eslint src/components/site/AgentConsole.tsx src/routes/api/public/v1/inference.ts src/routes/api/public/v1/capabilities.ts
       - name: Lint the Permission Manager implementation
