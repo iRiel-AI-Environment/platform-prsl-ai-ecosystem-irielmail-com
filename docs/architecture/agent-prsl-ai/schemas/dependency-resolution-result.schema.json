@@ -191,6 +191,8 @@
         "properties": {
           "code": {
             "enum": [
+              "REGISTRY_UNAVAILABLE",
+              "INVALID_REQUEST",
               "ROOT_CAPABILITY_NOT_VERIFIED",
               "ROOT_VERSION_UNSATISFIED",
               "DEPENDENCY_NOT_FOUND",

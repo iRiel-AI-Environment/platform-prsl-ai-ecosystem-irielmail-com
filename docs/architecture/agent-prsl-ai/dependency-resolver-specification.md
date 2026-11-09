@@ -141,6 +141,8 @@ A blocked result is never dispatch-eligible. A resolved or degraded result is on
 
 | Code | Meaning |
 |---|---|
+| INVALID_REQUEST | Request does not conform to the strict v1.0 request contract. |
+| REGISTRY_UNAVAILABLE | The trusted registry adapter could not return a snapshot record. Resolution is blocked, including optional dependencies. |
 | ROOT_CAPABILITY_NOT_VERIFIED | Root record is not verified and trusted. |
 | ROOT_CAPABILITY_ID_MISMATCH | Root registry record does not match the requested Capability ID. |
 | ROOT_VERSION_UNSATISFIED | Root version does not satisfy the request. |

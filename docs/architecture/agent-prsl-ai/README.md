@@ -49,6 +49,7 @@ An independent Agent repository is a future option only if deployment, distribut
 | [Execution Contract Test Vectors](./validation/execution-contract-cases.json) | Positive and negative registry, authorization, native-permission, and state-transition scenarios. |
 | [Capability Registry Specification](./registry-specification.md) | Registration, discovery, lifecycle, and dispatch governance. |
 | [Dependency Resolver Specification v1.0](./dependency-resolver-specification.md) | Trusted-snapshot dependency graph resolution, version constraints, cycle detection, and authority separation. |
+| [Dependency Resolver Runtime Core](../../../src/lib/dependency-resolver/README.md) | Framework-neutral graph resolution against a trusted registry adapter; no execution or authorization. |
 | [Dependency Resolution Request Schema](./schemas/dependency-resolution-request.schema.json) | Machine-readable request contract. |
 | [Dependency Resolution Result Schema](./schemas/dependency-resolution-result.schema.json) | Machine-readable resolution outcome, authorization requirements, model constraints, and dependency order. |
 | [Dependency Resolution Test Vectors](./validation/dependency-resolution-cases.json) | Synthetic positive and negative graph-resolution fixtures. |

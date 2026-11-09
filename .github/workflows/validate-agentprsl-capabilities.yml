@@ -89,6 +89,8 @@ jobs:
         run: bunx eslint src/components/site/AgentConsole.tsx src/routes/api/public/v1/inference.ts src/routes/api/public/v1/capabilities.ts
       - name: Lint the Permission Manager implementation
         run: bunx eslint src/lib/permission-manager/*.ts src/test/permission-manager/*.test.ts
+      - name: Lint the Dependency Resolver implementation
+        run: bunx eslint src/lib/dependency-resolver/*.ts
       - name: Upload verified Nitro build artifact
         uses: actions/upload-artifact@v4
         with:
