@@ -6,28 +6,40 @@ export function SiteFooter() {
   const { t } = useI18n();
   const f = t.footer;
   const cols = [
-    { h: f.platform, links: [
-      { label: f.about, to: "/about" as const },
-      { label: f.ecosystem, to: "/ecosystem" as const },
-      { label: f.iriel, to: "/iriel" as const },
-      { label: f.iapps, to: "/iapps" as const },
-    ] },
-    { h: f.developers, links: [
-      { label: f.documentation, to: "/docs" as const },
-      { label: f.architecture, to: "/developers" as const, hash: "architecture" },
-      { label: f.integrations, to: "/developers" as const, hash: "integrations" },
-      { label: f.devResources, to: "/developers" as const, hash: "resources" },
-    ] },
-    { h: f.resources, links: [
-      { label: f.feedback, to: "/feedback" as const },
-      { label: f.support, to: "/support" as const },
-      { label: f.contact, to: "/contact" as const },
-    ] },
-    { h: f.legal, links: [
-      { label: f.privacy, to: "/privacy" as const },
-      { label: f.security, to: "/security" as const },
-      { label: f.terms, to: "/terms" as const },
-    ] },
+    {
+      h: f.platform,
+      links: [
+        { label: f.about, to: "/about" as const },
+        { label: f.ecosystem, to: "/ecosystem" as const },
+        { label: f.iriel, to: "/iriel" as const },
+        { label: f.iapps, to: "/iapps" as const },
+      ],
+    },
+    {
+      h: f.developers,
+      links: [
+        { label: f.documentation, to: "/docs" as const },
+        { label: f.architecture, to: "/developers" as const, hash: "architecture" },
+        { label: f.integrations, to: "/developers" as const, hash: "integrations" },
+        { label: f.devResources, to: "/developers" as const, hash: "resources" },
+      ],
+    },
+    {
+      h: f.resources,
+      links: [
+        { label: f.feedback, to: "/feedback" as const },
+        { label: f.support, to: "/support" as const },
+        { label: f.contact, to: "/contact" as const },
+      ],
+    },
+    {
+      h: f.legal,
+      links: [
+        { label: f.privacy, to: "/privacy" as const },
+        { label: f.security, to: "/security" as const },
+        { label: f.terms, to: "/terms" as const },
+      ],
+    },
   ];
   return (
     <footer className="mt-24 border-t border-border bg-panel">
@@ -42,11 +54,17 @@ export function SiteFooter() {
         </div>
         {cols.map((c) => (
           <nav key={c.h} aria-label={c.h}>
-            <h2 className="font-display text-sm font-semibold uppercase tracking-widest text-foreground">{c.h}</h2>
+            <h2 className="font-display text-sm font-semibold uppercase tracking-widest text-foreground">
+              {c.h}
+            </h2>
             <ul className="mt-4 space-y-2">
               {c.links.map((l) => (
                 <li key={l.label}>
-                  <Link to={l.to} {..."hash" in l && l.hash ? { hash: l.hash } : {}} className="text-sm text-muted-foreground hover:text-primary">
+                  <Link
+                    to={l.to}
+                    {...("hash" in l && l.hash ? { hash: l.hash } : {})}
+                    className="text-sm text-muted-foreground hover:text-primary"
+                  >
                     {l.label}
                   </Link>
                 </li>

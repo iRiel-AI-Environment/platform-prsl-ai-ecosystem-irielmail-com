@@ -7,7 +7,10 @@ export const Route = createFileRoute("/support")({
       { title: "Support & Help Center — PRSL-AI" },
       { name: "description", content: "Getting started, FAQ and help for the PRSL-AI Ecosystem." },
       { property: "og:title", content: "Support & Help Center — PRSL-AI" },
-      { property: "og:description", content: "Getting started, FAQ and help for the PRSL-AI Ecosystem." },
+      {
+        property: "og:description",
+        content: "Getting started, FAQ and help for the PRSL-AI Ecosystem.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

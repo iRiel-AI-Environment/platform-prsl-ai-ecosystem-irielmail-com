@@ -5,9 +5,25 @@ import { matchTopic } from "@/lib/agent";
 
 describe("Language Core", () => {
   it("registers exactly the 17 target locales", () => {
-    expect(LOCALES.map((l) => l.code).sort()).toEqual(
-      ["ar", "de-DE", "en-GB", "en-US", "es-419", "es-ES", "fr-FR", "hi-IN", "it-IT", "ja-JP", "ko-KR", "nl-NL", "pt-BR", "pt-PT", "ru-RU", "zh-CN", "zh-TW"],
-    );
+    expect(LOCALES.map((l) => l.code).sort()).toEqual([
+      "ar",
+      "de-DE",
+      "en-GB",
+      "en-US",
+      "es-419",
+      "es-ES",
+      "fr-FR",
+      "hi-IN",
+      "it-IT",
+      "ja-JP",
+      "ko-KR",
+      "nl-NL",
+      "pt-BR",
+      "pt-PT",
+      "ru-RU",
+      "zh-CN",
+      "zh-TW",
+    ]);
   });
   it("marks only Arabic as right-to-left", () => {
     expect(LOCALES.filter((l) => l.dir === "rtl").map((l) => l.code)).toEqual(["ar"]);
@@ -15,7 +31,9 @@ describe("Language Core", () => {
   });
   it("falls back pt-PT to pt-BR and other locales to en-US", () => {
     expect(messagesFor("pt-PT").nav.about).toBe("Sobre");
-    expect(messagesFor("ja-JP").pages.about.sections).toEqual(messagesFor("en-US").pages.about.sections);
+    expect(messagesFor("ja-JP").pages.about.sections).toEqual(
+      messagesFor("en-US").pages.about.sections,
+    );
   });
   it("serves native interface text for every remaining locale", () => {
     expect(messagesFor("ja-JP").nav.about).toBe("概要");
@@ -34,7 +52,9 @@ describe("Language Core", () => {
     expect(matchLocale("es-MX")).toBe("es-419");
   });
   it("agent routes an iRiel question to the distinction answer", () => {
-    expect(matchTopic("How is iRiel different?", messagesFor("en-US").agent.keywords)).toBe("iriel");
+    expect(matchTopic("How is iRiel different?", messagesFor("en-US").agent.keywords)).toBe(
+      "iriel",
+    );
   });
   it("provides a local-only response in all 17 locales", () => {
     for (const locale of LOCALES) {

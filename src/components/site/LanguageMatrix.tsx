@@ -9,7 +9,12 @@ export function LanguageMatrix() {
       <h2 className="text-xl font-semibold text-foreground">Language Core · {LOCALES.length}</h2>
       <ul className="mt-4 grid gap-2 sm:grid-cols-2">
         {LOCALES.map((l) => (
-          <li key={l.code} lang={l.code} dir={l.dir} className="flex items-center justify-between gap-3 rounded-md border border-border px-3 py-2">
+          <li
+            key={l.code}
+            lang={l.code}
+            dir={l.dir}
+            className="flex items-center justify-between gap-3 rounded-md border border-border px-3 py-2"
+          >
             <span>
               <span className="font-medium text-foreground">{l.nativeName}</span>
               <span className="ms-2 text-sm text-muted-foreground">{l.region}</span>

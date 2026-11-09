@@ -12,7 +12,9 @@ describe("SubmissionStatus", () => {
       </I18nProvider>,
     );
 
-    expect(screen.getByText(/This form is not connected to a submission service/)).toBeInTheDocument();
+    expect(
+      screen.getByText(/This form is not connected to a submission service/),
+    ).toBeInTheDocument();
     expect(screen.queryByRole("form")).not.toBeInTheDocument();
     expect(screen.queryByRole("textbox")).not.toBeInTheDocument();
   });

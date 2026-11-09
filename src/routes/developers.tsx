@@ -5,9 +5,17 @@ export const Route = createFileRoute("/developers")({
   head: () => ({
     meta: [
       { title: "Developers — PRSL-AI" },
-      { name: "description", content: "Architecture specifications, SDK concepts and provider-agnostic integration guidelines." },
+      {
+        name: "description",
+        content:
+          "Architecture specifications, SDK concepts and provider-agnostic integration guidelines.",
+      },
       { property: "og:title", content: "Developers — PRSL-AI" },
-      { property: "og:description", content: "Architecture specifications, SDK concepts and provider-agnostic integration guidelines." },
+      {
+        property: "og:description",
+        content:
+          "Architecture specifications, SDK concepts and provider-agnostic integration guidelines.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
