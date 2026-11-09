@@ -10,11 +10,18 @@ export function LanguageSelector() {
 
   useEffect(() => {
     if (!open) return;
-    const onDoc = (e: MouseEvent) => { if (!ref.current?.contains(e.target as Node)) setOpen(false); };
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setOpen(false); };
+    const onDoc = (e: MouseEvent) => {
+      if (!ref.current?.contains(e.target as Node)) setOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
     document.addEventListener("mousedown", onDoc);
     document.addEventListener("keydown", onKey);
-    return () => { document.removeEventListener("mousedown", onDoc); document.removeEventListener("keydown", onKey); };
+    return () => {
+      document.removeEventListener("mousedown", onDoc);
+      document.removeEventListener("keydown", onKey);
+    };
   }, [open]);
 
   return (
@@ -44,16 +51,30 @@ export function LanguageSelector() {
                   type="button"
                   lang={l.code}
                   dir={l.dir}
-                  onClick={() => { setLocale(l.code); setOpen(false); }}
+                  onClick={() => {
+                    setLocale(l.code);
+                    setOpen(false);
+                  }}
                   className="flex w-full items-start gap-3 rounded-md px-3 py-2 text-start hover:bg-secondary aria-selected:bg-secondary"
                 >
-                  <span className="mt-0.5 w-4">{selected && <Check className="h-4 w-4 text-primary" aria-hidden />}</span>
+                  <span className="mt-0.5 w-4">
+                    {selected && <Check className="h-4 w-4 text-primary" aria-hidden />}
+                  </span>
                   <span className="flex-1">
-                    <span className="block font-medium">{l.nativeName} <span className="text-muted-foreground">· {l.region}</span></span>
-                    <span className="mt-0.5 flex flex-wrap gap-1.5 font-mono text-xs text-muted-foreground" dir="ltr">
+                    <span className="block font-medium">
+                      {l.nativeName} <span className="text-muted-foreground">· {l.region}</span>
+                    </span>
+                    <span
+                      className="mt-0.5 flex flex-wrap gap-1.5 font-mono text-xs text-muted-foreground"
+                      dir="ltr"
+                    >
                       <span>{l.code}</span>
-                      <span>{t.language.script}: {l.script}</span>
-                      <span className={l.dir === "rtl" ? "text-telemetry" : ""}>{l.dir.toUpperCase()}</span>
+                      <span>
+                        {t.language.script}: {l.script}
+                      </span>
+                      <span className={l.dir === "rtl" ? "text-telemetry" : ""}>
+                        {l.dir.toUpperCase()}
+                      </span>
                       {l.complete && <span className="text-primary">✓ {t.language.complete}</span>}
                     </span>
                   </span>

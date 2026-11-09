@@ -26,4 +26,3 @@ export const brand = {
   agentOrb: agentOrb.url,
   agentPedestal: agentPedestal.url,
 };
-

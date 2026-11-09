@@ -23,14 +23,18 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
-      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:start-2 focus:top-2 focus:rounded focus:bg-primary focus:px-3 focus:py-2 focus:text-primary-foreground">
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:absolute focus:start-2 focus:top-2 focus:rounded focus:bg-primary focus:px-3 focus:py-2 focus:text-primary-foreground"
+      >
         {t.skip}
       </a>
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-4 px-4">
         <Link to="/" className="flex items-center gap-2" aria-label="PRSL-AI Ecosystem">
           <img src={brand.shield} alt="" className="h-9 w-auto" />
           <span className="font-display text-lg font-bold">
-            <span className="text-metal">PRSL-AI</span> <span className="text-muted-foreground font-medium text-sm">Ecosystem</span>
+            <span className="text-metal">PRSL-AI</span>{" "}
+            <span className="text-muted-foreground font-medium text-sm">Ecosystem</span>
           </span>
         </Link>
         <nav aria-label="Main" className="ms-auto hidden lg:block">
@@ -57,7 +61,11 @@ export function SiteHeader() {
             aria-expanded={open}
             onClick={() => setOpen((o) => !o)}
           >
-            {open ? <X className="h-5 w-5" aria-hidden /> : <Menu className="h-5 w-5" aria-hidden />}
+            {open ? (
+              <X className="h-5 w-5" aria-hidden />
+            ) : (
+              <Menu className="h-5 w-5" aria-hidden />
+            )}
           </button>
         </div>
       </div>
@@ -66,7 +74,12 @@ export function SiteHeader() {
           <ul className="mx-auto grid max-w-7xl gap-1 p-3">
             {NAV.map((n) => (
               <li key={n.to}>
-                <Link to={n.to} onClick={() => setOpen(false)} activeOptions={{ exact: n.to === "/" }} className="block rounded-md px-3 py-3 data-[status=active]:text-primary">
+                <Link
+                  to={n.to}
+                  onClick={() => setOpen(false)}
+                  activeOptions={{ exact: n.to === "/" }}
+                  className="block rounded-md px-3 py-3 data-[status=active]:text-primary"
+                >
                   {t.nav[n.key]}
                 </Link>
               </li>
@@ -75,8 +88,12 @@ export function SiteHeader() {
         </nav>
       )}
       {!locale.complete && (
-        <p role="status" className="border-t border-border bg-panel px-4 py-1.5 text-center text-xs text-muted-foreground">
-          {locale.nativeName} ({locale.code}) — {t.language.fallback} {shown.nativeName} ({shown.code}).
+        <p
+          role="status"
+          className="border-t border-border bg-panel px-4 py-1.5 text-center text-xs text-muted-foreground"
+        >
+          {locale.nativeName} ({locale.code}) — {t.language.fallback} {shown.nativeName} (
+          {shown.code}).
         </p>
       )}
     </header>

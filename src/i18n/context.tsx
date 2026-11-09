@@ -1,5 +1,11 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
-import { DEFAULT_LOCALE, getLocale, matchLocale, type LocaleCode, type LocaleInfo } from "./locales";
+import {
+  DEFAULT_LOCALE,
+  getLocale,
+  matchLocale,
+  type LocaleCode,
+  type LocaleInfo,
+} from "./locales";
 import { messagesFor, type Messages } from "./messages";
 
 interface Ctx {

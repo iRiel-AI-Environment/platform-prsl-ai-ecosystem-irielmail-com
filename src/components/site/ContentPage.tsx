@@ -6,17 +6,35 @@ function linkify(text: string): ReactNode {
   return text;
 }
 
-export function PageHero({ eyebrow, title, intro }: { eyebrow: string; title: string; intro: string }) {
+export function PageHero({
+  eyebrow,
+  title,
+  intro,
+}: {
+  eyebrow: string;
+  title: string;
+  intro: string;
+}) {
   return (
     <div className="mx-auto max-w-4xl px-4 pt-16 pb-10">
       <p className="font-mono text-xs uppercase tracking-[0.25em] text-telemetry">{eyebrow}</p>
-      <h1 className="mt-3 text-4xl font-bold md:text-5xl"><span className="text-metal">{title}</span></h1>
+      <h1 className="mt-3 text-4xl font-bold md:text-5xl">
+        <span className="text-metal">{title}</span>
+      </h1>
       <p className="mt-4 text-lg text-muted-foreground">{intro}</p>
     </div>
   );
 }
 
-export function ContentPage({ page, aside, children }: { page: PageKey; aside?: ReactNode; children?: ReactNode }) {
+export function ContentPage({
+  page,
+  aside,
+  children,
+}: {
+  page: PageKey;
+  aside?: ReactNode;
+  children?: ReactNode;
+}) {
   const { t } = useI18n();
   const p = t.pages[page];
   return (
@@ -27,12 +45,19 @@ export function ContentPage({ page, aside, children }: { page: PageKey; aside?: 
         {p.sections.map((s) => (
           <section key={s.h} id={s.id} className="panel scroll-mt-24 p-6 md:p-8">
             <h2 className="text-xl font-semibold text-foreground">{s.h}</h2>
-            {s.body?.map((b) => <p key={b} className="mt-3 leading-relaxed text-muted-foreground">{linkify(b)}</p>)}
+            {s.body?.map((b) => (
+              <p key={b} className="mt-3 leading-relaxed text-muted-foreground">
+                {linkify(b)}
+              </p>
+            ))}
             {s.items && (
               <ul className="mt-4 space-y-2">
                 {s.items.map((i) => (
                   <li key={i} className="flex gap-3 text-muted-foreground">
-                    <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary glow-emerald" />
+                    <span
+                      aria-hidden
+                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary glow-emerald"
+                    />
                     <span>{linkify(i)}</span>
                   </li>
                 ))}
