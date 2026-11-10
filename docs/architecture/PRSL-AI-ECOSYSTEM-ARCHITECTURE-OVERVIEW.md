@@ -178,7 +178,7 @@ Accessibility is structural across interfaces, APIs, capabilities, workflows, do
 | Execution contract | JSON Schema, cross-component validator, and synthetic test vectors | Contract validation exists; does not establish a production execution runtime. |
 | Intelligence Router | Defined responsibility and architecture boundary | Runtime implementation and provider selection are not verified by this repository evidence. |
 | Apple Integration | Canonical Extension v5 specification | Canonical specification; individual native integrations remain subject to implementation evidence. |
-| iRiel AppWeb integration | Canonical platform integration contract; RFC-007 referenced as next-build specification | Contract documented; do not infer that the next-build integration is already implemented. |
+| iRiel AppWeb integration | Canonical platform integration contract; third-party account connectors and OAuth are excluded from the current baseline; AppWeb source repository is unverified | Contract documented; AppWeb runtime integration is not verified. |
 | iSpace and iApps | Canonical product/architecture definitions | Identity and boundaries defined; individual runtime capabilities require separate evidence. |
 | Production protected execution | Required trust and adapter boundaries documented | Not production-ready; remain disabled or fail-closed until all gates are implemented and independently verified. |
 

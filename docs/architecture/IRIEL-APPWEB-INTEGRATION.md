@@ -15,9 +15,9 @@
 
 ## 1. Purpose
 
-This document establishes the integration boundary between the iRiel AppWeb repository and the PRSL-AI platform repository. It prevents duplicated authority, incompatible contracts, and accidental promotion of proposed capabilities to implemented status.
+This document establishes the integration boundary between the iRiel AppWeb application and the PRSL-AI platform. It does not assert that the AppWeb source repository has been identified or that the application is synchronized with either GitHub repository currently accessible for this audit. It prevents duplicated authority, incompatible contracts, and accidental promotion of proposed capabilities to implemented status.
 
-The iRiel AppWeb is the client/application integration workspace. The separately accessible iRiel product/architecture repository contains canonical iRiel documentation and a standalone Orchestrator Core package, but not the AppWeb source tree. The PRSL-AI repository is the source of truth for shared ecosystem architecture, platform governance, capability contracts, platform policy, authorization authority, and reusable platform services. The exact AppWeb source repository must be verified independently before any code-level integration or synchronization claim.
+The iRiel AppWeb is the client/application integration workspace. Its exact source repository is not verified by the repositories currently accessible for this audit. The separate iRiel product/architecture repository contains canonical iRiel documentation and a standalone Orchestrator Core package, but not the AppWeb source tree. The PRSL-AI repository is the source of truth for shared ecosystem architecture, platform governance, capability contracts, platform policy, authorization authority, and reusable platform services. No code-level integration or synchronization claim may be made until the actual AppWeb source repository is identified and verified.
 
 ## 2. Canonical identity
 
@@ -151,17 +151,17 @@ Every status report must distinguish:
 - **Deployed:** a deployment record proves the target environment contains the implementation.
 - **Verified:** evidence supports the exact operational claim being made.
 
-## 10. Change ownership and release rules
+## 11. Change ownership and release rules
 
 - Shared platform contracts, schemas, permission identifiers, registry rules, platform policies, and reusable runtime services are changed in the PRSL-AI platform repository.
-- AppWeb routes, interaction design, client state, provider connection UX, and client-specific adapters are changed in the iRiel AppWeb repository.
+- AppWeb routes, interaction design, client state, and client-specific adapters may be changed only in the verified canonical AppWeb source repository. That repository is currently unverified; the iRiel documentation/Orchestrator Core repository must not be used as a substitute.
 - Cross-repository changes must update both sides in reviewable pull requests and keep versioned contracts aligned.
 - Neither repository may silently rewrite or replace the other's owned implementation.
 - Do not copy secrets, `.env` files, local machine state, provider tokens, or generated credentials between repositories.
 - Do not change production DNS, nameservers, mail records, Cloudflare settings, or deploy infrastructure as part of documentation integration.
 - Lovable-connected published history must be preserved; use branches and pull requests rather than force-push or history rewriting.
 
-## 11. Source of truth
+## 12. Source of truth
 
 | Artifact | Source of truth |
 |---|---|
@@ -172,7 +172,7 @@ Every status report must distinguish:
 | Agent PRSL-AI identity and specialist implementation | PRSL-AI platform repository |
 | Platform policies, shared schemas, execution contracts and infrastructure | PRSL-AI platform repository |
 
-## 12. Acceptance criteria for future integration changes
+## 13. Acceptance criteria for future integration changes
 
 A cross-repository integration change is ready to merge only when:
 

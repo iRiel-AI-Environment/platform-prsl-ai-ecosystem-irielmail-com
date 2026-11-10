@@ -16,7 +16,6 @@ This directory contains the canonical architecture definitions and technical spe
 | **Agent PRSL-AI** | First-party specialized agent of the PRSL-AI platform; **Powerful by Robert Software Labs** | [Agent PRSL-AI specification](./PRSL-AI-AGENT.md) |
 | **PRSL-AI Intelligence Infrastructure** | Shared platform foundation for governed capabilities, contracts, integrations, and execution infrastructure | [Infrastructure architecture](./PRSL-AI-INTELLIGENCE-INFRASTRUCTURE.md) |
 
-- [iRiel AppWeb — PRSL-AI Platform Integration Contract](./IRIEL-APPWEB-INTEGRATION.md) — canonical responsibility boundary, request flow, provider-connection separation, capability-contract alignment, and cross-repository change control.
 **iRiel-owned architecture and integration contracts:** canonical identity, personal context, continuity, system integration, entity, intent, automation, action, Apple/Siri, operational-state, and Intelligence Server contracts are maintained in the [iRiel AI repository](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/tree/main/docs/architecture). The platform consumes these contracts through explicit interfaces; it does not own iRiel identity or personal context.
 
 - [iRiel AppWeb — PRSL-AI Platform Integration Contract](./IRIEL-APPWEB-INTEGRATION.md) — **platform-owned cross-repository contract** defining the responsibility split, request flow, shared capability alignment, and change control.
