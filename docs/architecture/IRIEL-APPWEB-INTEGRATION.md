@@ -11,7 +11,7 @@
 - **PRSL-AI platform deployment:** https://platform-prsl-ai-ecosystem-irielmail-com.lovable.app/ecosystem
 - **iRiel AppWeb deployment:** https://iriel-prsl-ai-irielmail-com.lovable.app
 - **PRSL-AI platform repository:** https://github.com/iRiel-AI-Environment/platform-prsl-ai-ecosystem-irielmail-com
-- **iRiel AppWeb repository:** https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app (iRiel product/architecture repository; not verified as the AppWeb source repository)
+- **iRiel product/architecture repository (not AppWeb source):** https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app
 
 ## 1. Purpose
 
