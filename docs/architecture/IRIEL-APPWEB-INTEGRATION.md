@@ -115,7 +115,34 @@ The platform's canonical Capability Contract v1.0 is authoritative for shared ca
 
 iRiel may define application-specific presentation and request mapping, but MUST NOT fork the platform manifest schema or redefine permission identifiers independently. Schema evolution is governed in the platform repository and must be versioned with compatibility and migration guidance.
 
-## 7. Implementation status and verification
+## 7. Agent PRSL-AI specialist integration
+
+Agent PRSL-AI (`@prsl-ai.agent.prsl.ai`) is a first-party specialist of the PRSL-AI platform. iRiel may invoke it for PRSL-AI institutional knowledge, platform navigation, configuration guidance, diagnosis, and authorized platform-support tasks.
+
+The Agent is not iRiel, not a general iRiel orchestrator, and not an operating-system adapter. Invocation must use a declared Agent capability under the canonical [Capability Contract v1.0](./agent-prsl-ai/capability-contract.md).
+
+Mandatory boundaries:
+
+- iRiel retains authority over its identity, personal context, continuity, and consent-governed memory.
+- Agent PRSL-AI receives only the minimum task-specific context required for the invocation.
+- Invocation does not grant access to the complete iRiel profile, conversation history, iSpace, or persistent memory.
+- The Agent cannot authorize itself, bypass PRSL-AI policy, bypass the Permission Manager, or override native operating-system permissions.
+- Agent output is a specialist result; iRiel remains responsible for orchestration, validation, and accessible presentation.
+- The Agent's current implementation status must be reported from code and verification evidence, not inferred from this contract.
+
+The [iRiel System Integration Contract](./IRIEL-SYSTEM-INTEGRATION-CONTRACT.md) defines the complete relationship between iRiel, PRSL-AI, Agent PRSL-AI, and operating-system integration surfaces.
+
+## 8. Intelligence Server integration boundary
+
+Any future AppWeb connection to the iRiel Intelligence Server must use its versioned API or MCP interface contract, preserve client authentication and scoped authorization, and pass requests through iRiel orchestration, PRSL-AI policy, the canonical Intelligence Router, and trusted execution enforcement. The AppWeb client must not call providers or protected tools around those boundaries. See the [iRiel Intelligence Server Contract](./IRIEL-INTELLIGENCE-SERVER-CONTRACT.md).
+
+The Server contract is a specification, not evidence of an implemented endpoint or deployed service.
+
+## 9. Intent, context, and automation contracts
+
+The [iRiel Intents Contract](./IRIEL-INTENTS-SHORTCUTS-CONTRACT.md) defines the user's or iRiel's desired outcome before an action is selected. The [iRiel Context Contract](./IRIEL-CONTEXT-SHORTCUTS-CONTRACT.md) defines the minimum, fresh, operation-scoped context projection that may be disclosed to an adapter. The [iRiel Automations Contract](./IRIEL-AUTOMATIONS-SHORTCUTS-CONTRACT.md) defines how authorized triggers and repeatable action sequences are validated, executed, and reported. These contracts do not transfer intent, context, identity, or authorization authority to the AppWeb client or Apple Shortcuts.
+
+## 10. Implementation status and verification
 
 The platform repository contains capability and Permission Manager specifications plus implementation slices and automated validation. The presence of a specification, validator, test fixture, or in-memory adapter contract does not prove a production authorization service, trusted persistent decision store, native permission adapter, deployed API, or live capability runtime.
 
@@ -131,7 +158,7 @@ Every status report must distinguish:
 - **Deployed:** a deployment record proves the target environment contains the implementation.
 - **Verified:** evidence supports the exact operational claim being made.
 
-## 8. Change ownership and release rules
+## 10. Change ownership and release rules
 
 - Shared platform contracts, schemas, permission identifiers, registry rules, platform policies, and reusable runtime services are changed in the PRSL-AI platform repository.
 - AppWeb routes, interaction design, client state, provider connection UX, and client-specific adapters are changed in the iRiel AppWeb repository.
@@ -141,7 +168,7 @@ Every status report must distinguish:
 - Do not change production DNS, nameservers, mail records, Cloudflare settings, or deploy infrastructure as part of documentation integration.
 - Lovable-connected published history must be preserved; use branches and pull requests rather than force-push or history rewriting.
 
-## 9. Source of truth
+## 11. Source of truth
 
 | Artifact | Source of truth |
 |---|---|
@@ -152,7 +179,7 @@ Every status report must distinguish:
 | Agent PRSL-AI identity and specialist implementation | PRSL-AI platform repository |
 | Platform policies, shared schemas, execution contracts and infrastructure | PRSL-AI platform repository |
 
-## 10. Acceptance criteria for future integration changes
+## 12. Acceptance criteria for future integration changes
 
 A cross-repository integration change is ready to merge only when:
 

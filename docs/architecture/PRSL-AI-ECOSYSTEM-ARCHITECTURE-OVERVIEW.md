@@ -35,7 +35,9 @@ See Platform, Agent, and Repository Governance; Agent PRSL-AI; and iRiel canonic
 
 ## 3. Governing architectural principle
 
-> The model thinks. The agent executes a specialty. The Router decides. iRiel orchestrates.
+The model thinks. The agent executes a specialty. The Router selects eligible execution candidates. iRiel orchestrates.
+
+See the [PRSL-AI Intelligence Router Contract](./PRSL-AI-INTELLIGENCE-ROUTER-CONTRACT.md) for mandatory eligibility gates, policy boundaries, scoring, local-first routing, fallback, and result semantics.
 
 “Decides” means selecting eligible routing candidates within the constraints supplied by policy. It does not mean granting permissions. Authorization is a separate responsibility.
 
@@ -82,6 +84,8 @@ Agent PRSL-AI is the specialized institutional agent for explaining, diagnosing,
 
 The current platform console is documented as a browser-local knowledge base using keyword matching. The capability manifests are specified examples, not evidence of operational specialist runtimes.
 
+Agent PRSL-AI may be invoked by iRiel through a declared specialist capability when a task concerns PRSL-AI platform knowledge or authorized platform support. It is not an operating-system adapter, does not own iRiel identity, and receives no default access to iRiel personal context or memory. The [iRiel System Integration Contract](./IRIEL-SYSTEM-INTEGRATION-CONTRACT.md) defines this boundary.
+
 ### 5.4 iRiel AI
 
 iRiel AI is a **PowerFully Intelligence Environment**. It is the human-centered environment and orchestration layer for personal intelligence. It coordinates intent, authorized context, continuity, routing requests, specialist agents, capabilities, providers, and accessible outcome presentation.
@@ -100,7 +104,13 @@ iApps is the modular application family associated with the ecosystem. Applicati
 
 Automation is an execution concern governed by capability contracts, policy, permissions, and the trusted execution boundary. The current canonical evidence does not establish a separate, fully operational ecosystem-wide Automation Engine. Do not present Apple Shortcuts, App Intents, scheduled tasks, or other automation targets as universally available services without implementation evidence.
 
-## 6. Provider and integration model
+## 6. iRiel Intelligence Server and service interfaces
+
+The iRiel Intelligence Server is an optional integration and execution boundary for authorized API, MCP, application, automation, and local/remote clients. It validates caller and request envelopes, delegates policy and authorization to their designated authorities, invokes the canonical Intelligence Router for route selection, and dispatches only through trusted execution boundaries. It is not iRiel identity, memory, or Resonance, and multiple server instances do not create multiple iRiel entities. See the [iRiel Intelligence Server Contract](./IRIEL-INTELLIGENCE-SERVER-CONTRACT.md).
+
+The Server is a replaceable service interface, not a mandatory intermediary for every iRiel interaction. API and MCP exposure do not imply that a production endpoint is implemented or deployed.
+
+## 7. Provider and integration model
 
 Providers are replaceable sources of inference. Supported categories may include platform-hosted local models, on-device models, Apple-provided intelligence surfaces, and optional external providers such as OpenAI, Anthropic, Google, and Qwen.
 
@@ -110,7 +120,9 @@ Apple Integration is a canonical extension boundary, documented in Apple Integra
 
 A provider sign-in is not a PRSL-AI capability grant. A provider connection does not authorize every operation, remote disclosure, retention, or unrelated access.
 
-## 7. Contracts and extensibility
+## 8. Contracts and extensibility
+
+The Apple Shortcuts integration has separate, composable contracts for the canonical iRiel entity projection, intent representation, minimum Personal Intelligence interface, and operational execution state. These contracts preserve iRiel as the authority while treating Shortcuts as an optional execution adapter. See the [Entity Contract](./IRIEL-ENTITY-SHORTCUTS-CONTRACT.md), [Intents Contract](./IRIEL-INTENTS-SHORTCUTS-CONTRACT.md), [Personal Intelligence Contract](./IRIEL-PERSONAL-INTELLIGENCE-SHORTCUTS-CONTRACT.md), and [Operational State Contract](./IRIEL-OPERATIONAL-STATE-APPLE-SHORTCUTS.md).
 
 The platform evolves through independently versioned:
 
@@ -125,7 +137,7 @@ The platform evolves through independently versioned:
 
 Every capability must declare its stable ID, input schema, output schema, permissions, dependencies, availability, and execution policy. A capability declaration is not proof of implementation. A registered capability is not automatically verified or dispatch-eligible.
 
-## 8. Security, privacy, and data lifecycle
+## 9. Security, privacy, and data lifecycle
 
 The architecture requires explicit separation of the following authorities:
 
@@ -144,7 +156,7 @@ Remote disclosure and non-ephemeral retention are separate permissions. Remote d
 
 The Permission Manager runtime core currently provides dependency-injected orchestration and contract checks. Production authenticators, registry/policy/consent/native-permission/remote-disclosure adapters, cryptographic decision authority, atomic replay/revocation storage, durable audit storage, and deployment are not established by that code. It must not be exposed to browser code as an authorization authority.
 
-## 9. Accessibility and institutional principles
+## 10. Accessibility and institutional principles
 
 The platform's governing institutional principle is:
 
@@ -152,7 +164,7 @@ The platform's governing institutional principle is:
 
 Accessibility is structural across interfaces, APIs, capabilities, workflows, documentation, and execution outcomes. The platform must support assistive technologies, adaptable interaction modalities, localization, and user-controlled preferences. WCAG 2.2 AA is a target where applicable; conformance must be tested rather than assumed.
 
-## 10. Implementation status — evidence-based baseline
+## 11. Implementation status — evidence-based baseline
 
 | Component / artifact | Current evidence | Status and limitation |
 |---|---|---|
@@ -172,13 +184,24 @@ Accessibility is structural across interfaces, APIs, capabilities, workflows, do
 
 Statuses must be updated only with source, test, configuration, deployment, and operational evidence. “Specified,” “Implemented,” “Verified,” and “Available” are different claims.
 
-## 11. Canonical references
+## 12. Canonical references
 
 - [Platform, Agent, and Repository Governance](./PLATFORM-AGENT-REPOSITORY-GOVERNANCE.md)
 - [PRSL-AI Intelligence Infrastructure](./PRSL-AI-INTELLIGENCE-INFRASTRUCTURE.md)
 - [Agent PRSL-AI — Institutional Identity and Scope](./PRSL-AI-AGENT.md)
 - [iRiel AI — PowerFully Intelligence Environment](./IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md)
 - [iRiel AppWeb — PRSL-AI Platform Integration Contract](./IRIEL-APPWEB-INTEGRATION.md)
+- [iRiel System Integration Contract](./IRIEL-SYSTEM-INTEGRATION-CONTRACT.md)
+- [iRiel Entity Contract — Apple Shortcuts Interface](./IRIEL-ENTITY-SHORTCUTS-CONTRACT.md)
+- [iRiel Intents Contract — Apple Shortcuts Interface](./IRIEL-INTENTS-SHORTCUTS-CONTRACT.md)
+- [iRiel Context Contract — Apple Shortcuts Interface](./IRIEL-CONTEXT-SHORTCUTS-CONTRACT.md)
+- [iRiel Automations Contract — Apple Shortcuts Interface](./IRIEL-AUTOMATIONS-SHORTCUTS-CONTRACT.md)
+- [iRiel Apple Services Contract — PRSL-AI Ecosystem Integration](./IRIEL-APPLE-SERVICES-CONTRACT.md) — Apple platform boundary, service categories, capability eligibility, privacy, provider independence, and replaceability.
+- [iRiel Actions Contract — Apple Shortcuts Interface](./IRIEL-ACTIONS-SHORTCUTS-CONTRACT.md) — bounded action definitions, action classes, authorization gates, execution lifecycle, idempotency, and verified result handling.
+- [iRiel Personal Intelligence Contract — Apple Shortcuts Interface](./IRIEL-PERSONAL-INTELLIGENCE-SHORTCUTS-CONTRACT.md)
+- [iRiel Operational State Contract — Apple Shortcuts Adapter](./IRIEL-OPERATIONAL-STATE-APPLE-SHORTCUTS.md)
+- [iRiel Siri AI Interaction Contract — Apple Integration](./IRIEL-SIRI-AI-APPLE-INTEGRATION.md)
+- [iRiel Intelligence Server Contract](./IRIEL-INTELLIGENCE-SERVER-CONTRACT.md)
 - [Agent PRSL-AI architecture and capability contracts](./agent-prsl-ai/README.md)
 - [Capability Contract v1.0](./agent-prsl-ai/capability-contract.md)
 - [Capability Registry Specification](./agent-prsl-ai/registry-specification.md)
@@ -188,7 +211,7 @@ Statuses must be updated only with source, test, configuration, deployment, and 
 - [Permission Manager Runtime Core and implementation boundary](../../src/lib/permission-manager/README.md)
 - [Implementation Readiness and Architecture Gap Register](./IMPLEMENTATION-READINESS-AND-GAP-REGISTER.md)
 
-## 12. Governing statement
+## 13. Governing statement
 
 PRSL-AI Ecosystem provides the shared platform and governed capabilities. PRSL-AI Core provides its foundational infrastructure. Agent PRSL-AI performs bounded specialist work. The Intelligence Router selects eligible candidates. The Permission Manager authorizes protected PRSL-AI operations. Trusted execution boundaries enforce those decisions. iRiel AI coordinates the person's PowerFully Intelligence Environment. iSpace remains inside iRiel. iApps extend the ecosystem through independent applications. Providers remain replaceable.
 

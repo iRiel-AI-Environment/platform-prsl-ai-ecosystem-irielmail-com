@@ -250,7 +250,23 @@ This sequence is a recommendation, not a claim that the work has already been co
 - Do not initiate Cloudflare deployment or configuration.
 - Report completed, partially completed, planned, and blocked work separately.
 
-## 15. Governing Principle
+## 15. Intelligence Router contract
+
+The [PRSL-AI Intelligence Router Contract](./PRSL-AI-INTELLIGENCE-ROUTER-CONTRACT.md) defines the routing component's candidate-selection responsibility and its boundaries with iRiel orchestration, platform policy, the Permission Manager, the Capability Registry, providers, and execution runtimes. The Router selects only eligible candidates; it does not grant permissions or own personal context and memory. Its production runtime and provider selection must be verified independently.
+
+## 16. iRiel Intelligence Server contract
+
+The [iRiel Intelligence Server Contract](./IRIEL-INTELLIGENCE-SERVER-CONTRACT.md) defines a replaceable service and integration boundary for authorized clients. It composes existing platform responsibilities rather than duplicating them: authentication/admission at the service boundary, policy and Permission Manager decisions at their designated authorities, candidate selection through the Intelligence Router, and protected action enforcement at the trusted execution boundary. The Server does not own canonical iRiel identity, memory, or Resonance.
+
+## 17. Apple Shortcuts integration contract family
+
+The Apple integration contract family defines separate, composable boundaries for the canonical iRiel entity, intent representation, temporary context projection, automation definitions, Personal Intelligence interface, operational state, and Siri interaction. These specifications preserve iRiel authority while treating Apple Shortcuts and iCloud Drive as replaceable/optional adapters. See the [Entity](./IRIEL-ENTITY-SHORTCUTS-CONTRACT.md), [Intents](./IRIEL-INTENTS-SHORTCUTS-CONTRACT.md), [Context](./IRIEL-CONTEXT-SHORTCUTS-CONTRACT.md), [Automations](./IRIEL-AUTOMATIONS-SHORTCUTS-CONTRACT.md), [Personal Intelligence](./IRIEL-PERSONAL-INTELLIGENCE-SHORTCUTS-CONTRACT.md), and [Operational State](./IRIEL-OPERATIONAL-STATE-APPLE-SHORTCUTS.md) contracts.
+
+### Apple platform service and action contracts
+
+The [iRiel Apple Services Contract](./IRIEL-APPLE-SERVICES-CONTRACT.md) defines Apple as an external, replaceable platform boundary. The [iRiel Actions Contract](./IRIEL-ACTIONS-SHORTCUTS-CONTRACT.md) defines bounded executable operations independently from intents and automation workflows. Neither contract transfers iRiel identity, context, memory, or authorization authority to Apple services or Shortcuts.
+
+## 18. Governing Principle
 
 PRSL-AI Intelligence Infrastructure is an expandable foundation for creating, governing, executing, and integrating specialized technological capabilities.
 

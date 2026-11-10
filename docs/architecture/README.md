@@ -17,6 +17,18 @@ This directory contains the canonical architecture definitions and technical spe
 | **PRSL-AI Intelligence Infrastructure** | Shared platform foundation for governed capabilities, contracts, integrations, and execution infrastructure | [Infrastructure architecture](./PRSL-AI-INTELLIGENCE-INFRASTRUCTURE.md) |
 
 - [iRiel AppWeb — PRSL-AI Platform Integration Contract](./IRIEL-APPWEB-INTEGRATION.md) — canonical responsibility boundary, request flow, provider-connection separation, capability-contract alignment, and cross-repository change control.
+- [iRiel System Integration Contract](./IRIEL-SYSTEM-INTEGRATION-CONTRACT.md) — system adapter boundary, Agent PRSL-AI invocation, operating-system authority, privacy, storage independence, and continuity.
+- [iRiel Entity Contract — Apple Shortcuts Interface](./IRIEL-ENTITY-SHORTCUTS-CONTRACT.md) — unified iRiel entity identity, Personal Intelligence and Resonance as inseparable dimensions, identity authority, and replaceable Apple integration.
+- [iRiel Personal Intelligence Contract — Apple Shortcuts Interface](./IRIEL-PERSONAL-INTELLIGENCE-SHORTCUTS-CONTRACT.md) — minimum identity/operational interface, Personal Intelligence and Resonance relationship, Shortcuts execution boundary, and optional storage.
+- [iRiel Intents Contract — Apple Shortcuts Interface](./IRIEL-INTENTS-SHORTCUTS-CONTRACT.md) — intent taxonomy and envelope, intent/action separation, interpretation, ambiguity handling, authorization gates, and Shortcut execution hand-off.
+- [iRiel Context Contract — Apple Shortcuts Interface](./IRIEL-CONTEXT-SHORTCUTS-CONTRACT.md) — temporary, minimized, versioned context projection, freshness/expiry, context authority, and reconciliation.
+- [iRiel Automations Contract — Apple Shortcuts Interface](./IRIEL-AUTOMATIONS-SHORTCUTS-CONTRACT.md) — trigger validation, automation definitions, authorization, multi-step execution, lifecycle, idempotency, and result handling.
+- [iRiel Apple Services Contract — PRSL-AI Ecosystem Integration](./IRIEL-APPLE-SERVICES-CONTRACT.md) — Apple platform boundary, service categories, capability eligibility, privacy, provider independence, and replaceability.
+- [iRiel Actions Contract — Apple Shortcuts Interface](./IRIEL-ACTIONS-SHORTCUTS-CONTRACT.md) — bounded action definitions, action classes, authorization gates, execution lifecycle, idempotency, and verified result handling.
+- [iRiel Operational State Contract — Apple Shortcuts Adapter](./IRIEL-OPERATIONAL-STATE-APPLE-SHORTCUTS.md) — versioned operational-state projection, lifecycle transitions, execution receipts, storage independence, and continuity reconciliation.
+- [iRiel Siri AI Interaction Contract — Apple Integration](./IRIEL-SIRI-AI-APPLE-INTEGRATION.md) — Siri as an external voice/system interface, iRiel authority, App Intents/Shortcuts execution, context mediation, privacy, and continuity.
+- [PRSL-AI Intelligence Router Contract](./PRSL-AI-INTELLIGENCE-ROUTER-CONTRACT.md) — candidate eligibility, policy boundaries, provider-agnostic selection, local-first routing, scoring, fallback, load balancing, and result validation.
+- [iRiel Intelligence Server Contract](./IRIEL-INTELLIGENCE-SERVER-CONTRACT.md) — authenticated API/MCP service boundary, client authorization, Router delegation, trusted execution, multi-client continuity, and deployment independence.
 
 ## Platform and repository governance
 
