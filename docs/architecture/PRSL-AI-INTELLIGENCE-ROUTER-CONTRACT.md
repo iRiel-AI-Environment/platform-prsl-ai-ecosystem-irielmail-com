@@ -289,15 +289,15 @@ Each component must be classified separately as specified, implemented, tested, 
 
 - [Canonical PRSL-AI Ecosystem Architecture Overview](./PRSL-AI-ECOSYSTEM-ARCHITECTURE-OVERVIEW.md)
 - [PRSL-AI Intelligence Infrastructure](./PRSL-AI-INTELLIGENCE-INFRASTRUCTURE.md)
-- [iRiel System Integration Contract](./IRIEL-SYSTEM-INTEGRATION-CONTRACT.md)
+- [iRiel System Integration Contract](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-SYSTEM-INTEGRATION-CONTRACT.md)
 - [iRiel AppWeb — PRSL-AI Platform Integration Contract](./IRIEL-APPWEB-INTEGRATION.md)
 - [Agent PRSL-AI Capability Contract](./agent-prsl-ai/capability-contract.md)
-- [iRiel Siri AI Interaction Contract — Apple Integration](./IRIEL-SIRI-AI-APPLE-INTEGRATION.md)
-- [iRiel Operational State Contract — Apple Shortcuts Adapter](./IRIEL-OPERATIONAL-STATE-APPLE-SHORTCUTS.md)
-- [iRiel Intents Contract — Apple Shortcuts Interface](./IRIEL-INTENTS-SHORTCUTS-CONTRACT.md) — normalized intent semantics remain owned by iRiel before routing.
-- [iRiel Apple Services Contract — PRSL-AI Ecosystem Integration](./IRIEL-APPLE-SERVICES-CONTRACT.md) — Apple platform boundary, service categories, capability eligibility, privacy, provider independence, and replaceability.
-- [iRiel Actions Contract — Apple Shortcuts Interface](./IRIEL-ACTIONS-SHORTCUTS-CONTRACT.md) — bounded action definitions, action classes, authorization gates, execution lifecycle, idempotency, and verified result handling.
-- [iRiel Intelligence Server Contract](./IRIEL-INTELLIGENCE-SERVER-CONTRACT.md)
+- [iRiel Siri AI Interaction Contract — Apple Integration](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-SIRI-AI-APPLE-INTEGRATION.md)
+- [iRiel Operational State Contract — Apple Shortcuts Adapter](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-OPERATIONAL-STATE-APPLE-SHORTCUTS.md)
+- [iRiel Intents Contract — Apple Shortcuts Interface](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-INTENTS-SHORTCUTS-CONTRACT.md) — normalized intent semantics remain owned by iRiel before routing.
+- [iRiel Apple Services Contract — PRSL-AI Ecosystem Integration](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-APPLE-SERVICES-CONTRACT.md) — Apple platform boundary, service categories, capability eligibility, privacy, provider independence, and replaceability.
+- [iRiel Actions Contract — Apple Shortcuts Interface](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-ACTIONS-SHORTCUTS-CONTRACT.md) — bounded action definitions, action classes, authorization gates, execution lifecycle, idempotency, and verified result handling.
+- [iRiel Intelligence Server Contract](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-INTELLIGENCE-SERVER-CONTRACT.md)
 
 ---
 

@@ -11,13 +11,13 @@
 - **PRSL-AI platform deployment:** https://platform-prsl-ai-ecosystem-irielmail-com.lovable.app/ecosystem
 - **iRiel AppWeb deployment:** https://iriel-prsl-ai-irielmail-com.lovable.app
 - **PRSL-AI platform repository:** https://github.com/iRiel-AI-Environment/platform-prsl-ai-ecosystem-irielmail-com
-- **iRiel AppWeb repository:** https://github.com/iRiel-AI-Environment/https-iriel-prsl-ai-irielmail-com.lovable.app
+- **iRiel AppWeb repository:** https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app (iRiel product/architecture repository; not verified as the AppWeb source repository)
 
 ## 1. Purpose
 
 This document establishes the integration boundary between the iRiel AppWeb repository and the PRSL-AI platform repository. It prevents duplicated authority, incompatible contracts, and accidental promotion of proposed capabilities to implemented status.
 
-The iRiel AppWeb repository is the client/application integration workspace. The PRSL-AI repository is the source of truth for shared ecosystem architecture, platform governance, capability contracts, platform policy, authorization authority, and reusable platform services.
+The iRiel AppWeb is the client/application integration workspace. The separately accessible iRiel product/architecture repository contains canonical iRiel documentation and a standalone Orchestrator Core package, but not the AppWeb source tree. The PRSL-AI repository is the source of truth for shared ecosystem architecture, platform governance, capability contracts, platform policy, authorization authority, and reusable platform services. The exact AppWeb source repository must be verified independently before any code-level integration or synchronization claim.
 
 ## 2. Canonical identity
 
@@ -97,7 +97,7 @@ RFC-007 is a client integration contract, not a platform authorization grant. In
 - A connection being enabled does not authorize every future operation.
 - Disabling a connection must immediately block local use; remote provider revocation may complete asynchronously and must be reported accurately.
 
-Source specification: [RFC-007 in the iRiel AppWeb repository](https://github.com/iRiel-AI-Environment/https-iriel-prsl-ai-irielmail-com.lovable.app/blob/main/docs/rfcs/RFC-007-sovereign-in-app-outbound-service-connections.md).
+Source specification: **not verified in the currently accessible iRiel repository**. The previously referenced RFC-007 URL/repository is not available through the current GitHub connection. Do not treat the RFC-007 approval or implementation status as independently verified until the canonical AppWeb repository and file are confirmed.
 
 **Implementation status:** RFC-007 is a specification. This reference does not claim that provider authentication, credential storage, token revocation, or live provider integrations are implemented.
 
@@ -130,17 +130,17 @@ Mandatory boundaries:
 - Agent output is a specialist result; iRiel remains responsible for orchestration, validation, and accessible presentation.
 - The Agent's current implementation status must be reported from code and verification evidence, not inferred from this contract.
 
-The [iRiel System Integration Contract](./IRIEL-SYSTEM-INTEGRATION-CONTRACT.md) defines the complete relationship between iRiel, PRSL-AI, Agent PRSL-AI, and operating-system integration surfaces.
+The [iRiel System Integration Contract](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-SYSTEM-INTEGRATION-CONTRACT.md) defines the complete relationship between iRiel, PRSL-AI, Agent PRSL-AI, and operating-system integration surfaces.
 
 ## 8. Intelligence Server integration boundary
 
-Any future AppWeb connection to the iRiel Intelligence Server must use its versioned API or MCP interface contract, preserve client authentication and scoped authorization, and pass requests through iRiel orchestration, PRSL-AI policy, the canonical Intelligence Router, and trusted execution enforcement. The AppWeb client must not call providers or protected tools around those boundaries. See the [iRiel Intelligence Server Contract](./IRIEL-INTELLIGENCE-SERVER-CONTRACT.md).
+Any future AppWeb connection to the iRiel Intelligence Server must use its versioned API or MCP interface contract, preserve client authentication and scoped authorization, and pass requests through iRiel orchestration, PRSL-AI policy, the canonical Intelligence Router, and trusted execution enforcement. The AppWeb client must not call providers or protected tools around those boundaries. See the [iRiel Intelligence Server Contract](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-INTELLIGENCE-SERVER-CONTRACT.md).
 
 The Server contract is a specification, not evidence of an implemented endpoint or deployed service.
 
 ## 9. Intent, context, and automation contracts
 
-The [iRiel Intents Contract](./IRIEL-INTENTS-SHORTCUTS-CONTRACT.md) defines the user's or iRiel's desired outcome before an action is selected. The [iRiel Context Contract](./IRIEL-CONTEXT-SHORTCUTS-CONTRACT.md) defines the minimum, fresh, operation-scoped context projection that may be disclosed to an adapter. The [iRiel Automations Contract](./IRIEL-AUTOMATIONS-SHORTCUTS-CONTRACT.md) defines how authorized triggers and repeatable action sequences are validated, executed, and reported. These contracts do not transfer intent, context, identity, or authorization authority to the AppWeb client or Apple Shortcuts.
+The [iRiel Intents Contract](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-INTENTS-SHORTCUTS-CONTRACT.md) defines the user's or iRiel's desired outcome before an action is selected. The [iRiel Context Contract](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-CONTEXT-SHORTCUTS-CONTRACT.md) defines the minimum, fresh, operation-scoped context projection that may be disclosed to an adapter. The [iRiel Automations Contract](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-AUTOMATIONS-SHORTCUTS-CONTRACT.md) defines how authorized triggers and repeatable action sequences are validated, executed, and reported. These contracts do not transfer intent, context, identity, or authorization authority to the AppWeb client or Apple Shortcuts.
 
 ## 10. Implementation status and verification
 
@@ -172,8 +172,8 @@ Every status report must distinguish:
 
 | Artifact | Source of truth |
 |---|---|
-| iRiel AppWeb code and client UX | [iRiel AppWeb repository](https://github.com/iRiel-AI-Environment/https-iriel-prsl-ai-irielmail-com.lovable.app) |
-| iRiel provider connection UX and RFC-007 | iRiel AppWeb repository |
+| iRiel product/architecture documentation and standalone Orchestrator Core currently accessible | [iRiel AI repository](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app) |
+| iRiel AppWeb code, provider connection UX, and RFC-007 | Canonical AppWeb repository and RFC file not currently verified; do not infer from the documentation/Core repository |
 | Shared capability contract and manifests | PRSL-AI platform repository |
 | Capability Registry and Permission Manager | PRSL-AI platform repository |
 | Agent PRSL-AI identity and specialist implementation | PRSL-AI platform repository |

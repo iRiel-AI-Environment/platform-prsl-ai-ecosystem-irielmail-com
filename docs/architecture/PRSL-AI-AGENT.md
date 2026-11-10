@@ -237,7 +237,7 @@ Agent PRSL-AI and iRiel are distinct components within the broader Robert Softwa
 - Represents the platform's documented institutional and technical knowledge.
 
 **iRiel**
-- The PowerFully Intelligence Environment (see [the canonical iRiel technical definition](./IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md)).
+- The PowerFully Intelligence Environment (see [the canonical iRiel technical definition](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md)).
 - Orchestrates personal intelligence, context, continuity, capabilities, and interactions across compatible providers.
 - Has its own identity, user experience, and architectural responsibilities.
 

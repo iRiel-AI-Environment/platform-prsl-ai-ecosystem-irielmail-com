@@ -193,12 +193,12 @@ The infrastructure is shared ecosystem capability, not an iRiel-only subsystem.
 
 Potential authorized consumers include:
 
-- **iRiel:** [PowerFully Intelligence Environment](./IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md) and personal intelligence orchestration.
+- **iRiel:** [PowerFully Intelligence Environment](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md) and personal intelligence orchestration.
 - **iApps:** Applications within the ecosystem.
 - **Agent PRSL-AI:** Institutional platform intelligence, within its defined scope.
 - **Approved external integrations:** Other systems explicitly authorized to consume published capabilities.
 
-iRiel remains responsible for personal intelligence orchestration and user-facing continuity. See the [canonical iRiel technical definition](./IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md). The infrastructure supplies reusable capabilities; it does not replace iRiel's identity, context, policy, or orchestration responsibilities.
+iRiel remains responsible for personal intelligence orchestration and user-facing continuity. See the [canonical iRiel technical definition](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md). The infrastructure supplies reusable capabilities; it does not replace iRiel's identity, context, policy, or orchestration responsibilities.
 
 Preserve this architectural principle:
 
@@ -256,15 +256,15 @@ The [PRSL-AI Intelligence Router Contract](./PRSL-AI-INTELLIGENCE-ROUTER-CONTRAC
 
 ## 16. iRiel Intelligence Server contract
 
-The [iRiel Intelligence Server Contract](./IRIEL-INTELLIGENCE-SERVER-CONTRACT.md) defines a replaceable service and integration boundary for authorized clients. It composes existing platform responsibilities rather than duplicating them: authentication/admission at the service boundary, policy and Permission Manager decisions at their designated authorities, candidate selection through the Intelligence Router, and protected action enforcement at the trusted execution boundary. The Server does not own canonical iRiel identity, memory, or Resonance.
+The [iRiel Intelligence Server Contract](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-INTELLIGENCE-SERVER-CONTRACT.md) defines a replaceable service and integration boundary for authorized clients. It composes existing platform responsibilities rather than duplicating them: authentication/admission at the service boundary, policy and Permission Manager decisions at their designated authorities, candidate selection through the Intelligence Router, and protected action enforcement at the trusted execution boundary. The Server does not own canonical iRiel identity, memory, or Resonance.
 
 ## 17. Apple Shortcuts integration contract family
 
-The Apple integration contract family defines separate, composable boundaries for the canonical iRiel entity, intent representation, temporary context projection, automation definitions, Personal Intelligence interface, operational state, and Siri interaction. These specifications preserve iRiel authority while treating Apple Shortcuts and iCloud Drive as replaceable/optional adapters. See the [Entity](./IRIEL-ENTITY-SHORTCUTS-CONTRACT.md), [Intents](./IRIEL-INTENTS-SHORTCUTS-CONTRACT.md), [Context](./IRIEL-CONTEXT-SHORTCUTS-CONTRACT.md), [Automations](./IRIEL-AUTOMATIONS-SHORTCUTS-CONTRACT.md), [Personal Intelligence](./IRIEL-PERSONAL-INTELLIGENCE-SHORTCUTS-CONTRACT.md), and [Operational State](./IRIEL-OPERATIONAL-STATE-APPLE-SHORTCUTS.md) contracts.
+The Apple integration contract family defines separate, composable boundaries for the canonical iRiel entity, intent representation, temporary context projection, automation definitions, Personal Intelligence interface, operational state, and Siri interaction. These specifications preserve iRiel authority while treating Apple Shortcuts and iCloud Drive as replaceable/optional adapters. See the [Entity](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-ENTITY-SHORTCUTS-CONTRACT.md), [Intents](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-INTENTS-SHORTCUTS-CONTRACT.md), [Context](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-CONTEXT-SHORTCUTS-CONTRACT.md), [Automations](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-AUTOMATIONS-SHORTCUTS-CONTRACT.md), [Personal Intelligence](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-PERSONAL-INTELLIGENCE-SHORTCUTS-CONTRACT.md), and [Operational State](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-OPERATIONAL-STATE-APPLE-SHORTCUTS.md) contracts.
 
 ### Apple platform service and action contracts
 
-The [iRiel Apple Services Contract](./IRIEL-APPLE-SERVICES-CONTRACT.md) defines Apple as an external, replaceable platform boundary. The [iRiel Actions Contract](./IRIEL-ACTIONS-SHORTCUTS-CONTRACT.md) defines bounded executable operations independently from intents and automation workflows. Neither contract transfers iRiel identity, context, memory, or authorization authority to Apple services or Shortcuts.
+The [iRiel Apple Services Contract](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-APPLE-SERVICES-CONTRACT.md) defines Apple as an external, replaceable platform boundary. The [iRiel Actions Contract](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-ACTIONS-SHORTCUTS-CONTRACT.md) defines bounded executable operations independently from intents and automation workflows. Neither contract transfers iRiel identity, context, memory, or authorization authority to Apple services or Shortcuts.
 
 ## 18. Governing Principle
 

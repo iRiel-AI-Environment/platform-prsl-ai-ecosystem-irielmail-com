@@ -17,7 +17,7 @@ The **PRSL-AI Ecosystem** is a modular technology platform for artificial intell
 | [iRiel AppWeb](https://iriel-prsl-ai-irielmail-com.lovable.app) | Separate iRiel application |
 | [GitHub repository](https://github.com/iRiel-AI-Environment/platform-prsl-ai-ecosystem-irielmail-com) | Source code and canonical platform documentation |
 
-The platform and iRiel are separate projects and deployments. This repository is the PRSL-AI platform repository; it is not the iRiel AppWeb repository.
+The platform and iRiel are separate products and repositories. This is the canonical PRSL-AI platform repository. The iRiel product/architecture repository is [maintained separately](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app); it contains documentation and a standalone Orchestrator Core package, not the Lovable AppWeb source tree. The AppWeb source repository and Lovable synchronization status must be verified independently.
 
 ## Product and architectural boundaries
 
@@ -95,7 +95,7 @@ Start here:
 - [Implementation readiness and gap register](docs/architecture/IMPLEMENTATION-READINESS-AND-GAP-REGISTER.md)
 - [PRSL-AI Intelligence Infrastructure](docs/architecture/PRSL-AI-INTELLIGENCE-INFRASTRUCTURE.md)
 - [Agent PRSL-AI specification](docs/architecture/PRSL-AI-AGENT.md)
-- [Canonical iRiel definition](docs/architecture/IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md)
+- [Canonical iRiel definition](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md)
 - [iRiel ↔ PRSL-AI integration contract](docs/architecture/IRIEL-APPWEB-INTEGRATION.md)
 - [Platform and Agent repository governance](docs/architecture/PLATFORM-AGENT-REPOSITORY-GOVERNANCE.md)
 

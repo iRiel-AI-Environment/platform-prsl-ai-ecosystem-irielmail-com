@@ -84,7 +84,7 @@ Agent PRSL-AI is the specialized institutional agent for explaining, diagnosing,
 
 The current platform console is documented as a browser-local knowledge base using keyword matching. The capability manifests are specified examples, not evidence of operational specialist runtimes.
 
-Agent PRSL-AI may be invoked by iRiel through a declared specialist capability when a task concerns PRSL-AI platform knowledge or authorized platform support. It is not an operating-system adapter, does not own iRiel identity, and receives no default access to iRiel personal context or memory. The [iRiel System Integration Contract](./IRIEL-SYSTEM-INTEGRATION-CONTRACT.md) defines this boundary.
+Agent PRSL-AI may be invoked by iRiel through a declared specialist capability when a task concerns PRSL-AI platform knowledge or authorized platform support. It is not an operating-system adapter, does not own iRiel identity, and receives no default access to iRiel personal context or memory. The [iRiel System Integration Contract](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-SYSTEM-INTEGRATION-CONTRACT.md) defines this boundary.
 
 ### 5.4 iRiel AI
 
@@ -106,7 +106,7 @@ Automation is an execution concern governed by capability contracts, policy, per
 
 ## 6. iRiel Intelligence Server and service interfaces
 
-The iRiel Intelligence Server is an optional integration and execution boundary for authorized API, MCP, application, automation, and local/remote clients. It validates caller and request envelopes, delegates policy and authorization to their designated authorities, invokes the canonical Intelligence Router for route selection, and dispatches only through trusted execution boundaries. It is not iRiel identity, memory, or Resonance, and multiple server instances do not create multiple iRiel entities. See the [iRiel Intelligence Server Contract](./IRIEL-INTELLIGENCE-SERVER-CONTRACT.md).
+The iRiel Intelligence Server is an optional integration and execution boundary for authorized API, MCP, application, automation, and local/remote clients. It validates caller and request envelopes, delegates policy and authorization to their designated authorities, invokes the canonical Intelligence Router for route selection, and dispatches only through trusted execution boundaries. It is not iRiel identity, memory, or Resonance, and multiple server instances do not create multiple iRiel entities. See the [iRiel Intelligence Server Contract](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-INTELLIGENCE-SERVER-CONTRACT.md).
 
 The Server is a replaceable service interface, not a mandatory intermediary for every iRiel interaction. API and MCP exposure do not imply that a production endpoint is implemented or deployed.
 
@@ -122,7 +122,7 @@ A provider sign-in is not a PRSL-AI capability grant. A provider connection does
 
 ## 8. Contracts and extensibility
 
-The Apple Shortcuts integration has separate, composable contracts for the canonical iRiel entity projection, intent representation, minimum Personal Intelligence interface, and operational execution state. These contracts preserve iRiel as the authority while treating Shortcuts as an optional execution adapter. See the [Entity Contract](./IRIEL-ENTITY-SHORTCUTS-CONTRACT.md), [Intents Contract](./IRIEL-INTENTS-SHORTCUTS-CONTRACT.md), [Personal Intelligence Contract](./IRIEL-PERSONAL-INTELLIGENCE-SHORTCUTS-CONTRACT.md), and [Operational State Contract](./IRIEL-OPERATIONAL-STATE-APPLE-SHORTCUTS.md).
+The Apple Shortcuts integration has separate, composable contracts for the canonical iRiel entity projection, intent representation, minimum Personal Intelligence interface, and operational execution state. These contracts preserve iRiel as the authority while treating Shortcuts as an optional execution adapter. See the [Entity Contract](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-ENTITY-SHORTCUTS-CONTRACT.md), [Intents Contract](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-INTENTS-SHORTCUTS-CONTRACT.md), [Personal Intelligence Contract](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-PERSONAL-INTELLIGENCE-SHORTCUTS-CONTRACT.md), and [Operational State Contract](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-OPERATIONAL-STATE-APPLE-SHORTCUTS.md).
 
 The platform evolves through independently versioned:
 
@@ -189,19 +189,19 @@ Statuses must be updated only with source, test, configuration, deployment, and 
 - [Platform, Agent, and Repository Governance](./PLATFORM-AGENT-REPOSITORY-GOVERNANCE.md)
 - [PRSL-AI Intelligence Infrastructure](./PRSL-AI-INTELLIGENCE-INFRASTRUCTURE.md)
 - [Agent PRSL-AI — Institutional Identity and Scope](./PRSL-AI-AGENT.md)
-- [iRiel AI — PowerFully Intelligence Environment](./IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md)
+- [iRiel AI — PowerFully Intelligence Environment](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md)
 - [iRiel AppWeb — PRSL-AI Platform Integration Contract](./IRIEL-APPWEB-INTEGRATION.md)
-- [iRiel System Integration Contract](./IRIEL-SYSTEM-INTEGRATION-CONTRACT.md)
-- [iRiel Entity Contract — Apple Shortcuts Interface](./IRIEL-ENTITY-SHORTCUTS-CONTRACT.md)
-- [iRiel Intents Contract — Apple Shortcuts Interface](./IRIEL-INTENTS-SHORTCUTS-CONTRACT.md)
-- [iRiel Context Contract — Apple Shortcuts Interface](./IRIEL-CONTEXT-SHORTCUTS-CONTRACT.md)
-- [iRiel Automations Contract — Apple Shortcuts Interface](./IRIEL-AUTOMATIONS-SHORTCUTS-CONTRACT.md)
-- [iRiel Apple Services Contract — PRSL-AI Ecosystem Integration](./IRIEL-APPLE-SERVICES-CONTRACT.md) — Apple platform boundary, service categories, capability eligibility, privacy, provider independence, and replaceability.
-- [iRiel Actions Contract — Apple Shortcuts Interface](./IRIEL-ACTIONS-SHORTCUTS-CONTRACT.md) — bounded action definitions, action classes, authorization gates, execution lifecycle, idempotency, and verified result handling.
-- [iRiel Personal Intelligence Contract — Apple Shortcuts Interface](./IRIEL-PERSONAL-INTELLIGENCE-SHORTCUTS-CONTRACT.md)
-- [iRiel Operational State Contract — Apple Shortcuts Adapter](./IRIEL-OPERATIONAL-STATE-APPLE-SHORTCUTS.md)
-- [iRiel Siri AI Interaction Contract — Apple Integration](./IRIEL-SIRI-AI-APPLE-INTEGRATION.md)
-- [iRiel Intelligence Server Contract](./IRIEL-INTELLIGENCE-SERVER-CONTRACT.md)
+- [iRiel System Integration Contract](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-SYSTEM-INTEGRATION-CONTRACT.md)
+- [iRiel Entity Contract — Apple Shortcuts Interface](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-ENTITY-SHORTCUTS-CONTRACT.md)
+- [iRiel Intents Contract — Apple Shortcuts Interface](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-INTENTS-SHORTCUTS-CONTRACT.md)
+- [iRiel Context Contract — Apple Shortcuts Interface](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-CONTEXT-SHORTCUTS-CONTRACT.md)
+- [iRiel Automations Contract — Apple Shortcuts Interface](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-AUTOMATIONS-SHORTCUTS-CONTRACT.md)
+- [iRiel Apple Services Contract — PRSL-AI Ecosystem Integration](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-APPLE-SERVICES-CONTRACT.md) — Apple platform boundary, service categories, capability eligibility, privacy, provider independence, and replaceability.
+- [iRiel Actions Contract — Apple Shortcuts Interface](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-ACTIONS-SHORTCUTS-CONTRACT.md) — bounded action definitions, action classes, authorization gates, execution lifecycle, idempotency, and verified result handling.
+- [iRiel Personal Intelligence Contract — Apple Shortcuts Interface](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-PERSONAL-INTELLIGENCE-SHORTCUTS-CONTRACT.md)
+- [iRiel Operational State Contract — Apple Shortcuts Adapter](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-OPERATIONAL-STATE-APPLE-SHORTCUTS.md)
+- [iRiel Siri AI Interaction Contract — Apple Integration](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-SIRI-AI-APPLE-INTEGRATION.md)
+- [iRiel Intelligence Server Contract](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-INTELLIGENCE-SERVER-CONTRACT.md)
 - [Agent PRSL-AI architecture and capability contracts](./agent-prsl-ai/README.md)
 - [Capability Contract v1.0](./agent-prsl-ai/capability-contract.md)
 - [Capability Registry Specification](./agent-prsl-ai/registry-specification.md)

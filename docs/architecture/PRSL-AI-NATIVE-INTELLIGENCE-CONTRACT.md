@@ -4,7 +4,7 @@
 **Status:** Architecture contract — approved direction, not an implementation claim  
 **Version:** 1.0.0  
 **Owner:** Robert Software Labs  
-**Applies to:** PRSL-AI Ecosystem Platform and [iRiel AI — Powerfully Intelligence Environment](./IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md)
+**Applies to:** PRSL-AI Ecosystem Platform and [iRiel AI — Powerfully Intelligence Environment](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md)
 
 ## 1. Purpose
 
