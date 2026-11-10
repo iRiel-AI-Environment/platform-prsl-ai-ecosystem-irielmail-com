@@ -40,7 +40,7 @@ An independent Agent repository is a future option only if deployment, distribut
 |---|---|
 | [Platform, Agent, and Repository Governance](../PLATFORM-AGENT-REPOSITORY-GOVERNANCE.md) | Canonical ownership, repository placement, module boundaries, dependency direction, release governance, and split criteria. |
 | [Agent PRSL-AI institutional and architectural specification](../PRSL-AI-AGENT.md) | Canonical agent identity, specialization, scope, responsibilities, and boundaries. |
-| [iRiel — PowerFully Intelligence Environment](.https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md) | Canonical definition of the environment that orchestrates personal intelligence. |
+| [iRiel — PowerFully Intelligence Environment](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md) | Canonical definition of the environment that orchestrates personal intelligence. |
 | [Capability Contract v1.0](./capability-contract.md) | Shared contract for identity, schemas, permissions, dependencies, availability, and execution policy. |
 | [Capability Catalog](./capability-catalog.md) | Initial module and interface inventory with candidate capability operations. |
 | [Reasoning and Action Execution Pattern](./reasoning-action-execution-pattern.md) | ReAct-informed plan/action/observation/verification cycle, with PRSL-AI policy and authorization gates. |

@@ -17,7 +17,7 @@ The **PRSL-AI Ecosystem** is a modular technology platform for artificial intell
 | [iRiel AppWeb](https://iriel-prsl-ai-irielmail-com.lovable.app) | Separate iRiel application |
 | [GitHub repository](https://github.com/iRiel-AI-Environment/platform-prsl-ai-ecosystem-irielmail-com) | Source code and canonical platform documentation |
 
-The platform and iRiel are separate products and repositories. This is the canonical PRSL-AI platform repository. The iRiel product/architecture repository is [maintained separately](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app); it contains documentation and a standalone Orchestrator Core package, not the Lovable AppWeb source tree. The AppWeb source repository and Lovable synchronization status must be verified independently.
+The platform and iRiel are separate products with distinct architectural responsibilities. This is the canonical PRSL-AI platform repository. The separate [iRiel product/architecture repository](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app) contains iRiel documentation and a standalone Orchestrator Core package. It must not be described as the iRiel Lovable AppWeb source repository. The exact AppWeb source repository and its Lovable synchronization status are **not verified by the repositories currently accessible here**; do not infer either from the documentation repository or from the AppWeb's public URL.
 
 ## Product and architectural boundaries
 
@@ -84,7 +84,7 @@ Remote inference is intentionally not enabled in this console. Any future remote
 
 The current console does not access an iRiel profile, personal memory, or conversation history.
 
-The PRSL-AI Core and Core API service prototypes have not yet been consolidated into this platform repository. Transitional prototypes remain in the separate iRiel AppWeb repository; they are not canonical platform services, are not deployed, and are not connected to the public platform API. Repository-boundary migration is tracked as GAP-023.
+The PRSL-AI Core and Core API service prototypes have not yet been consolidated into this platform repository. GAP-023 tracks the canonical service selection and migration. The prototypes' exact source-repository location is **not verified by the repositories currently accessible here**; the separate iRiel documentation/Orchestrator Core repository must not be assumed to be the AppWeb source repository. The prototypes are not established as canonical platform services, deployed services, or connections to the public platform API.
 
 ## Architecture documentation
 

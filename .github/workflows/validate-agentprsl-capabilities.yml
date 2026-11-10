@@ -58,7 +58,7 @@ jobs:
       - name: Smoke-test portable Node server
         run: |
           set -euo pipefail
-          PORT=4179 HOST=127.0.0.1 node .output/server/index.mjs > /tmp/prsl-nitro.log 2>&1 &
+          PORT=4179 HOST=127.0.0.1 node dist/server/index.mjs > /tmp/prsl-nitro.log 2>&1 &
           server_pid=$!
           trap 'kill "$server_pid" 2>/dev/null || true' EXIT
           for attempt in $(seq 1 30); do
@@ -95,7 +95,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: prsl-ai-ecosystem-platform-${{ github.sha }}-${{ github.run_attempt }}
-          path: .output/
+          path: dist/
           if-no-files-found: error
           retention-days: 14
           include-hidden-files: true

@@ -37,7 +37,7 @@ The Intelligence Router selects eligible execution candidates. It does not issue
 | Capability discovery | Requests and presents available capabilities | Owns capability contracts, registry rules, validation, and dispatch eligibility |
 | Authorization intent | Captures user intent and presents consent/confirmation | Permission Manager evaluates and issues protected-operation decisions |
 | Native permissions | Requests through the host operating system when needed | Treats host permission as an independent prerequisite |
-| Provider sign-in | Initiates provider-supported authorization after user action | Defines shared security boundaries; does not equate sign-in with platform authorization |
+| External account connectors / OAuth | Excluded from the current baseline; no provider-account sign-in flow is assumed | Must not introduce or require third-party account connections without a new explicit owner decision |
 | Remote disclosure and retention | Explains and requests the specific purpose and disclosure | Enforces separate policy/permission checks for remote disclosure and non-ephemeral retention |
 | Execution | Invokes only authorized, available platform capabilities | Owns shared execution contracts, policy gates, and reusable execution infrastructure |
 | Provider/model adapters | Uses supported adapters through documented interfaces | Maintains platform-level adapter contracts and infrastructure where centrally shared |
@@ -84,22 +84,15 @@ The exact transport, authentication mechanism, and deployment topology must be d
 9. Provider and model selection MUST remain replaceable and MUST NOT own iRiel identity or continuity.
 10. Errors and results MUST be structured and MUST NOT expose credentials, bearer tokens, raw sensitive payloads, or model chain-of-thought.
 
-## 5. Provider connections: RFC-007
+## 5. Third-party account connections and OAuth — excluded from the current baseline
 
-The iRiel AppWeb RFC-007 defines the client-side sovereign connection lifecycle for GitHub, Google, Apple, Notion, and Microsoft Connect. It is approved as the next-build specification in the iRiel repository.
+The current iRiel repository explicitly excludes third-party account connections, OAuth, and account-linked connectors unless Robert Software Labs makes a new, explicit scope decision. This platform integration contract does not approve or require GitHub, Google, Apple, Notion, Microsoft, or other external account sign-in flows.
 
-RFC-007 is a client integration contract, not a platform authorization grant. In particular:
+A previously referenced RFC-007 connection specification is not present in the canonical iRiel repository currently accessible for this audit. Its earlier description as an approved next-build requirement is therefore unsupported and is withdrawn from this contract. It must not be treated as active scope, implementation authority, or a dependency.
 
-- The iRiel-owned authorization sheet explains purpose, data categories, requested scopes, processing location, retention, and the user's choice.
-- Provider authentication must use the provider's supported secure authorization surface; the iRiel sheet must not collect provider passwords or MFA codes.
-- Provider sign-in and PRSL-AI capability authorization are distinct.
-- Tokens and other bearer credentials must not enter browser localStorage, general application state, URLs, logs, telemetry, or model prompts.
-- A connection being enabled does not authorize every future operation.
-- Disabling a connection must immediately block local use; remote provider revocation may complete asynchronously and must be reported accurately.
+Any future proposal to introduce account-linked connectors or OAuth requires a new explicit owner decision, a versioned architecture decision record, a verified canonical specification, and coordinated changes in both owning repositories before implementation.
 
-Source specification: **not verified in the currently accessible iRiel repository**. The previously referenced RFC-007 URL/repository is not available through the current GitHub connection. Do not treat the RFC-007 approval or implementation status as independently verified until the canonical AppWeb repository and file are confirmed.
-
-**Implementation status:** RFC-007 is a specification. This reference does not claim that provider authentication, credential storage, token revocation, or live provider integrations are implemented.
+This exclusion concerns third-party account connections and OAuth. It does not silently remove separately documented operating-system capabilities or provider-agnostic model adapters; those remain subject to their own contracts, platform support, user permissions, and implementation evidence.
 
 ## 6. Capability contract alignment
 
@@ -148,7 +141,7 @@ The platform repository contains capability and Permission Manager specification
 
 The Permission Manager runtime implementation must remain fail-closed until trusted production adapters and the protected execution boundary are implemented, configured, and independently verified. Test fixtures are not production identities or grants.
 
-The iRiel RFC-007 connection work remains specification-only until its store migration, consent UI, provider handoffs, trusted credential boundary, revocation behavior, and acceptance tests are implemented and verified.
+The third-party account-connection and OAuth proposal is outside the current approved baseline. No store migration, provider handoff, credential boundary, or connection UX is authorized by this contract. Reconsideration requires an explicit owner decision and a new verified specification.
 
 Every status report must distinguish:
 
@@ -173,7 +166,7 @@ Every status report must distinguish:
 | Artifact | Source of truth |
 |---|---|
 | iRiel product/architecture documentation and standalone Orchestrator Core currently accessible | [iRiel AI repository](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app) |
-| iRiel AppWeb code, provider connection UX, and RFC-007 | Canonical AppWeb repository and RFC file not currently verified; do not infer from the documentation/Core repository |
+| iRiel AppWeb source and synchronization | Canonical AppWeb repository and Lovable synchronization status not currently verified; do not infer from the documentation/Core repository |
 | Shared capability contract and manifests | PRSL-AI platform repository |
 | Capability Registry and Permission Manager | PRSL-AI platform repository |
 | Agent PRSL-AI identity and specialist implementation | PRSL-AI platform repository |
