@@ -2,7 +2,8 @@
 
 **Status:** Proposed  
 **Owner:** Robert Software Labs  
-**Scope:** PRSL-AI Ecosystem / Agent PRSL-AI
+**Scope:** PRSL-AI Ecosystem / Agent PRSL-AI  
+**Related:** [Trusted Registry Adapter Contract v1.0](./trusted-registry-adapter-contract.md)
 
 ## 1. Purpose
 
@@ -99,6 +100,10 @@ Registry unavailability must fail closed for new dispatches unless a separately 
 7. Revocation is enforced at dispatch time.
 8. No user memory or provider secrets are stored in registry records.
 
-## 11. Implementation boundary
+## 11. Adapter boundary
 
-This document specifies registry behavior. It does not claim that a registry service or endpoint has been implemented.
+The server-side implementation MUST conform to the [Trusted Registry Adapter Contract v1.0](./trusted-registry-adapter-contract.md). The adapter verifies snapshot membership, record identity, schema validation, review state, manifest integrity, trust metadata, and current revocation before returning an eligible record to the Dependency Resolver.
+
+## 12. Implementation boundary
+
+This document specifies registry behavior. It does not claim that a registry service, persistent adapter, or endpoint has been implemented.
