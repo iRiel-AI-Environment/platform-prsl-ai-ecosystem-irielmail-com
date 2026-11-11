@@ -17,7 +17,7 @@ The **PRSL-AI Ecosystem** is a modular technology platform for artificial intell
 | [iRiel AppWeb](https://iriel-prsl-ai-irielmail-com.lovable.app) | Separate iRiel application |
 | [GitHub repository](https://github.com/iRiel-AI-Environment/platform-prsl-ai-ecosystem-irielmail-com) | Source code and canonical platform documentation |
 
-The platform and iRiel are separate products with distinct architectural responsibilities. This is the canonical PRSL-AI platform repository. The separate [iRiel product/architecture repository](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app) contains iRiel documentation and a standalone Orchestrator Core package. It must not be described as the iRiel Lovable AppWeb source repository. The exact AppWeb source repository and its Lovable synchronization status are **not verified by the repositories currently accessible here**; do not infer either from the documentation repository or from the AppWeb's public URL.
+The platform and iRiel are separate products with distinct architectural responsibilities. This is the canonical PRSL-AI platform repository. The iRiel AppWeb source repository is `iRiel-AI-Environment/iriel-ai-by-robert-software-labs`; it contains the React/TanStack application, tests, service prototypes, and GitHub Actions workflows. The separate [iRiel product/architecture repository](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app) contains product documentation and a standalone Orchestrator Core package; it is not the AppWeb source repository. Lovable is a build-validation surface only, not a required runtime or source-of-truth authority.
 
 ## Product and architectural boundaries
 
