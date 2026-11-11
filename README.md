@@ -29,11 +29,11 @@ The platform and iRiel are separate products with distinct architectural respons
 | **Intelligence Router** | Selects eligible execution candidates under policy constraints | An authorization authority |
 | **Permission Manager** | Issues authorization decisions for protected PRSL-AI operations | A model router or UI toggle |
 | **Agent PRSL-AI** | First-party specialist for PRSL-AI platform knowledge and documented capability guidance | iRiel, the platform itself, or a general autonomous task-execution runtime |
-| **iRiel AI** | Separate **PowerFully Intelligence Environment** that coordinates a person's broader intelligence experience | An AI model, the PRSL-AI platform, or Agent PRSL-AI |
+| **iRiel AI** | Separate **Personal Intelligence Environment (PIE)** that coordinates a person's broader intelligence experience | An AI model, the PRSL-AI platform, or Agent PRSL-AI |
 | **iSpace** | Personal workspace within iRiel | A peer platform or separate top-level product |
 | **iApps** | Modular application family | A replacement name for the platform or its agents |
 
-Canonical iRiel wording is **“PowerFully Intelligence Environment”**. Preserve the exact branded capitalization. Do not use the historical expansion “Personal Intelligence Environment (PIE)” as its definition.
+Canonical iRiel definition: **Personal Intelligence Environment (PIE)**. iRiel is the human-facing personal environment and orchestration layer; it is not a model, provider, generic chatbot, or specialist agent.
 
 ### Responsibility flow
 
@@ -84,7 +84,7 @@ Remote inference is intentionally not enabled in this console. Any future remote
 
 The current console does not access an iRiel profile, personal memory, or conversation history.
 
-The PRSL-AI Core and Core API service prototypes have not yet been consolidated into this platform repository. GAP-023 tracks the canonical service selection and migration. The prototypes' exact source-repository location is **not verified by the repositories currently accessible here**; the separate iRiel documentation/Orchestrator Core repository must not be assumed to be the AppWeb source repository. The prototypes are not established as canonical platform services, deployed services, or connections to the public platform API.
+The iRiel AppWeb source repository has now been verified as `iRiel-AI-Environment/iriel-ai-by-robert-software-labs`. It contains two distinct PRSL-AI Core service prototypes: Hono at `services/prsl-ai-core/` and Fastify at `services/prsl-ai-core-api/`. Their contracts and authentication models differ; neither is canonical, deployed, or connected to AppWeb. GAP-023 tracks consolidation into one platform-owned Core service in this repository. The separate iRiel product/architecture documentation repository is not the AppWeb source repository.
 
 ## Architecture documentation
 
