@@ -12,7 +12,7 @@ This directory contains the canonical architecture definitions and technical spe
 
 | Identity | Technical classification | Canonical reference |
 |---|---|---|
-| **iRiel** | Personal Intelligence Environment (PIE); human-facing personal orchestration environment | [iRiel canonical technical definition](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-PERSONAL-INTELLIGENCE-ENVIRONMENT.md) |
+| **iRiel** | Personal Intelligence Environment (PIE); human-facing personal orchestration environment | [iRiel canonical technical definition](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md) |
 | **Agent PRSL-AI** | First-party specialized agent of the PRSL-AI platform; **Powerful by Robert Software Labs** | [Agent PRSL-AI specification](./PRSL-AI-AGENT.md) |
 | **PRSL-AI Intelligence Infrastructure** | Shared platform foundation for governed capabilities, contracts, integrations, and execution infrastructure | [Infrastructure architecture](./PRSL-AI-INTELLIGENCE-INFRASTRUCTURE.md) |
 
