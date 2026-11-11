@@ -15,7 +15,7 @@
 
 ## 1. Purpose
 
-This document establishes the integration boundary between the iRiel AppWeb application and the PRSL-AI platform. It does not assert that the AppWeb source repository has been identified or that the application is synchronized with either GitHub repository currently accessible for this audit. It prevents duplicated authority, incompatible contracts, and accidental promotion of proposed capabilities to implemented status.
+This document establishes the integration boundary between the verified iRiel AppWeb source repository and the PRSL-AI platform. It prevents duplicated authority, incompatible contracts, and accidental promotion of proposed capabilities to implemented status. Source-code presence is verified; live platform integration, deployment, and Lovable synchronization are separate claims requiring their own evidence.
 
 The iRiel AppWeb source repository has been verified as `iRiel-AI-Environment/iriel-ai-by-robert-software-labs`. It contains the React/TanStack AppWeb source, application tests, service prototypes, and GitHub Actions workflows. The separate iRiel product/architecture repository `iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app` contains canonical product/architecture documentation and a standalone Orchestrator Core package; it is not the AppWeb source tree. The PRSL-AI repository is the source of truth for shared ecosystem architecture, platform governance, capability contracts, platform policy, authorization authority, and reusable platform services. AppWeb source presence is verified; live AppWeb-to-PRSL-AI runtime integration and production deployment are not.
 
@@ -154,7 +154,7 @@ Every status report must distinguish:
 ## 11. Change ownership and release rules
 
 - Shared platform contracts, schemas, permission identifiers, registry rules, platform policies, and reusable runtime services are changed in the PRSL-AI platform repository.
-- AppWeb routes, interaction design, client state, and client-specific adapters may be changed only in the verified canonical AppWeb source repository. That repository is currently unverified; the iRiel documentation/Orchestrator Core repository must not be used as a substitute.
+- AppWeb routes, interaction design, client state, and client-specific adapters belong in `iRiel-AI-Environment/iriel-ai-by-robert-software-labs`. The iRiel product/architecture documentation repository must not be used as a substitute for AppWeb source.
 - Cross-repository changes must update both sides in reviewable pull requests and keep versioned contracts aligned.
 - Neither repository may silently rewrite or replace the other's owned implementation.
 - Do not copy secrets, `.env` files, local machine state, provider tokens, or generated credentials between repositories.
