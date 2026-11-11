@@ -12,7 +12,7 @@ This directory contains the canonical architecture definitions and technical spe
 
 | Identity | Technical classification | Canonical reference |
 |---|---|---|
-| **iRiel AI** | PowerFully Intelligence Environment; personal intelligence coordination and orchestration environment | [iRiel canonical technical definition](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md) |
+| **iRiel** | Personal Intelligence Environment (PIE); human-facing personal orchestration environment | [iRiel canonical technical definition](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-PERSONAL-INTELLIGENCE-ENVIRONMENT.md) |
 | **Agent PRSL-AI** | First-party specialized agent of the PRSL-AI platform; **Powerful by Robert Software Labs** | [Agent PRSL-AI specification](./PRSL-AI-AGENT.md) |
 | **PRSL-AI Intelligence Infrastructure** | Shared platform foundation for governed capabilities, contracts, integrations, and execution infrastructure | [Infrastructure architecture](./PRSL-AI-INTELLIGENCE-INFRASTRUCTURE.md) |
 
@@ -52,7 +52,7 @@ This directory contains the canonical architecture definitions and technical spe
 - **Robert Software Labs** is the creator and institutional owner.
 - **PRSL-AI Ecosystem** defines the shared platform architecture, policy, and reusable capabilities.
 - **PRSL-AI Core** provides the foundational platform infrastructure; the complete infrastructure is not yet established as operational.
-- **iRiel** coordinates the PowerFully Intelligence Environment and the user's experience through explicit integration boundaries.
+- **iRiel** coordinates the Personal Intelligence Environment (PIE) and the user's experience through explicit integration boundaries.
 - **Agent PRSL-AI** is a first-party platform component that performs specialized assistance within its declared scope.
 - **The model** provides inference and remains replaceable.
 - **The Intelligence Router** selects eligible execution candidates; it does not authorize protected operations.
