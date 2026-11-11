@@ -27,7 +27,7 @@ A repository boundary is a source-control and delivery decision. It is not, by i
 | Creator and institutional owner | Robert Software Labs | Owns the institutional direction, product identities, and governing principles. |
 | Platform | PRSL-AI Ecosystem — `@prsl-ai.prsl.ai.ecosystem` | Owns shared architecture, policy, contracts, infrastructure, and platform services. |
 | First-party specialized agent | Agent PRSL-AI — `@prsl-ai.agent.prsl.ai` | Provides specialized platform intelligence and performs only authorized platform tasks. |
-| PowerFully Intelligence Environment | iRiel AI — `@iriel.prsl.ai.ecosystem` | Coordinates the person's intelligence experience and may consume approved platform capabilities through explicit integration. |
+| Personal Intelligence Environment (PIE) | iRiel AI — `@iriel.prsl.ai.ecosystem` | Coordinates the person's intelligence experience and may consume approved platform capabilities through explicit integration. |
 | Inference providers | Replaceable provider adapters | Supply inference; they do not own the Agent's identity, policies, or permissions. |
 
 Agent PRSL-AI is part of the platform, not the platform itself. iRiel is a distinct environment, not a child agent of Agent PRSL-AI. Neither identity replaces the other.
@@ -118,13 +118,13 @@ The layout is illustrative. Do not create empty directories or relocate existing
 
 ### 4.3 What belongs in another repository
 
-A distinct repository is required for a separate product or application, such as iRiel. The currently accessible iRiel repository is `iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app`; it is the canonical location for the iRiel product/architecture documentation and standalone Orchestrator Core package currently present there. Its README states that the Lovable AppWeb source tree and root dependency manifest are absent. Therefore it must not be described as the AppWeb source repository, and AppWeb source location/synchronization must be verified independently. iRiel consumes platform contracts through documented interfaces; it does not own PRSL-AI shared policy or Agent PRSL-AI.
+A distinct repository is required for a separate product or application, such as iRiel. iRiel has distinct source-control responsibilities. The AppWeb source repository is `iRiel-AI-Environment/iriel-ai-by-robert-software-labs`; it contains the React/TanStack application, tests, workflows, and two transitional PRSL-AI Core service prototypes. The separate `iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app` repository contains product/architecture documentation and a standalone Orchestrator Core package; it is not the AppWeb source repository. Lovable is a build-validation surface only and must not become a required implementation or inference dependency. iRiel consumes platform contracts through documented interfaces; it does not own PRSL-AI shared policy or Agent PRSL-AI.
 
 Do not treat multiple iRiel application repositories, prototypes, deployment mirrors, or Lovable-connected projects as alternative canonical locations for the Agent without an explicit repository ownership decision.
 
 ### 4.4 iRiel repository ownership
 
-The iRiel product/architecture repository is separate from this platform repository. iRiel owns its canonical identity, personal context, continuity, iSpace, iApps experience, personal memory lifecycle, and iRiel-specific system/Apple/automation/action contracts. PRSL-AI owns shared platform policy, schemas, capability/registry contracts, Permission Manager, Intelligence Router, platform infrastructure, and Agent PRSL-AI. Cross-repository contracts must name both owners and link to each side's canonical specification. Neither repository may duplicate the other's authority.
+The iRiel AppWeb source repository and the iRiel product/architecture documentation repository are separate from this platform repository. iRiel owns its canonical identity, personal context, continuity, iSpace, iApps experience, personal memory lifecycle, and iRiel-specific system/Apple/automation/action contracts. PRSL-AI owns shared platform policy, schemas, capability/registry contracts, Permission Manager, Intelligence Router, platform Core infrastructure, and Agent PRSL-AI. Cross-repository contracts must name both owners and link to each side's canonical specification. Neither repository may duplicate the other's authority.
 
 ## 5. Dependency direction and integration
 
@@ -197,7 +197,7 @@ This decision does not:
 
 ## 9. Canonical statement
 
-**Robert Software Labs creates and governs both products. PRSL-AI Ecosystem owns the shared platform architecture and services. Agent PRSL-AI is its first-party specialized agent, independently modular but maintained within the platform's canonical repository. iRiel AI remains a distinct PowerFully Intelligence Environment, with its own product/architecture repository, and integrates through explicit contracts.**
+**Robert Software Labs creates and governs both products. PRSL-AI Ecosystem owns the shared platform architecture and services. Agent PRSL-AI is its first-party specialized agent, independently modular but maintained within the platform's canonical repository. iRiel AI remains a distinct Personal Intelligence Environment (PIE), with its own product/architecture repository, and integrates through explicit contracts.**
 
 > One platform repository. Modular components. Distinct identities. Shared contracts. Explicit permissions. No duplicated authority.
 
