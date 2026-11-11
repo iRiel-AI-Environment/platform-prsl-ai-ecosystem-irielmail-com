@@ -17,7 +17,7 @@ The **PRSL-AI Ecosystem** is a modular technology platform for artificial intell
 | [iRiel AppWeb](https://iriel-prsl-ai-irielmail-com.lovable.app) | Separate iRiel application |
 | [GitHub repository](https://github.com/iRiel-AI-Environment/platform-prsl-ai-ecosystem-irielmail-com) | Source code and canonical platform documentation |
 
-The platform and iRiel are separate products with distinct architectural responsibilities. This is the canonical PRSL-AI platform repository. The iRiel AppWeb source repository is `iRiel-AI-Environment/iriel-ai-by-robert-software-labs`; it contains the React/TanStack application, tests, service prototypes, and GitHub Actions workflows. The separate [iRiel product/architecture repository](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app) contains product documentation and a standalone Orchestrator Core package; it is not the AppWeb source repository. Lovable is a build-validation surface only, not a required runtime or source-of-truth authority.
+The platform and iRiel are separate products with distinct architectural responsibilities. This is the canonical PRSL-AI platform repository. The iRiel AppWeb source repository is `iRiel-AI-Environment/iriel-ai-by-robert-software-labs`; it contains the React/TanStack application, tests, service prototypes, and GitHub Actions workflows. The AppWeb repository's [Core boundary decision](https://github.com/iRiel-AI-Environment/iriel-ai-by-robert-software-labs/blob/main/docs/architecture/PRSL-AI-CORE-BOUNDARY.md) documents the two transitional service prototypes and their non-production status. The separate [iRiel product/architecture repository](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app) contains product documentation and a standalone Orchestrator Core package; it is not the AppWeb source repository. Lovable is a build-validation surface only, not a required runtime or source-of-truth authority.
 
 ## Product and architectural boundaries
 
@@ -84,7 +84,7 @@ Remote inference is intentionally not enabled in this console. Any future remote
 
 The current console does not access an iRiel profile, personal memory, or conversation history.
 
-The iRiel AppWeb source repository has now been verified as `iRiel-AI-Environment/iriel-ai-by-robert-software-labs`. It contains two distinct PRSL-AI Core service prototypes: Hono at `services/prsl-ai-core/` and Fastify at `services/prsl-ai-core-api/`. Their contracts and authentication models differ; neither is canonical, deployed, or connected to AppWeb. GAP-023 tracks consolidation into one platform-owned Core service in this repository. The separate iRiel product/architecture documentation repository is not the AppWeb source repository.
+The iRiel AppWeb source repository has now been verified as `iRiel-AI-Environment/iriel-ai-by-robert-software-labs`. It contains two distinct PRSL-AI Core service prototypes: Hono at `services/prsl-ai-core/` and Fastify at `services/prsl-ai-core-api/`. Their contracts and authentication models differ; neither is canonical, deployed, or connected to AppWeb. GAP-023 tracks consolidation into one canonical platform-owned Core architecture and a coherent set of versioned service contracts in this repository. Its implementation may be modular; it must not create competing policy, authorization, routing, or client-contract authorities. The separate iRiel product/architecture documentation repository is not the AppWeb source repository.
 
 ## Architecture documentation
 
