@@ -17,11 +17,11 @@
 
 This document establishes the integration boundary between the iRiel AppWeb application and the PRSL-AI platform. It does not assert that the AppWeb source repository has been identified or that the application is synchronized with either GitHub repository currently accessible for this audit. It prevents duplicated authority, incompatible contracts, and accidental promotion of proposed capabilities to implemented status.
 
-The iRiel AppWeb is the client/application integration workspace. Its exact source repository is not verified by the repositories currently accessible for this audit. The separate iRiel product/architecture repository contains canonical iRiel documentation and a standalone Orchestrator Core package, but not the AppWeb source tree. The PRSL-AI repository is the source of truth for shared ecosystem architecture, platform governance, capability contracts, platform policy, authorization authority, and reusable platform services. No code-level integration or synchronization claim may be made until the actual AppWeb source repository is identified and verified.
+The iRiel AppWeb source repository has been verified as `iRiel-AI-Environment/iriel-ai-by-robert-software-labs`. It contains the React/TanStack AppWeb source, application tests, service prototypes, and GitHub Actions workflows. The separate iRiel product/architecture repository `iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app` contains canonical product/architecture documentation and a standalone Orchestrator Core package; it is not the AppWeb source tree. The PRSL-AI repository is the source of truth for shared ecosystem architecture, platform governance, capability contracts, platform policy, authorization authority, and reusable platform services. AppWeb source presence is verified; live AppWeb-to-PRSL-AI runtime integration and production deployment are not.
 
 ## 2. Canonical identity
 
-iRiel AI is a **PowerFully Intelligence Environment**. It is the personal intelligence environment and orchestration layer through which the human interacts with authorized intelligence, tools, and capabilities.
+iRiel AI is a **Personal Intelligence Environment (PIE)**. It is the personal intelligence environment and orchestration layer through which the human interacts with authorized intelligence, tools, and capabilities.
 
 Agent PRSL-AI is a first-party specialist belonging to the PRSL-AI platform. It is not iRiel, not the platform entity itself, and not a replacement for the platform's shared services.
 
@@ -165,8 +165,8 @@ Every status report must distinguish:
 
 | Artifact | Source of truth |
 |---|---|
-| iRiel product/architecture documentation and standalone Orchestrator Core currently accessible | [iRiel AI repository](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app) |
-| iRiel AppWeb source and synchronization | Canonical AppWeb repository and Lovable synchronization status not currently verified; do not infer from the documentation/Core repository |
+| iRiel product/architecture documentation and standalone Orchestrator Core | [iRiel documentation repository](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app) |
+| iRiel AppWeb source and CI | `iRiel-AI-Environment/iriel-ai-by-robert-software-labs` (AppWeb source, tests, and workflows); Lovable is build validation only |
 | Shared capability contract and manifests | PRSL-AI platform repository |
 | Capability Registry and Permission Manager | PRSL-AI platform repository |
 | Agent PRSL-AI identity and specialist implementation | PRSL-AI platform repository |
