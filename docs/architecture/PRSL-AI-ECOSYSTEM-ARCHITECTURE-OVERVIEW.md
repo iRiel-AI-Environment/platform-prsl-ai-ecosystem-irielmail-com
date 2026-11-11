@@ -24,7 +24,7 @@ This document is the ecosystem-level orientation and responsibility map. Detaile
 | PRSL-AI Core | Foundational platform infrastructure | Core services and intelligence infrastructure, including local-first inference foundations and shared platform contracts. It is not a model or a separate product identity. |
 | Intelligence Router | Platform routing component | Selects eligible intelligence providers, capabilities, and execution candidates under policy constraints. It does not authorize protected operations. |
 | Agent PRSL-AI | @prsl-ai.agent.prsl.ai | First-party specialized platform agent; Powerful by Robert Software Labs. It remains a modular component within the canonical platform repository. |
-| iRiel AI | @iriel.prsl.ai.ecosystem | Independent PowerFully Intelligence Environment that coordinates the person's intelligence experience and authorized workflows. |
+| iRiel AI | @iriel.prsl.ai.ecosystem | Independent Personal Intelligence Environment (PIE) that coordinates the person's intelligence experience and authorized workflows. |
 | iSpace | Internal component of iRiel | Personal space for identity, continuity, user-controlled memory, privacy, and settings. |
 | iApps | Application family | Modular applications that consume approved platform and iRiel capabilities through explicit contracts. |
 | Providers and integrations | Replaceable adapters / extensions | Supply optional inference or native/external system capabilities without owning platform identity or authorization. |
@@ -88,11 +88,11 @@ Agent PRSL-AI may be invoked by iRiel through a declared specialist capability w
 
 ### 5.4 iRiel AI
 
-iRiel AI is a **PowerFully Intelligence Environment**. It is the human-centered environment and orchestration layer for personal intelligence. It coordinates intent, authorized context, continuity, routing requests, specialist agents, capabilities, providers, and accessible outcome presentation.
+iRiel AI is a **Personal Intelligence Environment (PIE)**. It is the human-centered environment and orchestration layer for personal intelligence. It coordinates intent, authorized context, continuity, routing requests, specialist agents, capabilities, providers, and accessible outcome presentation.
 
 Its identity and core responsibilities must remain independent of any model, vendor, framework, or device. iRiel may consume PRSL-AI capabilities through explicit, governed integration contracts; it does not duplicate the platform Permission Manager or claim platform-wide authority.
 
-The branded spelling “PowerFully Intelligence Environment” is intentional and canonical. Do not substitute “Personal Intelligence Environment (PIE)” or normalize the capitalization.
+The branded spelling “Personal Intelligence Environment (PIE)” is intentional and canonical. Do not substitute “Personal Intelligence Environment (PIE)” or normalize the capitalization.
 
 ### 5.5 iSpace and iApps
 
@@ -189,7 +189,7 @@ Statuses must be updated only with source, test, configuration, deployment, and 
 - [Platform, Agent, and Repository Governance](./PLATFORM-AGENT-REPOSITORY-GOVERNANCE.md)
 - [PRSL-AI Intelligence Infrastructure](./PRSL-AI-INTELLIGENCE-INFRASTRUCTURE.md)
 - [Agent PRSL-AI — Institutional Identity and Scope](./PRSL-AI-AGENT.md)
-- [iRiel AI — PowerFully Intelligence Environment](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md)
+- [iRiel AI — Personal Intelligence Environment (PIE)](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-POWERFULLY-INTELLIGENCE-ENVIRONMENT.md)
 - [iRiel AppWeb — PRSL-AI Platform Integration Contract](./IRIEL-APPWEB-INTEGRATION.md)
 - [iRiel System Integration Contract](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-SYSTEM-INTEGRATION-CONTRACT.md)
 - [iRiel Entity Contract — Apple Shortcuts Interface](https://github.com/iRiel-AI-Environment/https-iriel-ai-by-robert-software-labs.lovable.app/blob/main/docs/architecture/IRIEL-ENTITY-SHORTCUTS-CONTRACT.md)
@@ -213,7 +213,7 @@ Statuses must be updated only with source, test, configuration, deployment, and 
 
 ## 13. Governing statement
 
-PRSL-AI Ecosystem provides the shared platform and governed capabilities. PRSL-AI Core provides its foundational infrastructure. Agent PRSL-AI performs bounded specialist work. The Intelligence Router selects eligible candidates. The Permission Manager authorizes protected PRSL-AI operations. Trusted execution boundaries enforce those decisions. iRiel AI coordinates the person's PowerFully Intelligence Environment. iSpace remains inside iRiel. iApps extend the ecosystem through independent applications. Providers remain replaceable.
+PRSL-AI Ecosystem provides the shared platform and governed capabilities. PRSL-AI Core provides its foundational infrastructure. Agent PRSL-AI performs bounded specialist work. The Intelligence Router selects eligible candidates. The Permission Manager authorizes protected PRSL-AI operations. Trusted execution boundaries enforce those decisions. iRiel AI coordinates the person's Personal Intelligence Environment (PIE). iSpace remains inside iRiel. iApps extend the ecosystem through independent applications. Providers remain replaceable.
 
 **Accessibility, Inclusion, and Security by Default. Your continuity is your right. The machine adapts to you.**
 
