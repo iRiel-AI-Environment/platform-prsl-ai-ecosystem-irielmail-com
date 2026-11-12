@@ -1,0 +1,14 @@
+{
+  "manifestVersion": "1.0.0",
+  "catalogId": "iriel.core",
+  "name": "iRiel Core Catalog",
+  "owner": "Robert Software Labs",
+  "generatedAt": "2026-11-12T00:00:00Z",
+  "description": "Bootstrap catalog manifest. Empty registries are intentional until definitions are reviewed and registered.",
+  "capabilities": [],
+  "intents": [],
+  "skills": [],
+  "agents": [],
+  "providers": [],
+  "policies": []
+}

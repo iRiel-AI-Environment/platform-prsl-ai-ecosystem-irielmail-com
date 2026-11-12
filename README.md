@@ -86,6 +86,14 @@ The current console does not access an iRiel profile, personal memory, or conver
 
 The iRiel AppWeb source repository has now been verified as `iRiel-AI-Environment/iriel-ai-by-robert-software-labs`. It contains two distinct PRSL-AI Core service prototypes: Hono at `services/prsl-ai-core/` and Fastify at `services/prsl-ai-core-api/`. Their contracts and authentication models differ; neither is canonical, deployed, or connected to AppWeb. GAP-023 tracks consolidation into one canonical platform-owned Core architecture and a coherent set of versioned service contracts in this repository. Its implementation may be modular; it must not create competing policy, authorization, routing, or client-contract authorities. The accepted [Core transport decision](docs/architecture/PRSL-AI-CORE-TRANSPORT-DECISION.md) selects a Hono Fetch adapter as the transport only; it does not adopt the existing AppWeb prototype unchanged. The separate iRiel product/architecture documentation repository is not the AppWeb source repository.
 
+## ICAS and IMS foundation
+
+- [ICAS documentation index](docs/icas/README.md)
+- [ICAS specification](docs/icas/specification.md)
+- [IMS specification](docs/icas/ims-specification.md)
+- [IMS manifest schema](schemas/ims/manifest.schema.json)
+- [Bootstrap catalog manifest](catalog/manifest.json)
+
 ## Architecture documentation
 
 Start here:
