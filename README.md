@@ -144,6 +144,13 @@ python docs/architecture/agent-prsl-ai/scripts/validate_dependency_resolver.py
 
 GitHub Actions runs the architecture-link, capability-manifest, Permission Manager, execution-contract, Dependency Resolver, application-test, and type-check validations for the configured change paths. Run the relevant checks locally before opening a pull request.
 
+
+## Licensing and intellectual property
+
+**Proprietary — All Rights Reserved.** The original software, source code, architecture, documentation, specifications, designs, and other original materials in this repository are proprietary to Robert Software Labs, except where materials are expressly identified as third-party works or owned by their respective rights holders. No permission to use, reproduce, modify, distribute, sublicense, or create derivative works is granted except with prior written authorization or where applicable law expressly permits it.
+
+See [LICENSE](LICENSE) for the proprietary rights notice. Third-party dependencies and incorporated materials remain subject to their own licenses and notices; this repository-wide notice does not relicense them. Public repository visibility and use of GitHub remain subject to GitHub's Terms of Service.
+
 ## Contact, feedback, and security reporting status
 
 The Contact and Feedback pages are status-only. Their previous form controls did not connect to a delivery service; they have been removed. No message is transmitted or stored by those pages. A direct human-contact channel and a dedicated secure vulnerability-reporting channel are not currently verified. Do not submit sensitive information, exploit details, credentials, or formal notices through the public Agent.
