@@ -2,6 +2,10 @@
 
 This directory contains the canonical architecture definitions and technical specifications for the PRSL-AI Ecosystem and its associated intelligence components.
 
+## Proposals — non-canonical
+
+- [QwenCloud Provider Adapter Proposal](./providers/QWENCLOUD-PROVIDER-ADAPTER-PROPOSAL.md) — isolated external inference adapter proposal; status PROPOSED, not registered or enabled.
+
 ## Ecosystem-level architecture
 
 - [Canonical PRSL-AI Ecosystem Architecture Overview](./PRSL-AI-ECOSYSTEM-ARCHITECTURE-OVERVIEW.md) — institutional hierarchy, component responsibilities, routing and authorization boundaries, provider model, security principles, and evidence-based implementation status.
