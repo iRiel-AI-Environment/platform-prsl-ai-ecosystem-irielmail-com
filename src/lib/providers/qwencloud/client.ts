@@ -197,9 +197,13 @@ export class QwenCloudChatClient {
 
       let model: string | undefined;
       let finishReason: string | null | undefined;
+      let sawDone = false;
 
       for await (const data of parseSseData(response.body)) {
-        if (data === "[DONE]") break;
+        if (data === "[DONE]") {
+          sawDone = true;
+          break;
+        }
 
         let chunk: WireChunk;
         try {
@@ -227,6 +231,13 @@ export class QwenCloudChatClient {
 
         const usage = normalizeUsage(chunk.usage);
         if (usage) yield { type: "usage", usage };
+      }
+
+      if (!sawDone) {
+        throw new QwenCloudError(
+          "invalid_stream_payload",
+          "QwenCloud stream ended before the completion marker.",
+        );
       }
 
       yield {
