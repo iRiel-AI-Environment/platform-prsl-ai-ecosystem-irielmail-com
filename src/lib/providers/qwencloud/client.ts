@@ -139,10 +139,17 @@ export class QwenCloudChatClient {
         "QwenCloud endpoint must be a valid HTTPS URL.",
       );
     }
-    if (endpointUrl.protocol !== "https:" || !this.model.trim()) {
+    const trustedQwenHost =
+      endpointUrl.hostname === "maas.qwencloudapi.com" ||
+      endpointUrl.hostname.endsWith(".maas.qwencloudapi.com");
+    if (
+      endpointUrl.protocol !== "https:" ||
+      !trustedQwenHost ||
+      !this.model.trim()
+    ) {
       throw new QwenCloudError(
         "invalid_configuration",
-        "QwenCloud endpoint must use HTTPS and model must be non-empty.",
+        "QwenCloud endpoint must use HTTPS on a QwenCloud MaaS host, and model must be non-empty.",
       );
     }
     this.timeoutMs = options.timeoutMs ?? DEFAULT_TIMEOUT_MS;
@@ -268,8 +275,10 @@ export class QwenCloudChatClient {
         if (typeof chunk.model === "string") model = chunk.model;
 
         const choice = chunk.choices?.[0];
-        if (typeof choice?.finish_reason === "string" ||
-            choice?.finish_reason === null) {
+        if (
+          typeof choice?.finish_reason === "string" ||
+          choice?.finish_reason === null
+        ) {
           finishReason = choice.finish_reason;
         }
 
