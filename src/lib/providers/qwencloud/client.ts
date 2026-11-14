@@ -25,6 +25,7 @@ type WireChunk = {
     completion_tokens?: unknown;
     total_tokens?: unknown;
   };
+  error?: unknown;
 };
 
 function toOptionalNumber(value: unknown): number | undefined {
@@ -123,6 +124,22 @@ export class QwenCloudChatClient {
     this.endpoint = options.endpoint ?? DEFAULT_ENDPOINT;
     this.model = options.model ?? DEFAULT_MODEL;
     this.enableThinking = options.enableThinking;
+
+    let endpointUrl: URL;
+    try {
+      endpointUrl = new URL(this.endpoint);
+    } catch {
+      throw new QwenCloudError(
+        "invalid_configuration",
+        "QwenCloud endpoint must be a valid HTTPS URL.",
+      );
+    }
+    if (endpointUrl.protocol !== "https:" || !this.model.trim()) {
+      throw new QwenCloudError(
+        "invalid_configuration",
+        "QwenCloud endpoint must use HTTPS and model must be non-empty.",
+      );
+    }
     this.timeoutMs = options.timeoutMs ?? DEFAULT_TIMEOUT_MS;
     this.fetchImpl = options.fetchImpl ?? fetch;
 
@@ -142,6 +159,27 @@ export class QwenCloudChatClient {
       throw new QwenCloudError(
         "invalid_configuration",
         "At least one chat message is required.",
+      );
+    }
+    if (
+      request.maxCompletionTokens !== undefined &&
+      (!Number.isInteger(request.maxCompletionTokens) ||
+        request.maxCompletionTokens <= 0)
+    ) {
+      throw new QwenCloudError(
+        "invalid_configuration",
+        "maxCompletionTokens must be a positive integer.",
+      );
+    }
+    if (
+      request.temperature !== undefined &&
+      (!Number.isFinite(request.temperature) ||
+        request.temperature < 0 ||
+        request.temperature > 2)
+    ) {
+      throw new QwenCloudError(
+        "invalid_configuration",
+        "temperature must be between 0 and 2.",
       );
     }
 
@@ -179,6 +217,7 @@ export class QwenCloudChatClient {
             : {}),
         }),
         signal: controller.signal,
+        redirect: "error",
       });
 
       if (!response.ok) {
@@ -215,6 +254,12 @@ export class QwenCloudChatClient {
           );
         }
 
+        if (chunk.error !== undefined) {
+          throw new QwenCloudError(
+            "invalid_stream_payload",
+            "QwenCloud returned an error event during streaming.",
+          );
+        }
         if (typeof chunk.model === "string") model = chunk.model;
 
         const choice = chunk.choices?.[0];
