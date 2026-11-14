@@ -120,7 +120,7 @@ describe("QwenCloudChatClient", () => {
   it("rejects a stream that closes before the completion marker", async () => {
     const fetchImpl = vi.fn<typeof fetch>().mockResolvedValue(
       new Response(streamFrom([
-        'data: {"choices":[{"delta":{"content":"partial"}}]}\\n\\n',
+        'data: {"choices":[{"delta":{"content":"partial"}}]}\n\n',
       ]), { status: 200 }),
     );
     const client = new QwenCloudChatClient({
