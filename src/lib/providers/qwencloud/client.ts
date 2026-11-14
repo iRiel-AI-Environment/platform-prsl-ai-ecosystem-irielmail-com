@@ -87,6 +87,11 @@ export async function* parseSseData(
       }
     }
   } finally {
+    try {
+      await reader.cancel();
+    } catch {
+      // The stream may already be closed or errored.
+    }
     reader.releaseLock();
   }
 }
@@ -120,7 +125,7 @@ export class QwenCloudChatClient {
       );
     }
 
-    this.apiKey = options.apiKey;
+    this.apiKey = options.apiKey.trim();
     this.endpoint = options.endpoint ?? DEFAULT_ENDPOINT;
     this.model = options.model ?? DEFAULT_MODEL;
     this.enableThinking = options.enableThinking;
