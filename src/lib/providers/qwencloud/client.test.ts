@@ -116,6 +116,36 @@ describe("QwenCloudChatClient", () => {
     expect(fetchImpl).toHaveBeenCalledTimes(1);
   });
 
+
+  it("rejects a stream that closes before the completion marker", async () => {
+    const fetchImpl = vi.fn<typeof fetch>().mockResolvedValue(
+      new Response(streamFrom([
+        'data: {"choices":[{"delta":{"content":"partial"}}]}\\n\\n',
+      ]), { status: 200 }),
+    );
+    const client = new QwenCloudChatClient({
+      apiKey: "test-key",
+      enableThinking: true,
+      fetchImpl,
+    });
+
+    await expect(async () => {
+      for await (const _event of client.streamChat({
+        messages: [{ role: "user", content: "Hello" }],
+      })) {
+        // Consume the stream.
+      }
+    }).rejects.toMatchObject({ code: "invalid_stream_payload" });
+  });
+
+  it("rejects an insecure provider endpoint", () => {
+    expect(() => new QwenCloudChatClient({
+      apiKey: "test-key",
+      endpoint: "http://example.invalid/chat/completions",
+      enableThinking: true,
+    })).toThrow(QwenCloudError);
+  });
+
   it("rejects empty message lists before making a network request", async () => {
     const fetchImpl = vi.fn<typeof fetch>();
     const client = new QwenCloudChatClient({
