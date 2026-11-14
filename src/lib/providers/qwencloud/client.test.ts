@@ -146,6 +146,14 @@ describe("QwenCloudChatClient", () => {
     })).toThrow(QwenCloudError);
   });
 
+  it("rejects HTTPS endpoints outside the QwenCloud MaaS domain", () => {
+    expect(() => new QwenCloudChatClient({
+      apiKey: "test-key",
+      endpoint: "https://attacker.example/chat/completions",
+      enableThinking: true,
+    })).toThrow(QwenCloudError);
+  });
+
   it("rejects empty message lists before making a network request", async () => {
     const fetchImpl = vi.fn<typeof fetch>();
     const client = new QwenCloudChatClient({
